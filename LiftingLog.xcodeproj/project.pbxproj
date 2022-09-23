@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EB484EF28DD220A0024B9F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EB484EE28DD220A0024B9F0 /* GoogleService-Info.plist */; };
+		1EB484F228DD23800024B9F0 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB484F128DD23800024B9F0 /* FirebaseAnalyticsSwift */; };
+		1EB484F428DD23800024B9F0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB484F328DD23800024B9F0 /* FirebaseDatabase */; };
+		1EB484F628DD23800024B9F0 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB484F528DD23800024B9F0 /* FirebaseDatabaseSwift */; };
+		1EB484F828DD23800024B9F0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB484F728DD23800024B9F0 /* FirebaseFirestoreSwift */; };
+		1EB484FA28DD23800024B9F0 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB484F928DD23800024B9F0 /* FirebaseFunctions */; };
+		1EB484FC28DD23800024B9F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB484FB28DD23800024B9F0 /* FirebaseStorage */; };
 		8D10629728DD040F008AD000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629628DD040F008AD000 /* AppDelegate.swift */; };
 		8D10629928DD040F008AD000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629828DD040F008AD000 /* SceneDelegate.swift */; };
 		8D10629B28DD040F008AD000 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629A28DD040F008AD000 /* ViewController.swift */; };
@@ -17,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EB484ED28DD1C220024B9F0 /* LiftingLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiftingLog.entitlements; sourceTree = "<group>"; };
+		1EB484EE28DD220A0024B9F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D10629328DD040F008AD000 /* LiftingLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiftingLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D10629628DD040F008AD000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D10629828DD040F008AD000 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +42,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EB484F628DD23800024B9F0 /* FirebaseDatabaseSwift in Frameworks */,
+				1EB484F428DD23800024B9F0 /* FirebaseDatabase in Frameworks */,
+				1EB484FA28DD23800024B9F0 /* FirebaseFunctions in Frameworks */,
+				1EB484F228DD23800024B9F0 /* FirebaseAnalyticsSwift in Frameworks */,
+				1EB484F828DD23800024B9F0 /* FirebaseFirestoreSwift in Frameworks */,
+				1EB484FC28DD23800024B9F0 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +73,7 @@
 		8D10629528DD040F008AD000 /* LiftingLog */ = {
 			isa = PBXGroup;
 			children = (
+				1EB484ED28DD1C220024B9F0 /* LiftingLog.entitlements */,
 				8D10629628DD040F008AD000 /* AppDelegate.swift */,
 				8D10629828DD040F008AD000 /* SceneDelegate.swift */,
 				8D10629A28DD040F008AD000 /* ViewController.swift */,
@@ -66,6 +82,7 @@
 				8D1062A428DD0411008AD000 /* LaunchScreen.storyboard */,
 				8D1062A728DD0411008AD000 /* Info.plist */,
 				8D10629F28DD040F008AD000 /* LiftingLog.xcdatamodeld */,
+				1EB484EE28DD220A0024B9F0 /* GoogleService-Info.plist */,
 			);
 			path = LiftingLog;
 			sourceTree = "<group>";
@@ -86,6 +103,14 @@
 			dependencies = (
 			);
 			name = LiftingLog;
+			packageProductDependencies = (
+				1EB484F128DD23800024B9F0 /* FirebaseAnalyticsSwift */,
+				1EB484F328DD23800024B9F0 /* FirebaseDatabase */,
+				1EB484F528DD23800024B9F0 /* FirebaseDatabaseSwift */,
+				1EB484F728DD23800024B9F0 /* FirebaseFirestoreSwift */,
+				1EB484F928DD23800024B9F0 /* FirebaseFunctions */,
+				1EB484FB28DD23800024B9F0 /* FirebaseStorage */,
+			);
 			productName = LiftingLog;
 			productReference = 8D10629328DD040F008AD000 /* LiftingLog.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +139,9 @@
 				Base,
 			);
 			mainGroup = 8D10628A28DD040F008AD000;
+			packageReferences = (
+				1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8D10629428DD040F008AD000 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D1062A628DD0411008AD000 /* LaunchScreen.storyboard in Resources */,
+				1EB484EF28DD220A0024B9F0 /* GoogleService-Info.plist in Resources */,
 				8D1062A328DD0411008AD000 /* Assets.xcassets in Resources */,
 				8D10629E28DD040F008AD000 /* Main.storyboard in Resources */,
 			);
@@ -289,8 +318,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LiftingLog/LiftingLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiftingLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -316,8 +347,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LiftingLog/LiftingLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiftingLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -360,6 +393,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1EB484F128DD23800024B9F0 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		1EB484F328DD23800024B9F0 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		1EB484F528DD23800024B9F0 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		1EB484F728DD23800024B9F0 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		1EB484F928DD23800024B9F0 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		1EB484FB28DD23800024B9F0 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8D10629F28DD040F008AD000 /* LiftingLog.xcdatamodeld */ = {
