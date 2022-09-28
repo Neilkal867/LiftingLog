@@ -9,12 +9,12 @@ import UIKit
 
 class WelcomeDashBoardController: UITableViewController {
     var welcomeDashOptions = ["Start Workout", "Create Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings"]
-   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Welcome to the MainDashboard!"
         navigationItem.setHidesBackButton(true, animated: true)
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,13 +28,19 @@ class WelcomeDashBoardController: UITableViewController {
       }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 5{
-            if let settingsCell = storyboard?.instantiateViewController(withIdentifier: "Settings") as? SettingsController{
-                navigationController?.pushViewController(settingsCell, animated: true)
-            }
-        
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "Settings") {
+            mainDashUIVC(vcToDisplay: "Settings", viewController: SettingsController.self)
         }
         
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "Start Workout"){
+            mainDashUIVC(vcToDisplay: "StartWorkout", viewController: StartWorkoutController.self)
+            }
     }
+    
+    func mainDashUIVC<UIVC: UIViewController> (vcToDisplay: String, viewController: UIVC.Type){
+        if let displayUIVC = storyboard?.instantiateViewController(withIdentifier: "\(vcToDisplay)") as? UIVC {
+            navigationController?.pushViewController(displayUIVC, animated: true)
+            }
+        }
 
 }

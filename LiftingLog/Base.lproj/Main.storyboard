@@ -126,6 +126,21 @@
             </objects>
             <point key="canvasLocation" x="1742" y="-384"/>
         </scene>
+        <!--Start Workout Controller-->
+        <scene sceneID="qdw-QU-f4f">
+            <objects>
+                <viewController storyboardIdentifier="StartWorkout" id="8iH-TA-ydH" customClass="StartWorkoutController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9WQ-Wf-1Sm">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yEB-F3-CdE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8e-7H-OdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2402" y="-385"/>
+        </scene>
         <!--Create Account Controller-->
         <scene sceneID="sj3-B8-clf">
             <objects>
@@ -159,7 +174,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-0k-tZC">
-                                <rect key="frame" x="0.0" y="437" width="390" height="67"/>
+                                <rect key="frame" x="-1" y="437" width="390" height="67"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSd-wc-W6q">
