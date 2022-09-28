@@ -12,7 +12,7 @@ class WelcomeDashBoardController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Welcome to the MainDashboard!"
+        title = "Lifting Log Dashboard!"
         navigationItem.setHidesBackButton(true, animated: true)
         
     }
@@ -24,7 +24,7 @@ class WelcomeDashBoardController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "MainDashTableCells", for: indexPath)
           cell.textLabel?.text = welcomeDashOptions [indexPath.row]
-          return cell
+        return cell
       }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -34,7 +34,9 @@ class WelcomeDashBoardController: UITableViewController {
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Start Workout"){
             mainDashUIVC(vcToDisplay: "StartWorkout", viewController: StartWorkoutController.self)
-            }
+        }
+        
+        // TO DO: Add the rest of the VCs accordingly
     }
     
     func mainDashUIVC<UIVC: UIViewController> (vcToDisplay: String, viewController: UIVC.Type){
