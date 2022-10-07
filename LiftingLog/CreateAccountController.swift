@@ -8,9 +8,17 @@
 import UIKit
 
 class CreateAccountController: UIViewController {
-
+    //first name textfield
+    @IBOutlet weak var firstNameCA: UITextField!
+    //last name text field
+    @IBOutlet weak var lastNameCA: UITextField!
+    // username or email text field
+    @IBOutlet weak var userNameCA: UITextField!
+    // password textfield
+    @IBOutlet weak var passwordCA: UITextField!
+    //datepicker or date of birth textfield (this later gets converted to a date picker in the code) 
     @IBOutlet weak var datePickerTF: UITextField!
-    //@IBOutlet var datePicker: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
