@@ -9,7 +9,11 @@ import UIKit
 import FirebaseDatabase
 import FirebaseFirestore
 
+
+
 class ViewController: UIViewController {
+    
+   // var calcService = CalculationsService();
     //username textfield
     @IBOutlet var userNameLogin: UITextField!
     //password textfield
@@ -22,6 +26,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         title = "Welcome to Lifting Log!"
         navigationItem.setHidesBackButton(true, animated: true)
+        
+  
     }
+
+
+    
+    //func getWilksNumber(){
+     
+      //  calcService.
+    //}
 }
 

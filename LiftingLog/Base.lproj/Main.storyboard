@@ -26,8 +26,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lk9-yi-h60">
-                                <rect key="frame" x="161" y="290" width="66" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lk9-yi-h60">
+                                <rect key="frame" x="162" y="282" width="66" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login">
                                     <backgroundConfiguration key="background">
@@ -39,8 +39,8 @@
                                     <segue destination="ysz-IS-oqS" kind="show" id="HpG-gO-cu5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7o-8e-5vx">
-                                <rect key="frame" x="121" y="357" width="147" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7o-8e-5vx">
+                                <rect key="frame" x="121" y="340" width="147" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Create Account ">
                                     <backgroundConfiguration key="background">
@@ -60,10 +60,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lWC-Uq-9eG" secondAttribute="trailing" constant="46" id="Hsg-7u-S37"/>
                             <constraint firstItem="lWC-Uq-9eG" firstAttribute="leading" secondItem="7VV-Ai-BvN" secondAttribute="leading" id="V6e-mv-zWr"/>
                             <constraint firstItem="lWC-Uq-9eG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="Y7P-r4-FZf"/>
+                            <constraint firstItem="l7o-8e-5vx" firstAttribute="top" secondItem="lk9-yi-h60" secondAttribute="bottom" constant="23" id="Zr6-zX-niH"/>
                             <constraint firstItem="lWC-Uq-9eG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="bLy-Pa-6zT"/>
                             <constraint firstItem="lWC-Uq-9eG" firstAttribute="centerX" secondItem="7VV-Ai-BvN" secondAttribute="centerX" id="bx1-zf-Wd4"/>
                             <constraint firstItem="lWC-Uq-9eG" firstAttribute="centerX" secondItem="lk9-yi-h60" secondAttribute="centerX" id="mmu-dw-jfF"/>
                             <constraint firstItem="7VV-Ai-BvN" firstAttribute="top" secondItem="lWC-Uq-9eG" secondAttribute="bottom" constant="22" id="s4D-me-aEL"/>
+                            <constraint firstItem="lk9-yi-h60" firstAttribute="top" secondItem="7VV-Ai-BvN" secondAttribute="bottom" constant="32" id="ucA-5c-uSZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xaH-Uk-csN"/>
@@ -256,7 +258,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ot4-gp-ZcZ"/>
+        <segue reference="p52-md-mt1"/>
+        <segue reference="HpG-gO-cu5"/>
         <segue reference="NXH-dP-kxi"/>
     </inferredMetricsTieBreakers>
     <resources>
