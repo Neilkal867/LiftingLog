@@ -65,12 +65,10 @@ class CalculationsService {
 
     func calculateOneRepMax(weight: Double, reps: Double) -> Int
     {
-        var repsxweight = weight * reps * 0.0333;
-        var repsxweightPlusWeight = repsxweight + weight
-        var oneRepMax = Int(ceil(repsxweightPlusWeight))
+        let repsxweight = weight * reps * 0.0333;
+        let repsxweightPlusWeight = repsxweight + weight
+        let oneRepMax = Int(ceil(repsxweightPlusWeight))
         return oneRepMax;
     }
 
-
 }
-
