@@ -86,20 +86,36 @@
 				1EB484ED28DD1C220024B9F0 /* LiftingLog.entitlements */,
 				8D10629628DD040F008AD000 /* AppDelegate.swift */,
 				8D10629828DD040F008AD000 /* SceneDelegate.swift */,
-				8D10629A28DD040F008AD000 /* ViewController.swift */,
 				8D10629C28DD040F008AD000 /* Main.storyboard */,
 				8D1062A228DD0411008AD000 /* Assets.xcassets */,
 				8D1062A428DD0411008AD000 /* LaunchScreen.storyboard */,
 				8D1062A728DD0411008AD000 /* Info.plist */,
 				8D10629F28DD040F008AD000 /* LiftingLog.xcdatamodeld */,
 				1EB484EE28DD220A0024B9F0 /* GoogleService-Info.plist */,
+				8D67F4F3290B1CC00008724F /* Services */,
+				8D67F4F4290B1CD10008724F /* Views */,
+			);
+			path = LiftingLog;
+			sourceTree = "<group>";
+		};
+		8D67F4F3290B1CC00008724F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1EF30A63290B17A500E8FB22 /* CalculationsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8D67F4F4290B1CD10008724F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D10629A28DD040F008AD000 /* ViewController.swift */,
 				1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */,
 				1E287B5A28E3DF36003A66AD /* WelcomeDashBoardController.swift */,
 				1E287B5C28E3E1A5003A66AD /* SettingsController.swift */,
 				1E827BED28E4A336005D1CD5 /* StartWorkoutController.swift */,
-				1EF30A63290B17A500E8FB22 /* CalculationsService.swift */,
 			);
-			path = LiftingLog;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
