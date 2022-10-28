@@ -30,8 +30,11 @@ class ViewController: UIViewController {
   
     }
 
-
-    
+    @IBAction func logInClicked(_ sender: UIButton) {
+        print(self.userNameLogin.text!)
+        print(self.passwordLogin.text!)
+    }
+   
     //func getWilksNumber(){
      
       //  calcService.
