@@ -47,4 +47,13 @@ class CreateAccountController: UIViewController {
         formatter.dateFormat = "MMMM dd, yyyy"
         return formatter.string(from: date)
     }
+    
+    @IBAction func createAccountClicked(_ sender: UIButton) {
+        print(self.firstNameCA.text!)
+        print(self.lastNameCA.text!)
+        print(self.userNameCA.text!)
+        print(self.passwordCA.text!)
+        print(self.datePickerTF.text!)
+    }
+    
 }
