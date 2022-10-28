@@ -31,6 +31,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func logInClicked(_ sender: UIButton) {
+        guard let userName = userNameLogin.text, !userName.isEmpty, let passWord = passwordLogin.text, !passWord.isEmpty else
+        {
+            print("Cannot Leave Username or Password Blank")
+            return
+        }
         print(self.userNameLogin.text!)
         print(self.passwordLogin.text!)
     }
