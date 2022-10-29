@@ -14,8 +14,8 @@ import UIKit
 
 class AuthenticationService
 {
+    var randomObj = RandomObjectService.init(loginState: false)
     init(){}
-    
     func createUser(emailAddress: String, password: String)
     {
         
@@ -23,7 +23,7 @@ class AuthenticationService
             if error != nil {
                 //show an error to the user
                 print(error.unsafelyUnwrapped)
-            
+                
             }
             
             if result != nil {
@@ -32,13 +32,13 @@ class AuthenticationService
                 
             }
         }
-    
+        
     }
     
     func logUserIn(emailAddress: String, password: String)
     {
         
-        Auth.auth().signIn(withEmail: emailAddress, password: password) {result, error in
+        Auth.auth().signIn(withEmail: emailAddress, password: password) {[self]result, error in
             if error != nil {
                 //Show an error to the user
                 print(error.unsafelyUnwrapped)
@@ -46,9 +46,13 @@ class AuthenticationService
             }
             
             if result != nil {
-                //Might have to advance screens here
+            //Move to next screen
                 print("success")
             }
+          
         }
     }
+
+    
 }
+

@@ -10,6 +10,11 @@
 		1E287B5928E3DBE9003A66AD /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */; };
 		1E287B5B28E3DF36003A66AD /* WelcomeDashBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E287B5A28E3DF36003A66AD /* WelcomeDashBoardController.swift */; };
 		1E287B5D28E3E1A5003A66AD /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E287B5C28E3E1A5003A66AD /* SettingsController.swift */; };
+		1E2FA04A290C54940016B726 /* RandomObjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA049290C54940016B726 /* RandomObjectService.swift */; };
+		1E2FA04C290CA1DA0016B726 /* CreateWorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA04B290CA1DA0016B726 /* CreateWorkoutController.swift */; };
+		1E2FA04E290CA2B40016B726 /* PastWorkoutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA04D290CA2B40016B726 /* PastWorkoutsController.swift */; };
+		1E2FA050290CA3090016B726 /* WilksCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA04F290CA3090016B726 /* WilksCalculatorController.swift */; };
+		1E2FA054290CA3F00016B726 /* OneRMCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA053290CA3F00016B726 /* OneRMCalculatorViewController.swift */; };
 		1E827BEE28E4A336005D1CD5 /* StartWorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E827BED28E4A336005D1CD5 /* StartWorkoutController.swift */; };
 		1EB484EF28DD220A0024B9F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EB484EE28DD220A0024B9F0 /* GoogleService-Info.plist */; };
 		1EB484F428DD23800024B9F0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB484F328DD23800024B9F0 /* FirebaseDatabase */; };
@@ -34,6 +39,11 @@
 		1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		1E287B5A28E3DF36003A66AD /* WelcomeDashBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDashBoardController.swift; sourceTree = "<group>"; };
 		1E287B5C28E3E1A5003A66AD /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		1E2FA049290C54940016B726 /* RandomObjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomObjectService.swift; sourceTree = "<group>"; };
+		1E2FA04B290CA1DA0016B726 /* CreateWorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutController.swift; sourceTree = "<group>"; };
+		1E2FA04D290CA2B40016B726 /* PastWorkoutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastWorkoutsController.swift; sourceTree = "<group>"; };
+		1E2FA04F290CA3090016B726 /* WilksCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WilksCalculatorController.swift; sourceTree = "<group>"; };
+		1E2FA053290CA3F00016B726 /* OneRMCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRMCalculatorViewController.swift; sourceTree = "<group>"; };
 		1E827BED28E4A336005D1CD5 /* StartWorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutController.swift; sourceTree = "<group>"; };
 		1EB484ED28DD1C220024B9F0 /* LiftingLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiftingLog.entitlements; sourceTree = "<group>"; };
 		1EB484EE28DD220A0024B9F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -109,6 +119,7 @@
 				1EF30A63290B17A500E8FB22 /* CalculationsService.swift */,
 				8D67F4F5290B1DE50008724F /* DatabaseService.swift */,
 				8D67F4F7290B1E020008724F /* AuthenticationService.swift */,
+				1E2FA049290C54940016B726 /* RandomObjectService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -121,6 +132,10 @@
 				1E287B5A28E3DF36003A66AD /* WelcomeDashBoardController.swift */,
 				1E287B5C28E3E1A5003A66AD /* SettingsController.swift */,
 				1E827BED28E4A336005D1CD5 /* StartWorkoutController.swift */,
+				1E2FA04B290CA1DA0016B726 /* CreateWorkoutController.swift */,
+				1E2FA04D290CA2B40016B726 /* PastWorkoutsController.swift */,
+				1E2FA04F290CA3090016B726 /* WilksCalculatorController.swift */,
+				1E2FA053290CA3F00016B726 /* OneRMCalculatorViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,13 +230,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E2FA050290CA3090016B726 /* WilksCalculatorController.swift in Sources */,
 				1E287B5B28E3DF36003A66AD /* WelcomeDashBoardController.swift in Sources */,
+				1E2FA04E290CA2B40016B726 /* PastWorkoutsController.swift in Sources */,
+				1E2FA04A290C54940016B726 /* RandomObjectService.swift in Sources */,
 				1EF30A64290B17A500E8FB22 /* CalculationsService.swift in Sources */,
 				8D10629B28DD040F008AD000 /* ViewController.swift in Sources */,
 				8D10629728DD040F008AD000 /* AppDelegate.swift in Sources */,
 				8D67F4F8290B1E020008724F /* AuthenticationService.swift in Sources */,
+				1E2FA054290CA3F00016B726 /* OneRMCalculatorViewController.swift in Sources */,
 				1E287B5D28E3E1A5003A66AD /* SettingsController.swift in Sources */,
 				1E827BEE28E4A336005D1CD5 /* StartWorkoutController.swift in Sources */,
+				1E2FA04C290CA1DA0016B726 /* CreateWorkoutController.swift in Sources */,
 				8D67F4F6290B1DE50008724F /* DatabaseService.swift in Sources */,
 				8D1062A128DD040F008AD000 /* LiftingLog.xcdatamodeld in Sources */,
 				8D10629928DD040F008AD000 /* SceneDelegate.swift in Sources */,
