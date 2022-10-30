@@ -12,7 +12,8 @@ class CreateWorkoutController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = "Creation Workout"
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     
 

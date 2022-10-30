@@ -12,7 +12,8 @@ class WilksCalculatorController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = "Wilks Calculator"
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     
 

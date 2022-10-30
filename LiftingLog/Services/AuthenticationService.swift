@@ -11,11 +11,12 @@ import FirebaseFirestore
 import FirebaseAuth
 import UIKit
 
-
 class AuthenticationService
 {
-    var randomObj = RandomObjectService.init(loginState: false)
-    init(){}
+   // var loginState: Bool
+    init(){
+       // self.loginState = loginState
+    }
     func createUser(emailAddress: String, password: String)
     {
         
@@ -46,13 +47,12 @@ class AuthenticationService
             }
             
             if result != nil {
-            //Move to next screen
                 print("success")
             }
-          
         }
     }
 
     
 }
+
 
