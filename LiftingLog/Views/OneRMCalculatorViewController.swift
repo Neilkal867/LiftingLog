@@ -14,6 +14,7 @@ class OneRMCalculatorViewController: UIViewController {
 
         title = "1RM Calculator"
         navigationItem.setHidesBackButton(true, animated: true)
+        self.hideKeyboardWhenTappedAround()
     }
     
 
