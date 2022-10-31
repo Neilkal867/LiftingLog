@@ -8,12 +8,10 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseFirestore
-
-
+import FirebaseAuth
+import FirebaseCore
 
 class ViewController: UIViewController {
-    
-   // var calcService = CalculationsService();
     //username textfield
     @IBOutlet var userNameLogin: UITextField!
     //password textfield
@@ -22,22 +20,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     // create account button 
     @IBOutlet weak var createAccButton: UIButton!
-    
+   
     override func viewDidLoad() {
         title = "Welcome to Lifting Log!"
         navigationItem.setHidesBackButton(true, animated: true)
-        
-  
     }
-
+    
     @IBAction func logInClicked(_ sender: UIButton) {
-        print(self.userNameLogin.text!)
-        print(self.passwordLogin.text!)
+        guard let userName = userNameLogin.text, !userName.isEmpty, let password = passwordLogin.text, !password.isEmpty else{
+            self.showAlert(title: "Invalid Username or Password", message: "Please Enter a Valid Username And Password.")
+            return
+      }
+        Auth.auth().signIn(withEmail: userNameLogin.text!, password: passwordLogin.text!) {[self]result, error in
+            if error != nil {
+                self.showAlert(title: "User Not Found", message: "Please Make Sure You Are Using The Correct Username & Password")
+                print(error.unsafelyUnwrapped)
+                return
+            }
+            
+            if result != nil {
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let vc: UITableViewController = mainStoryboard.instantiateViewController(withIdentifier: "welcomeDash") as! UITableViewController
+                    navigationController?.pushViewController(vc, animated: true)
+                print("success")
+            }
+        }
+       // auth.logUserIn(emailAddress: userNameLogin.text!, password: passwordLogin.text!)
+        //Code Below will bring you from Login Page to Main Dash no matter what
+        //---------------------------------------------------------------------//
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc: UITableViewController = mainStoryboard.instantiateViewController(withIdentifier: "welcomeDash") as! UITableViewController
+        navigationController?.pushViewController(vc, animated: true)
+        //---------------------------------------------------------------------//
     }
-   
-    //func getWilksNumber(){
-     
-      //  calcService.
-    //}
 }
 

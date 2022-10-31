@@ -8,13 +8,14 @@
 import UIKit
 
 class WelcomeDashBoardController: UITableViewController {
+    
     var welcomeDashOptions = ["Start Workout", "Create Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Lifting Log Dashboard!"
         navigationItem.setHidesBackButton(true, animated: true)
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,21 +29,28 @@ class WelcomeDashBoardController: UITableViewController {
       }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == welcomeDashOptions.firstIndex(of: "Settings") {
-            mainDashUIVC(vcToDisplay: "Settings", viewController: SettingsController.self)
-        }
-        
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Start Workout"){
             mainDashUIVC(vcToDisplay: "StartWorkout", viewController: StartWorkoutController.self)
         }
         
-        // TO DO: Add the rest of the VCs accordingly
-    }
-    
-    func mainDashUIVC<UIVC: UIViewController> (vcToDisplay: String, viewController: UIVC.Type){
-        if let displayUIVC = storyboard?.instantiateViewController(withIdentifier: "\(vcToDisplay)") as? UIVC {
-            navigationController?.pushViewController(displayUIVC, animated: true)
-            }
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "Create Workout") {
+            mainDashUIVC(vcToDisplay: "CreateWorkout", viewController: CreateWorkoutController.self)
         }
-
+        
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "View Past Workout"){
+            mainDashUIVC(vcToDisplay: "PastWorkouts", viewController: PastWorkoutsController.self)
+        }
+        
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "Wilks Calculator"){
+            mainDashUIVC(vcToDisplay: "WilksCalc", viewController: WilksCalculatorController.self)
+        }
+        
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "1RM Calculator"){
+            mainDashUIVC(vcToDisplay: "1RMCalc", viewController: OneRMCalculatorViewController.self )
+        }
+        
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "Settings"){
+            mainDashUIVC(vcToDisplay: "Settings", viewController: SettingsController.self)
+        }
+    }
 }
