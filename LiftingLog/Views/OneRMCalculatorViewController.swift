@@ -33,7 +33,6 @@ class OneRMCalculatorViewController: UIViewController {
       }
             let doubleBodyWeight = Double(bodyWeightRMTF.text!) ?? 0.0
             let doubleNumberOfReps = Double(numberOfRepsRMTF.text!) ?? 0.0
-           // var intRMOutput = Int(oneRMOutputTF.text!) ?? 0
             let rmCalc = calcServ.calculateOneRepMax(weight: doubleBodyWeight, reps: doubleNumberOfReps)
            
            oneRMOutputTF.text = String(rmCalc)
