@@ -48,7 +48,6 @@ extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    
     func mainDashUIVC<UIVC: UIViewController> (vcToDisplay: String, viewController: UIVC.Type){
         if let displayUIVC = storyboard?.instantiateViewController(withIdentifier: "\(vcToDisplay)") as? UIVC {
             navigationController?.pushViewController(displayUIVC, animated: true)
@@ -105,6 +104,16 @@ extension UIViewController {
             self.view.frame.origin.y = -viewOriginY
         }
     }
+    
+    func hideKeyboardWhenTappedAround() {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+        }
+        
+        @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
 }
 
 extension UIResponder {
