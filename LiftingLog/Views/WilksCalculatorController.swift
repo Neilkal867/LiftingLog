@@ -21,7 +21,6 @@ class WilksCalculatorController: UIViewController {
         super.viewDidLoad()
 
         title = "Wilks Calculator"
-        navigationItem.setHidesBackButton(true, animated: true)
         setGenderValue()
         self.hideKeyboardWhenTappedAround()
     }
