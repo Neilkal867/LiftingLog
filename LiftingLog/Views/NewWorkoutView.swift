@@ -14,9 +14,10 @@ class NewWorkoutView: UIViewController {
 
         title = "New Workout"
         navigationItem.setHidesBackButton(true, animated: true)
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
-   
     override func viewWillAppear(_ animated: Bool) {
            self.addKeyboardObserver()
        }
