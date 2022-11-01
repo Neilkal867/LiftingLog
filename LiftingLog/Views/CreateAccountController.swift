@@ -72,6 +72,7 @@ class CreateAccountController: UIViewController {
             }
             
             if result != nil {
+                self.mainDashUIVC(vcToDisplay: "LoginView", viewController: ViewController.self)
                 self.showAlert(title: "Account Created", message: "You have successfully created an account")
             }
         }
