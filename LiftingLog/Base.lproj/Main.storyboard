@@ -127,7 +127,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="welcomeDash" id="ysz-IS-oqS" customClass="WelcomeDashBoardController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dGe-9Q-2im">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -442,7 +442,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="createAccountClicked:" destination="UDL-xf-Lmu" eventType="touchUpInside" id="reT-2V-r9z"/>
-                                    <segue destination="ysz-IS-oqS" kind="show" id="ot4-gp-ZcZ"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="DVc-xO-ucF"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sl9-YD-bJq">
@@ -488,8 +488,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="p52-md-mt1"/>
-        <segue reference="NXH-dP-kxi"/>
+        <segue reference="DVc-xO-ucF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

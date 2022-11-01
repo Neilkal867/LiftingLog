@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CreateAccountController: UIViewController {
     //first name textfield
@@ -16,13 +17,13 @@ class CreateAccountController: UIViewController {
     @IBOutlet weak var userNameCA: UITextField!
     // password textfield
     @IBOutlet weak var passwordCA: UITextField!
-    //datepicker or date of birth textfield (this later gets converted to a date picker in the code) 
+    //datepicker or date of birth textfield (this later gets converted to a date picker in the code)
     @IBOutlet weak var datePickerTF: UITextField!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "Account Creation"
         navigationItem.setHidesBackButton(true, animated: true)
         
@@ -32,7 +33,7 @@ class CreateAccountController: UIViewController {
         dateOfBirth.frame.size   = CGSize(width: 0, height: 300)
         dateOfBirth.preferredDatePickerStyle = .wheels
         dateOfBirth.maximumDate = Date()
-       
+        
         datePickerTF.inputView = dateOfBirth
         datePickerTF.text = "Date of Birth"
     }
@@ -54,6 +55,25 @@ class CreateAccountController: UIViewController {
         print(self.userNameCA.text!)
         print(self.passwordCA.text!)
         print(self.datePickerTF.text!)
+        
+        if  self.userNameCA.text != nil && self.passwordCA.text != nil
+        {
+            let userName = self.userNameCA.text!
+            let password = self.passwordCA.text!
+            createUser(emailAddress: userName, password: password)
+        }
     }
     
+    func createUser(emailAddress: String, password: String)
+    {
+        Auth.auth().createUser(withEmail: emailAddress, password: password) {result, error in
+            if error != nil {
+                self.showAlert(title: "Error creating account", message: error!.localizedDescription)
+            }
+            
+            if result != nil {
+                self.showAlert(title: "Account Created", message: "You have successfully created an account")
+            }
+        }
+    }
 }

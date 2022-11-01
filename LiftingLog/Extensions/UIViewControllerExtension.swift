@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 extension UIViewController {
     
@@ -36,6 +37,26 @@ extension UIViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
 
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            
+            
+           // I am about 99% sure this code shouldn't live here....
+            let user = Auth.auth().currentUser
+            if Auth.auth().currentUser != nil
+            {
+                user?.delete { error in
+                    if error != nil
+                    {
+                        self.showAlert(title: "Error deleting account", message: error!.localizedDescription)
+                    }
+                    else
+                    {
+                        self.showAlert(title: "Account deleted", message: "You have successfully deleted your account")
+                    }
+                  
+                }
+            }
+            
+            
             if let loginView = self.storyboard?.instantiateViewController(withIdentifier: "LoginView") as? UIViewController {
                 self.navigationController?.pushViewController(loginView, animated: true)
                 }
