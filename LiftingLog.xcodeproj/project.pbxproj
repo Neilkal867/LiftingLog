@@ -34,6 +34,7 @@
 		8D67F4F6290B1DE50008724F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F5290B1DE50008724F /* DatabaseService.swift */; };
 		8D67F4F8290B1E020008724F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F7290B1E020008724F /* AuthenticationService.swift */; };
 		8D67F4FB290B20A00008724F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8D67F4FA290B20A00008724F /* FirebaseAuth */; };
+		8DC4945C29146B920013D6D3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC4945B29146B920013D6D3 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 				1EB484F828DD23800024B9F0 /* FirebaseFirestoreSwift in Frameworks */,
 				8D67F4FB290B20A00008724F /* FirebaseAuth in Frameworks */,
 				1EB484FC28DD23800024B9F0 /* FirebaseStorage in Frameworks */,
+				8DC4945C29146B920013D6D3 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +183,7 @@
 				1EB484F928DD23800024B9F0 /* FirebaseFunctions */,
 				1EB484FB28DD23800024B9F0 /* FirebaseStorage */,
 				8D67F4FA290B20A00008724F /* FirebaseAuth */,
+				8DC4945B29146B920013D6D3 /* FirebaseFirestore */,
 			);
 			productName = LiftingLog;
 			productReference = 8D10629328DD040F008AD000 /* LiftingLog.app */;
@@ -517,6 +520,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		8DC4945B29146B920013D6D3 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 
