@@ -38,8 +38,10 @@ class DatabaseService
         ])
     }
     
+    //I think this method can be used to grab the individual workout when the user clicks one from the lists of dates
     func loadSpecificWorkout(){}
     
+    //I think this method will grab all collections in the DB
     func loadAllWorkouts(){}
     
     func getCurrentMonthDayYear() -> String
