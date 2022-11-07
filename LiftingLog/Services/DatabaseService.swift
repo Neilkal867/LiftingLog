@@ -14,8 +14,7 @@ class DatabaseService
     struct Workout
     {
         var date: String
-        var workoutTitle: String
-        var workout: String
+        var workoutType: String
         var weight: Int
         var reps: Int
         var sets: Int
@@ -31,8 +30,9 @@ class DatabaseService
         let todaysDate:String = getCurrentMonthDayYear()
 
         db.collection(todaysDate).addDocument(data: [
-            "Lift" : workout.workoutTitle,
+            "Workout Type" : workout.workoutType,
             "Reps" : workout.reps,
+            "Sets" : workout.sets,
             "Weight" : workout.weight,
             "Comments": workout.comments
         ])
@@ -54,8 +54,8 @@ class DatabaseService
         return MonthDayYear
     }
     
-    func createWorkoutObject(date: String, workoutTitle: String, workout: String, weight: Int, reps: Int, sets: Int, comments: String) -> Workout
+    func createWorkoutObject(date: String, workoutType: String, weight: Int, reps: Int, sets: Int, comments: String) -> Workout
     {
-        return Workout(date: date, workoutTitle: workoutTitle,workout: workout,weight: weight,reps: reps,sets: sets,comments: comments)
+        return Workout(date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
     }
 }

@@ -4,7 +4,9 @@
 //
 //  Created by Neil Kalanish on 9/22/22.
 //
-
+// TODO:
+// 1) Wire up the Ui to actually save the workout when the user types in the workout values
+// 2) Figure out how we want to read the data from the DB and make it usable
 import UIKit
 import FirebaseDatabase
 import FirebaseFirestore
@@ -29,8 +31,6 @@ class ViewController: UIViewController {
     
     @IBAction func logInClicked(_ sender: UIButton)
     {
-        ThisIsOnlyForTestingDBCalls()
-        
 //        guard let userName = userNameLogin.text, !userName.isEmpty, let password = passwordLogin.text, !password.isEmpty else{
 //            self.showAlert(title: "Invalid Username or Password", message: "Please Enter a Valid Username And Password.")
 //            return
@@ -45,32 +45,16 @@ class ViewController: UIViewController {
 //
 //            if result != nil
 //            {
-//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//                let vc: UITableViewController = mainStoryboard.instantiateViewController(withIdentifier: "welcomeDash") as! UITableViewController
-//                navigationController?.pushViewController(vc, animated: true)
-//                print("success")
+//                self.navigateToMainDash()
 //            }
 //        }
 //
         if userNameLogin.text! == "dev" && passwordLogin.text! == "dev"
         {
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let vc: UITableViewController = mainStoryboard.instantiateViewController(withIdentifier: "welcomeDash") as! UITableViewController
-            navigationController?.pushViewController(vc, animated: true)
+            self.navigateToMainDash()
         }
         
     }
     
-    //Delete this once everything is hooked up
-    func ThisIsOnlyForTestingDBCalls()
-    {
-        let dbService = DatabaseService()
-        
-        let todaysDate = dbService.getCurrentMonthDayYear()
-        
-        let newWorkout = dbService.createWorkoutObject(date: todaysDate, workoutTitle: "New Workout", workout: "Benchg", weight: 123, reps: 123, sets: 123, comments: "These are comments")
-        
-        dbService.saveWorkout(workout: newWorkout)
-    }
 }
 

@@ -8,7 +8,12 @@
 import UIKit
 
 class NewWorkoutView: UIViewController {
-
+    
+    @IBOutlet weak var workoutTypeTF: UITextField!
+    @IBOutlet weak var weightTF: UITextField!
+    @IBOutlet weak var numOfRepsTF: UITextField!
+    @IBOutlet weak var numOfSetsTF: UITextField!
+    @IBOutlet weak var commentsTF: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +36,32 @@ class NewWorkoutView: UIViewController {
     }
 
     @IBAction func submitNewWorkout(_ sender: UIButton) {
-        self.showAlert(title: "Submitted", message: "Workout Successfully Submitted!")
+        submitWorkout()
+        self.showSubmissionAlert(title: "Submitted", message: "Workout Sucessfully Submitted")
+        //self.showAlert(title: "Submitted", message: "Workout Successfully Submitted!")
+        //self.navigateToMainDash()
+    }
+    
+    func submitWorkout()
+    {
+        guard let workoutType = workoutTypeTF.text, !workoutType.isEmpty, let weight = weightTF.text, !weight.isEmpty,
+              let numofReps = numOfRepsTF.text, !numofReps.isEmpty, let numOfSets = numOfSetsTF.text, !numOfSets.isEmpty
+       
+        else{
+                    self.showAlert(title: "Required Data", message: "All Fields Must Contain Data. However, Comments Are Optional")
+                    return
+            }
+        
+        let dbService = DatabaseService()
+        let todaysDate = dbService.getCurrentMonthDayYear()
+        let weightInt = Int(weightTF.text!) ?? 0
+        let numOfRepsInt = Int(numOfRepsTF.text!) ?? 0
+        let numOfSetsInt = Int(numOfSetsTF.text!) ?? 0
+        let comments = commentsTF.text ?? ""
+        let newWorkout = dbService.createWorkoutObject(date: todaysDate, workoutType: workoutType, weight: weightInt, reps: numOfRepsInt, sets: numOfSetsInt, comments: comments)
+        
+        
+        dbService.saveWorkout(workout: newWorkout)
     }
    
 }

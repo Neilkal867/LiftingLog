@@ -33,6 +33,17 @@ extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    func showSubmissionAlert(title: String, message: String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
+            self.navigateToMainDash()
+        }))
+
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    
     func showDeleteAccountlAlert(title: String, message: String){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
 
@@ -74,6 +85,12 @@ extension UIViewController {
             navigationController?.pushViewController(displayUIVC, animated: true)
             }
         }
+    
+    func navigateToMainDash(){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let vc: UITableViewController = mainStoryboard.instantiateViewController(withIdentifier: "welcomeDash") as! UITableViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
     func addKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotifications(notification:)),
