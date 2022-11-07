@@ -14,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="LoginView" id="BYZ-38-t0r" customClass="ViewController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VV-Ai-BvN">
@@ -122,35 +122,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvU-Nb-9pT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="950.76923076923072" y="-650.47393364928905"/>
-        </scene>
-        <!--Welcome Dash Board Controller-->
-        <scene sceneID="8GG-M7-kAu">
-            <objects>
-                <tableViewController storyboardIdentifier="welcomeDash" id="ysz-IS-oqS" customClass="WelcomeDashBoardController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dGe-9Q-2im">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MainDashTableCells" id="HwH-su-UiL">
-                                <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HwH-su-UiL" id="IQM-7u-KTF">
-                                    <rect key="frame" x="0.0" y="0.0" width="359.66666666666669" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ysz-IS-oqS" id="4mS-dU-gQi"/>
-                            <outlet property="delegate" destination="ysz-IS-oqS" id="EcA-cr-zEi"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="M1n-Z5-khF"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YO0-mg-Ck5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1742" y="-384"/>
         </scene>
         <!--Start Workout Controller-->
         <scene sceneID="nHJ-hB-bUl">
@@ -324,6 +295,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8e-7H-OdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2409.2307692307691" y="-384.59715639810423"/>
+        </scene>
+        <!--Welcome Dash Board Controller-->
+        <scene sceneID="8GG-M7-kAu">
+            <objects>
+                <tableViewController storyboardIdentifier="welcomeDash" id="ysz-IS-oqS" customClass="WelcomeDashBoardController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dGe-9Q-2im">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MainDashTableCells" id="HwH-su-UiL">
+                                <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HwH-su-UiL" id="IQM-7u-KTF">
+                                    <rect key="frame" x="0.0" y="0.0" width="359.66666666666669" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ysz-IS-oqS" id="4mS-dU-gQi"/>
+                            <outlet property="delegate" destination="ysz-IS-oqS" id="EcA-cr-zEi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="M1n-Z5-khF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YO0-mg-Ck5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1742" y="-384"/>
         </scene>
         <!--Create Workout Controller-->
         <scene sceneID="k1N-f7-JVG">
@@ -551,7 +551,7 @@
             <objects>
                 <viewController id="UDL-xf-Lmu" customClass="CreateAccountController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cW1-8U-8sv">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-y1-hwb">
@@ -604,7 +604,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="createAccountClicked:" destination="UDL-xf-Lmu" eventType="touchUpInside" id="reT-2V-r9z"/>
-                                    <segue destination="ysz-IS-oqS" kind="show" id="ot4-gp-ZcZ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sl9-YD-bJq">
@@ -650,7 +649,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NXH-dP-kxi"/>
+        <segue reference="M4R-5M-R1o"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
