@@ -54,6 +54,18 @@ class ViewController: UIViewController {
             self.navigateToMainDash()
         }
         
+       testingGettingCollection()
+    
+    }
+    
+    func testingGettingCollection()
+    {
+        let dbService = DatabaseService()
+        
+        var test:[String] =  dbService.getAllCollections()
+
+        print(test)
+        
     }
     
 }

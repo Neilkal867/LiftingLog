@@ -8,6 +8,8 @@ import FirebaseFirestore
 import Foundation
 import Firebase
 
+let workoutCollection: String = "Workouts"
+
 class DatabaseService
 {
     
@@ -36,13 +38,36 @@ class DatabaseService
             "Weight" : workout.weight,
             "Comments": workout.comments
         ])
+        
+        addDateToWorkoutCollection(date: todaysDate)
     }
     
     //I think this method can be used to grab the individual workout when the user clicks one from the lists of dates
     func loadSpecificWorkout(){}
     
     //I think this method will grab all collections in the DB
-    func loadAllWorkouts(){}
+    func getAllCollections() -> [String]
+    {
+        var collectionOfWorkouts = [String]()
+        let db = Firestore.firestore()
+        
+        db.collection(workoutCollection).getDocuments()
+        { (snapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            }
+            else
+            {
+                for document in snapshot!.documents
+                {
+                    print(document.documentID)
+                    collectionOfWorkouts.append(document.documentID)
+                }
+            }
+        }
+        
+        return collectionOfWorkouts
+    }
     
     func getCurrentMonthDayYear() -> String
     {
@@ -57,5 +82,12 @@ class DatabaseService
     func createWorkoutObject(date: String, workoutType: String, weight: Int, reps: Int, sets: Int, comments: String) -> Workout
     {
         return Workout(date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
+    }
+    
+    func addDateToWorkoutCollection(date: String)
+    {
+        let db = Firestore.firestore()
+        
+        db.collection(workoutCollection).document(date).setData(["field":""])
     }
 }

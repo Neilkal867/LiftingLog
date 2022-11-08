@@ -38,8 +38,7 @@ class NewWorkoutView: UIViewController {
     @IBAction func submitNewWorkout(_ sender: UIButton) {
         submitWorkout()
         self.showSubmissionAlert(title: "Submitted", message: "Workout Sucessfully Submitted")
-        //self.showAlert(title: "Submitted", message: "Workout Successfully Submitted!")
-        //self.navigateToMainDash()
+        clearTextFields()
     }
     
     func submitWorkout()
@@ -47,7 +46,7 @@ class NewWorkoutView: UIViewController {
         guard let workoutType = workoutTypeTF.text, !workoutType.isEmpty, let weight = weightTF.text, !weight.isEmpty,
               let numofReps = numOfRepsTF.text, !numofReps.isEmpty, let numOfSets = numOfSetsTF.text, !numOfSets.isEmpty
        
-        else{
+        else {
                     self.showAlert(title: "Required Data", message: "All Fields Must Contain Data. However, Comments Are Optional")
                     return
             }
@@ -60,8 +59,16 @@ class NewWorkoutView: UIViewController {
         let comments = commentsTF.text ?? ""
         let newWorkout = dbService.createWorkoutObject(date: todaysDate, workoutType: workoutType, weight: weightInt, reps: numOfRepsInt, sets: numOfSetsInt, comments: comments)
         
-        
         dbService.saveWorkout(workout: newWorkout)
+    }
+    
+    func clearTextFields()
+    {
+        workoutTypeTF.text = ""
+        weightTF.text = ""
+        numOfRepsTF.text = ""
+        numOfSetsTF.text = ""
+        commentsTF.text = ""
     }
    
 }
