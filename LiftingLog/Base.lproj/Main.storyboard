@@ -122,70 +122,12 @@
             </objects>
             <point key="canvasLocation" x="950.76923076923072" y="-650.47393364928905"/>
         </scene>
-        <!--Start Workout Controller-->
-        <scene sceneID="nHJ-hB-bUl">
-            <objects>
-                <viewController storyboardIdentifier="StartWorkout" id="80F-Oa-p1z" customClass="StartWorkoutController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PeH-kj-pPd">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select Workout Configuration: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiQ-2k-hH0">
-                                <rect key="frame" x="51" y="128" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLe-Zn-npM">
-                                <rect key="frame" x="134" y="262" width="127" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" subtitle="New Workout">
-                                    <backgroundConfiguration key="background" strokeWidth="0.0">
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <color key="strokeColor" systemColor="systemGreenColor"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="subtitleFontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="8iH-TA-ydH" kind="push" id="72U-m0-geJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgP-1S-BJk">
-                                <rect key="frame" x="134" y="378" width="130" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" subtitle="Load Workout">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                        <color key="strokeColor" systemColor="systemOrangeColor"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="subtitleFontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                </buttonConfiguration>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Vl4-bl-k2F"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="wiQ-2k-hH0" firstAttribute="centerX" secondItem="PeH-kj-pPd" secondAttribute="centerX" id="2wA-3l-MKu"/>
-                            <constraint firstItem="Vl4-bl-k2F" firstAttribute="bottom" secondItem="WgP-1S-BJk" secondAttribute="bottom" constant="383" id="EMC-zW-bLO"/>
-                            <constraint firstItem="eLe-Zn-npM" firstAttribute="centerX" secondItem="WgP-1S-BJk" secondAttribute="centerX" id="I4N-BN-ogj"/>
-                            <constraint firstItem="WgP-1S-BJk" firstAttribute="leading" secondItem="Vl4-bl-k2F" secondAttribute="leading" constant="131" id="Rh5-yx-zIQ"/>
-                            <constraint firstItem="wiQ-2k-hH0" firstAttribute="centerX" secondItem="eLe-Zn-npM" secondAttribute="centerX" id="T3v-fI-U7F"/>
-                            <constraint firstItem="WgP-1S-BJk" firstAttribute="top" secondItem="eLe-Zn-npM" secondAttribute="bottom" constant="89" id="YOc-1m-rLx"/>
-                            <constraint firstItem="wiQ-2k-hH0" firstAttribute="top" secondItem="Vl4-bl-k2F" secondAttribute="top" constant="81" id="i0t-8V-DDt"/>
-                            <constraint firstItem="eLe-Zn-npM" firstAttribute="leading" secondItem="Vl4-bl-k2F" secondAttribute="leading" constant="132" id="uDD-4l-uay"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ive-nG-a4K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2409" y="-1079"/>
-        </scene>
         <!--Title-->
         <scene sceneID="qdw-QU-f4f">
             <objects>
                 <viewController storyboardIdentifier="NewWorkout" id="8iH-TA-ydH" customClass="NewWorkoutView" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9WQ-Wf-1Sm">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Type: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXf-8t-jaW">

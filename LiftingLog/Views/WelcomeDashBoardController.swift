@@ -30,7 +30,7 @@ class WelcomeDashBoardController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Start Workout"){
-            mainDashUIVC(vcToDisplay: "StartWorkout", viewController: StartWorkoutController.self)
+            mainDashUIVC(vcToDisplay: "NewWorkout", viewController: NewWorkoutView.self)
         }
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Create Workout") {
