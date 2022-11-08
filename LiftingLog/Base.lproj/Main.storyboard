@@ -440,6 +440,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="calculateWilksButton:" destination="C1Y-uF-sdS" eventType="touchUpInside" id="gUi-e6-2HZ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yc7-Eg-YA8">
                                 <rect key="frame" x="138" y="391" width="97" height="34"/>
@@ -451,11 +454,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EdB-Iw-Yn9">
-                                <rect key="frame" x="119" y="94" width="101" height="30"/>
+                                <rect key="frame" x="119" y="94" width="179" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <menu key="menu" title="Select Gender" id="o3j-4r-0Pj">
                                     <children>
+                                        <command title="Tap To Select Gender" id="hUk-ub-bdB" userLabel="Tap To Select Gender"/>
                                         <command title="Male" id="yHf-1z-n5j"/>
                                         <command title="Female" id="Xmh-qu-qU2"/>
                                     </children>
@@ -478,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zwk-6j-GIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4481.538461538461" y="-385.30805687203792"/>
+            <point key="canvasLocation" x="4480" y="-385.30805687203792"/>
         </scene>
         <!--OneRM Calculator View Controller-->
         <scene sceneID="8pG-DI-dO9">

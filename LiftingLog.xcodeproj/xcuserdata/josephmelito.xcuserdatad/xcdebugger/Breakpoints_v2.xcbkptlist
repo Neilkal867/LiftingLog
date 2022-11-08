@@ -116,5 +116,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18A1BA23-C18E-4FC7-89DB-11B3DA710DB1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LiftingLog/Views/WilksCalculatorController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "calculateWilksButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "18A1BA23-C18E-4FC7-89DB-11B3DA710DB1 - e0110255765444d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiftingLog.WilksCalculatorController.calculateWilksButton(__C.UIButton) -&gt; ()"
+                  moduleName = "LiftingLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/josephmelito/Documents/GitHub/LiftingLog/LiftingLog/Views/WilksCalculatorController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1772">
+               </Location>
+               <Location
+                  uuid = "18A1BA23-C18E-4FC7-89DB-11B3DA710DB1 - e0110255765444d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiftingLog.WilksCalculatorController.calculateWilksButton(__C.UIButton) -&gt; ()"
+                  moduleName = "LiftingLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/josephmelito/Documents/GitHub/LiftingLog/LiftingLog/Views/WilksCalculatorController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1968">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
