@@ -13,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="LoginView" id="BYZ-38-t0r" customClass="ViewController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VV-Ai-BvN">
@@ -242,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8e-7H-OdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2409.2307692307691" y="-384.59715639810423"/>
+            <point key="canvasLocation" x="2455" y="-717"/>
         </scene>
         <!--Welcome Dash Board Controller-->
         <scene sceneID="8GG-M7-kAu">
@@ -271,22 +271,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YO0-mg-Ck5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1742" y="-384"/>
-        </scene>
-        <!--Create Workout Controller-->
-        <scene sceneID="k1N-f7-JVG">
-            <objects>
-                <viewController storyboardIdentifier="CreateWorkout" id="Hxi-CD-cuM" customClass="CreateWorkoutController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ohK-od-5y7">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ZK1-wM-5EG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AUe-XC-aY1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3088" y="-385"/>
+            <point key="canvasLocation" x="1742" y="-68"/>
         </scene>
         <!--Past Workouts Controller-->
         <scene sceneID="zct-5Z-tvL">
@@ -301,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="geN-IU-Cvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3757" y="-385"/>
+            <point key="canvasLocation" x="2454" y="-68"/>
         </scene>
         <!--Wilks Calculator Controller-->
         <scene sceneID="3Qj-qJ-01y">
@@ -421,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zwk-6j-GIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4480" y="-385.30805687203792"/>
+            <point key="canvasLocation" x="2454" y="591"/>
         </scene>
         <!--OneRM Calculator View Controller-->
         <scene sceneID="8pG-DI-dO9">
@@ -494,14 +479,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vej-jS-kfG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5151" y="-385"/>
+            <point key="canvasLocation" x="2454" y="1248"/>
         </scene>
         <!--Create Account Controller-->
         <scene sceneID="sj3-B8-clf">
             <objects>
                 <viewController id="UDL-xf-Lmu" customClass="CreateAccountController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cW1-8U-8sv">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-y1-hwb">
@@ -577,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEX-IM-owY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1741.5384615384614" y="280.80568720379148"/>
+            <point key="canvasLocation" x="1742" y="591"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZMy-29-K5U">
@@ -599,7 +584,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M4R-5M-R1o"/>
+        <segue reference="NXH-dP-kxi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
