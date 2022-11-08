@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -453,19 +452,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EdB-Iw-Yn9">
-                                <rect key="frame" x="119" y="94" width="179" height="30"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-gi-UxB">
+                                <rect key="frame" x="116" y="92" width="131" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <menu key="menu" title="Select Gender" id="o3j-4r-0Pj">
-                                    <children>
-                                        <command title="Tap To Select Gender" id="hUk-ub-bdB" userLabel="Tap To Select Gender"/>
-                                        <command title="Male" id="yHf-1z-n5j"/>
-                                        <command title="Female" id="Xmh-qu-qU2"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button"/>
-                            </button>
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                                <connections>
+                                    <action selector="setGenderValue:" destination="C1Y-uF-sdS" eventType="valueChanged" id="9IE-lM-2Fo"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t5H-3d-E3q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -473,7 +470,7 @@
                     <connections>
                         <outlet property="bodyWeightTF" destination="787-MQ-8Xv" id="7Jr-I1-oZc"/>
                         <outlet property="calcWilksButton" destination="jsg-NX-sT7" id="bQe-pm-tR1"/>
-                        <outlet property="genderSelector" destination="EdB-Iw-Yn9" id="ssl-hh-lCG"/>
+                        <outlet property="genderSelection" destination="Clg-gi-UxB" id="Vz1-i0-QdE"/>
                         <outlet property="maxBenchTF" destination="787-MQ-8Xv" id="Kst-aZ-A39"/>
                         <outlet property="maxDeadLiftTF" destination="Q9a-ol-hRs" id="uve-TK-IWq"/>
                         <outlet property="maxSquatTF" destination="li6-5f-ce6" id="bIQ-dS-nwf"/>

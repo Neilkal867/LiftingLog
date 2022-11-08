@@ -11,20 +11,21 @@ class WilksCalculatorController: UIViewController {
 
     var genderValue: String = ""
     var calcServ = CalculationsService()
-    @IBOutlet weak var genderSelector: UIButton!
     @IBOutlet weak var bodyWeightTF: UITextField!
     @IBOutlet weak var maxBenchTF: UITextField!
     @IBOutlet weak var maxSquatTF: UITextField!
     @IBOutlet weak var maxDeadLiftTF: UITextField!
     @IBOutlet weak var calcWilksButton: UIButton!
     @IBOutlet weak var wilksScoreTF: UITextField!
+    @IBOutlet weak var genderSelection: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Wilks Calculator"
-      
         self.hideKeyboardWhenTappedAround()
+        genderValue = "Male"
+
     }
     
     
@@ -37,7 +38,6 @@ class WilksCalculatorController: UIViewController {
             return
         }
         
-        var genderValue = setGenderValue()
         let doubleBodyWeight = Double(bodyWeightTF.text!) ?? 0.0
         let doubleMaxBench = Double(maxBenchTF.text!) ?? 0.0
         let doubleMaxSquat = Double(maxSquatTF.text!) ?? 0.0
@@ -53,31 +53,25 @@ class WilksCalculatorController: UIViewController {
             let wilksOutput = calcServ.calculateWomensWilksNumberInPounds(maxBench: doubleMaxBench, maxSquat: doubleMaxSquat, maxDeadlift: doubleMaxDeadLift, bodyWeight: doubleBodyWeight)
             wilksScoreTF.text = String(wilksOutput)
         }
+        
     }
     
-    func setGenderValue() -> String{
-        let maleGender = {(action: UIAction) in
-            self.genderValue = "Male"
-            print("Male Selected")
-        }
+    override func didReceiveMemoryWarning() {
+           super.didReceiveMemoryWarning()
+           // Dispose of any resources that can be recreated.
+       }
+    
+    @IBAction func setGenderValue(_ sender: Any)  {
         
-        let femaleGender = {(action: UIAction) in
-            self.genderValue = "Female"
-            print("Female Selected")
-        }
-        
-        let selectGender = {(action: UIAction) in
-            self.genderValue = ""
-            print("No Gender Selected")
-        }
-        
-        genderSelector.menu = UIMenu(children: [
-            UIAction(title: "Tap To Select Gender", state: .off, handler: selectGender),
-            UIAction(title: "Male", state: .on, handler: maleGender),
-            UIAction(title: "Female", state: .on, handler: femaleGender)])
-        
-        genderSelector.showsMenuAsPrimaryAction = true
-        genderSelector.changesSelectionAsPrimaryAction = true
-        return genderValue
+        if(genderSelection.selectedSegmentIndex == 0)
+                {
+                    genderValue = "Male"
+                }
+        else if(genderSelection.selectedSegmentIndex == 1)
+                {
+                    genderValue = "Female"
+                }
     }
 }
+
+
