@@ -37,7 +37,7 @@ class NewWorkoutView: UIViewController {
 
     @IBAction func submitNewWorkout(_ sender: UIButton) {
         submitWorkout()
-        self.showSubmissionAlert(title: "Submitted", message: "Workout Sucessfully Submitted")
+        self.showAlert(title: "Submitted", message: "Workout Sucessfully Submitted")
         clearTextFields()
     }
     
