@@ -12,17 +12,6 @@ let workoutCollection: String = "Workouts"
 
 class DatabaseService
 {
-    
-    struct Workout
-    {
-        var date: String
-        var workoutType: String
-        var weight: Int
-        var reps: Int
-        var sets: Int
-        var comments: String
-    }
-    
     init(){}
 
     func saveWorkout(workout:Workout)

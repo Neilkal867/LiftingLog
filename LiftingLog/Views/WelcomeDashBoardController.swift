@@ -9,7 +9,7 @@ import UIKit
 
 class WelcomeDashBoardController: UITableViewController {
     
-    var welcomeDashOptions = ["Start Workout", "Create Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings"]
+    var welcomeDashOptions = ["Start Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +31,6 @@ class WelcomeDashBoardController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Start Workout"){
             mainDashUIVC(vcToDisplay: "NewWorkout", viewController: NewWorkoutView.self)
-        }
-        
-        if indexPath.row == welcomeDashOptions.firstIndex(of: "Create Workout") {
-            mainDashUIVC(vcToDisplay: "CreateWorkout", viewController: CreateWorkoutController.self)
         }
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "View Past Workout"){

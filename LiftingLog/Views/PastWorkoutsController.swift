@@ -6,25 +6,91 @@
 //
 
 import UIKit
+import SwiftUI
 
-class PastWorkoutsController: UIViewController {
-
+class PastWorkoutsController: UITableViewController {
+    //var workout = [Workout]()
+    var workout = ["Nov-8-2022", "Nov-9-2022", "Nov-9-2022", "Nov-19-2022", "Nov-29-2022"]
+    //var filteredWorkouts = [Workout]()
+   // var filterKeyword: String = ""
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = "View Previous Workouts"
-       // navigationItem.setHidesBackButton(true, animated: true)
+            title = "Past Workouts"
+      //  navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(askFilter))
+      
     }
+    //shows error if data is not loaded from db
+    func showError(){
+        let ac = UIAlertController(title: "Loading Error", message: "There was a problem loading the data. Please refresh and try again.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title:"OK", style: .default))
+            present(ac, animated: true)
+        }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           return workout.count
+        }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+          let cell = tableView.dequeueReusableCell(withIdentifier: "PastWorkoutCells", for: indexPath)
+          cell.textLabel?.text = workout [indexPath.row]
+        return cell
+      }
+    
+    
+    
+//    @objc func askFilter() {
+//            let ac = UIAlertController(title: "Filter", message: "Filter the petitions on the following keyword (leave empty to reset filtering)", preferredStyle: .alert)
+//            ac.addTextField()
+//
+//            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+//            ac.addAction(UIAlertAction(title: "OK", style: .default) {
+//                [weak self, weak ac] _ in
+//                self?.filterKeyword = ac?.textFields?[0].text ?? ""
+//                self?.filterData()
+//                self?.tableView.reloadData()
+//            })
+//
+//            present(ac, animated: true)
+//
+//        }
+//
+//    func filterData() {
+//           if filterKeyword.isEmpty {
+//               filteredWorkouts = workout
+//               navigationItem.leftBarButtonItem?.title = "Filter"
+//               return
+//           }
+//        navigationItem.leftBarButtonItem?.title = "Filter (current: \(filterKeyword))"
+//        filteredWorkouts = workout.filter() { workout in
+//            if let _ = workout.date.range(of: filterKeyword, options: .caseInsensitive) {
+//                   return true
+//               }
+////               if let _ =  workout.body.range(of: filterKeyword, options: .caseInsensitive) {
+////                   return true
+////               }
+//               return false
+//           }
+//       }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return filteredWorkouts.count
+//    }
+//
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+//        let petition = filteredWorkouts[indexPath.row]
+//        cell.textLabel?.text = workout.date
+//        return cell
+//    }
+//
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let vc = DetailViewController() // new detail view controller that will need to be created to format what insdie each cell looks like
+//                // look at hacking with swift project 7
+//        vc.detailItem = filteredPetitions[indexPath.row]
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
+//}
 
 }
