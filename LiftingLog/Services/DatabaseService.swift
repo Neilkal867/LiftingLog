@@ -8,12 +8,14 @@ import FirebaseFirestore
 import Foundation
 import Firebase
 
-let workoutCollection: String = "Workouts"
+var arrayOfWorkouts = [String]()
 
 class DatabaseService
 {
     init(){}
-
+    
+    let workoutCollection: String = "Workouts"
+    
     func saveWorkout(workout:Workout)
     {
         let db = Firestore.firestore()
@@ -71,5 +73,16 @@ class DatabaseService
         let db = Firestore.firestore()
         
         db.collection(workoutCollection).document(date).setData(["field":""])
+    }
+    
+    func intalizeWorkoutsArray()
+    {
+        getAllCollections
+        { documents in
+            for document in documents
+            {
+                 arrayOfWorkouts.append(document.documentID)
+            }
+        }
     }
 }

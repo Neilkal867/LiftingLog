@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct Workouts: Codable {
-    var results :[Workout]
+struct Workouts: Codable
+{
+    var results : [Workout]
 }

@@ -6,25 +6,20 @@
 //
 
 import Foundation
-import FirebaseCore
-import FirebaseFirestore
 import FirebaseAuth
-import UIKit
 
 class AuthenticationService
 {
-   // var loginState: Bool
-    init(){
-       // self.loginState = loginState
-    }
+    init(){}
+        
     func createUser(emailAddress: String, password: String)
     {
         
         Auth.auth().createUser(withEmail: emailAddress, password: password) {result, error in
-            if error != nil {
+            if error != nil
+            {
                 //show an error to the user
                 print(error.unsafelyUnwrapped)
-                
             }
             
             if result != nil {
@@ -33,26 +28,28 @@ class AuthenticationService
                 
             }
         }
-        
     }
     
-    func logUserIn(emailAddress: String, password: String)
+    func logUserIn(emailAddress: String, password: String, completion: @escaping(Bool) -> ())
     {
+        let db = DatabaseService()
         
-        Auth.auth().signIn(withEmail: emailAddress, password: password) {[self]result, error in
-            if error != nil {
-                //Show an error to the user
+        Auth.auth().signIn(withEmail: emailAddress, password: password)
+        {result, error in
+            if error != nil
+            {
                 print(error.unsafelyUnwrapped)
-                
+                completion(false)
             }
             
-            if result != nil {
-                print("success")
+            if result != nil
+            {
+                //If the user logs in successfully populate the workouts array
+                db.intalizeWorkoutsArray()
+                completion(true)
             }
         }
     }
-
-    
 }
 
 

@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     // create account button
     @IBOutlet weak var createAccButton: UIButton!
     
+    let auth = AuthenticationService()
+    
     override func viewDidLoad()
     {
         title = "Welcome to Lifting Log!"
@@ -31,44 +33,29 @@ class ViewController: UIViewController {
     
     @IBAction func logInClicked(_ sender: UIButton)
     {
-//        guard let userName = userNameLogin.text, !userName.isEmpty, let password = passwordLogin.text, !password.isEmpty else{
-//            self.showAlert(title: "Invalid Username or Password", message: "Please Enter a Valid Username And Password.")
-//            return
-//        }
-//        Auth.auth().signIn(withEmail: userNameLogin.text!, password: passwordLogin.text!) {[self]result, error in
-//            if error != nil
-//            {
-//                self.showAlert(title: "User Not Found", message: "Please Make Sure You Are Using The Correct Username & Password")
-//                print(error.unsafelyUnwrapped)
-//                return
-//            }
-//
-//            if result != nil
-//            {
-//                self.navigateToMainDash()
-//            }
-//        }
-//
-        if userNameLogin.text! == "dev" && passwordLogin.text! == "dev"
+        guard let userName = userNameLogin.text, !userName.isEmpty, let password = passwordLogin.text, !password.isEmpty
+        else
         {
+            self.showAlert(title: "Invalid Username or Password", message: "Please Enter a Valid Username And Password.")
+            return
+        }
+        
+        auth.logUserIn(emailAddress: userName, password: password)
+        { successSignIn in
+            if(!successSignIn)
+            {
+                self.showAlert(title: "User Not Found", message: "Please Make Sure You Are Using The Correct Username & Password")
+                return
+            }
             self.navigateToMainDash()
         }
         
-       testingGettingCollection()
-    
-    }
-    
-    func testingGettingCollection()
-    {
-        let dbService = DatabaseService()
-        
-        dbService.getAllCollections
-        { documents in
-            for document in documents
-            {
-                 print("\(document.documentID)")
-            }
+        if userNameLogin.text! == "dev" && passwordLogin.text! == "dev"
+        {
+            //This is a hack to populate the workouts array when logging in for test
+            DatabaseService().intalizeWorkoutsArray()
+
+            self.navigateToMainDash()
         }
     }
 }
-

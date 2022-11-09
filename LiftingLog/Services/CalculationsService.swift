@@ -30,7 +30,6 @@ class CalculationsService {
         let ex = e * pow(x,4)
         let fx = f * pow(x,5)
         
-        
         let bottom = a + bx + cx + dx + ex + fx
         
         let coefficient = 600 / bottom
@@ -56,7 +55,6 @@ class CalculationsService {
         let ex = e * pow(x,4)
         let fx = f * pow(x,5)
         
-        
         let bottom = a + bx + cx + dx + ex + fx
         
         let coefficient = 600 / bottom
@@ -70,5 +68,4 @@ class CalculationsService {
         let oneRepMax = Int(ceil(repsxweightPlusWeight))
         return oneRepMax;
     }
-
 }

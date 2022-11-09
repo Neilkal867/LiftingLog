@@ -10,11 +10,12 @@ import SwiftUI
 
 class PastWorkoutsController: UITableViewController {
     //var workout = [Workout]()
-    var workout = ["Nov-8-2022", "Nov-9-2022", "Nov-9-2022", "Nov-19-2022", "Nov-29-2022"]
+    
     //var filteredWorkouts = [Workout]()
    // var filterKeyword: String = ""
    
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
             title = "Past Workouts"
       //  navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(askFilter))
@@ -28,12 +29,12 @@ class PastWorkoutsController: UITableViewController {
         }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           return workout.count
+        return arrayOfWorkouts.count
         }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "PastWorkoutCells", for: indexPath)
-          cell.textLabel?.text = workout [indexPath.row]
+        cell.textLabel?.text = arrayOfWorkouts[indexPath.row]
         return cell
       }
     

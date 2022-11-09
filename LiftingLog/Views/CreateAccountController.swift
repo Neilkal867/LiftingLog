@@ -20,8 +20,10 @@ class CreateAccountController: UIViewController {
     //datepicker or date of birth textfield (this later gets converted to a date picker in the code)
     @IBOutlet weak var datePickerTF: UITextField!
     
+    let auth = AuthenticationService()
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         title = "Account Creation"
@@ -38,18 +40,20 @@ class CreateAccountController: UIViewController {
         datePickerTF.text = "Date of Birth"
     }
     
-    @objc func dateChange(dateOfBirth: UIDatePicker){
-        
+    @objc func dateChange(dateOfBirth: UIDatePicker)
+    {
         datePickerTF.text = formatDate(date: dateOfBirth.date)
     }
     
-    func formatDate(date: Date) -> String{
+    func formatDate(date: Date) -> String
+    {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd, yyyy"
         return formatter.string(from: date)
     }
     
-    @IBAction func createAccountClicked(_ sender: UIButton) {
+    @IBAction func createAccountClicked(_ sender: UIButton)
+    {
         print(self.firstNameCA.text!)
         print(self.lastNameCA.text!)
         print(self.userNameCA.text!)
@@ -60,6 +64,7 @@ class CreateAccountController: UIViewController {
         {
             let userName = self.userNameCA.text!
             let password = self.passwordCA.text!
+            
             createUser(emailAddress: userName, password: password)
         }
     }
