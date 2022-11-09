@@ -90,6 +90,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1EF9F7DE291C07EE001257D1 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE38E6291BF35900029972 /* WorkoutsStruct.swift */,
+				1EEE38E4291BF32B00029972 /* WorkoutStruct.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
 		8D10628A28DD040F008AD000 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +128,7 @@
 				8D1062A728DD0411008AD000 /* Info.plist */,
 				8D10629F28DD040F008AD000 /* LiftingLog.xcdatamodeld */,
 				1EB484EE28DD220A0024B9F0 /* GoogleService-Info.plist */,
+				1EF9F7DE291C07EE001257D1 /* Structures */,
 				8D67F4F3290B1CC00008724F /* Services */,
 				1E2FA057290F2E9B0016B726 /* Extensions */,
 				8D67F4F4290B1CD10008724F /* Views */,
@@ -132,8 +142,6 @@
 				1EF30A63290B17A500E8FB22 /* CalculationsService.swift */,
 				8D67F4F5290B1DE50008724F /* DatabaseService.swift */,
 				8D67F4F7290B1E020008724F /* AuthenticationService.swift */,
-				1EEE38E4291BF32B00029972 /* WorkoutStruct.swift */,
-				1EEE38E6291BF35900029972 /* WorkoutsStruct.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
