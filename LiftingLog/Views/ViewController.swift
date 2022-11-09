@@ -62,11 +62,13 @@ class ViewController: UIViewController {
     {
         let dbService = DatabaseService()
         
-        var test:[String] =  dbService.getAllCollections()
-
-        print(test)
-        
+        dbService.getAllCollections
+        { documents in
+            for document in documents
+            {
+                 print("\(document.documentID)")
+            }
+        }
     }
-    
 }
 

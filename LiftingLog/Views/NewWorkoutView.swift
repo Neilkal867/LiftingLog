@@ -46,10 +46,11 @@ class NewWorkoutView: UIViewController {
         guard let workoutType = workoutTypeTF.text, !workoutType.isEmpty, let weight = weightTF.text, !weight.isEmpty,
               let numofReps = numOfRepsTF.text, !numofReps.isEmpty, let numOfSets = numOfSetsTF.text, !numOfSets.isEmpty
        
-        else {
-                    self.showAlert(title: "Required Data", message: "All Fields Must Contain Data. However, Comments Are Optional")
-                    return
-            }
+        else
+        {
+            self.showAlert(title: "Required Data", message: "All Fields Must Contain Data. However, Comments Are Optional")
+            return
+        }
         
         let dbService = DatabaseService()
         let todaysDate = dbService.getCurrentMonthDayYear()

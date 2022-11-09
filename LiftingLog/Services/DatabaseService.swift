@@ -46,9 +46,8 @@ class DatabaseService
     func loadSpecificWorkout(){}
     
     //I think this method will grab all collections in the DB
-    func getAllCollections() -> [String]
+    func getAllCollections(completion: @escaping([QueryDocumentSnapshot]) -> Void)
     {
-        var collectionOfWorkouts = [String]()
         let db = Firestore.firestore()
         
         db.collection(workoutCollection).getDocuments()
@@ -58,15 +57,9 @@ class DatabaseService
             }
             else
             {
-                for document in snapshot!.documents
-                {
-                    print(document.documentID)
-                    collectionOfWorkouts.append(document.documentID)
-                }
+                completion(snapshot!.documents)
             }
         }
-        
-        return collectionOfWorkouts
     }
     
     func getCurrentMonthDayYear() -> String
