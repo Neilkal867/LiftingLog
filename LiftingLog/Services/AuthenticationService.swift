@@ -12,25 +12,23 @@ class AuthenticationService
 {
     init(){}
     
-    func createUser(emailAddress: String, password: String)
+    func createUser(emailAddress: String, password: String, completion: @escaping(Authresponse)->())
     {
         
         Auth.auth().createUser(withEmail: emailAddress, password: password) {result, error in
             if error != nil
             {
-                //show an error to the user
-                print(error.unsafelyUnwrapped)
+                completion(Authresponse(SuccesfulSignin: false, Error: error!.localizedDescription))
             }
             
-            if result != nil {
-                //Might have to advance screens here
-                print("success")
-                
+            if result != nil
+            {
+                completion(Authresponse(SuccesfulSignin: true, Error: "Account successfully created"))
             }
         }
     }
     
-    func logUserIn(emailAddress: String, password: String, completion: @escaping(Bool) -> ())
+    func logUserIn(emailAddress: String, password: String, completion: @escaping(Authresponse) -> ())
     {
         let db = DatabaseService()
         
@@ -38,15 +36,14 @@ class AuthenticationService
         {result, error in
             if error != nil
             {
-                print(error.unsafelyUnwrapped)
-                completion(false)
+                completion(Authresponse(SuccesfulSignin: false, Error: error!.localizedDescription))
             }
             
             if result != nil
             {
                 //If the user logs in successfully populate the workouts array
                 db.intalizeWorkoutsArray()
-                completion(true)
+                completion(Authresponse(SuccesfulSignin: true, Error: "Successful login"))
             }
         }
     }

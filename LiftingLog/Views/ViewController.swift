@@ -41,10 +41,10 @@ class ViewController: UIViewController {
         }
         
         auth.logUserIn(emailAddress: userName, password: password)
-        { successSignIn in
-            if(!successSignIn)
+        { authresponse in
+            if(!authresponse.SuccesfulSignin)
             {
-                self.showAlert(title: "User Not Found", message: "Please Make Sure You Are Using The Correct Username & Password")
+                self.showAlert(title: "User Not Found", message: authresponse.Error)
                 return
             }
             self.navigateToMainDash()

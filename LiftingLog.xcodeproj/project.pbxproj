@@ -35,6 +35,7 @@
 		8D67F4F8290B1E020008724F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F7290B1E020008724F /* AuthenticationService.swift */; };
 		8D67F4FB290B20A00008724F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8D67F4FA290B20A00008724F /* FirebaseAuth */; };
 		8DC4945C29146B920013D6D3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC4945B29146B920013D6D3 /* FirebaseFirestore */; };
+		8DD03714291D7DF100B7B547 /* AuthResponseStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD03713291D7DF100B7B547 /* AuthResponseStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		8D1062A728DD0411008AD000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D67F4F5290B1DE50008724F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		8D67F4F7290B1E020008724F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		8DD03713291D7DF100B7B547 /* AuthResponseStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponseStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				1EEE38E6291BF35900029972 /* WorkoutsStruct.swift */,
 				1EEE38E4291BF32B00029972 /* WorkoutStruct.swift */,
+				8DD03713291D7DF100B7B547 /* AuthResponseStruct.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				8D67F4F6290B1DE50008724F /* DatabaseService.swift in Sources */,
 				8D1062A128DD040F008AD000 /* LiftingLog.xcdatamodeld in Sources */,
 				8D10629928DD040F008AD000 /* SceneDelegate.swift in Sources */,
+				8DD03714291D7DF100B7B547 /* AuthResponseStruct.swift in Sources */,
 				1EEE38E5291BF32B00029972 /* WorkoutStruct.swift in Sources */,
 				1E287B5928E3DBE9003A66AD /* CreateAccountController.swift in Sources */,
 			);

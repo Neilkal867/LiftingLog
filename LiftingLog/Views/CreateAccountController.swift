@@ -71,17 +71,15 @@ class CreateAccountController: UIViewController {
     
     func createUser(emailAddress: String, password: String)
     {
-        Auth.auth().createUser(withEmail: emailAddress, password: password) {result, error in
-            if error != nil
+        auth.createUser(emailAddress: emailAddress, password: password) { Authresponse in
+            if (!Authresponse.SuccesfulSignin)
             {
-                self.showAlert(title: "Error creating account", message: error!.localizedDescription)
+                self.showAlert(title: "Error creating account", message: Authresponse.Error)
+                return
             }
             
-            if result != nil
-            {
-                self.mainDashUIVC(vcToDisplay: "LoginView", viewController: ViewController.self)
-                self.showAlert(title: "Account Created", message: "You have successfully created an account")
-            }
+            self.mainDashUIVC(vcToDisplay: "LoginView", viewController: ViewController.self)
+            self.showAlert(title: "Account Created", message: "You have successfully created an account")
         }
     }
 }
