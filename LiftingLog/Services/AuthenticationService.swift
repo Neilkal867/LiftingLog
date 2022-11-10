@@ -11,7 +11,7 @@ import FirebaseAuth
 class AuthenticationService
 {
     init(){}
-        
+    
     func createUser(emailAddress: String, password: String)
     {
         

@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         {
             //This is a hack to populate the workouts array when logging in for test
             DatabaseService().intalizeWorkoutsArray()
-
+            
             self.navigateToMainDash()
         }
     }
