@@ -18,15 +18,15 @@ class OneRMCalculatorViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        
         title = "1RM Calculator"
         self.hideKeyboardWhenTappedAround()
     }
-
+    
     @IBAction func calculateRM(_ sender: UIButton)
     {
         
-    guard let bodyWeight = bodyWeightRMTF.text, !bodyWeight.isEmpty, let numOfReps = numberOfRepsRMTF.text, !numOfReps.isEmpty
+        guard let bodyWeight = bodyWeightRMTF.text, !bodyWeight.isEmpty, let numOfReps = numberOfRepsRMTF.text, !numOfReps.isEmpty
         else
         {
             showAlert(title: "Blank Values", message: "Bodyweight & Number of Reps Cannot Be Left Blank")

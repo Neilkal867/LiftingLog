@@ -10,7 +10,7 @@ import Foundation
 class CalculationsService {
     
     init(){}
-
+    
     func calculateMensWilksNumberInPounds(maxBench: Double, maxSquat: Double, maxDeadlift: Double, bodyWeight: Double) -> Double
     {
         let totalLiftWeightInPounds = maxBench + maxSquat + maxDeadlift
@@ -23,7 +23,7 @@ class CalculationsService {
         let d = -0.001395833811
         let e = 7.07665973070743 * 0.000001
         let f = -1.20804336482315 * 0.00000001
-
+        
         let bx = b * x
         let cx = c * pow(x,2)
         let dx = d * pow(x,3)
@@ -35,7 +35,7 @@ class CalculationsService {
         let coefficient = 600 / bottom
         return coefficient * totalLightWeightInKilos
     }
-
+    
     func calculateWomensWilksNumberInPounds(maxBench: Double, maxSquat: Double, maxDeadlift: Double, bodyWeight: Double) -> Double
     {
         let totalLiftWeightInPounds = maxBench + maxSquat + maxDeadlift
@@ -48,7 +48,7 @@ class CalculationsService {
         let d = -0.001050400051
         let e = 9.38773881462799 * 0.000001
         let f = -2.3334613884954 * 0.00000001
-
+        
         let bx = b * x
         let cx = c * pow(x,2)
         let dx = d * pow(x,3)
@@ -60,7 +60,7 @@ class CalculationsService {
         let coefficient = 600 / bottom
         return coefficient * totalLightWeightInKilos
     }
-
+    
     func calculateOneRepMax(weight: Double, reps: Double) -> Int
     {
         let repsxweight = weight * reps * 0.0333;

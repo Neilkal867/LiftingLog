@@ -8,7 +8,7 @@
 import UIKit
 
 class WilksCalculatorController: UIViewController {
-
+    
     var genderValue: String = ""
     var calcServ = CalculationsService()
     @IBOutlet weak var bodyWeightTF: UITextField!
@@ -19,21 +19,21 @@ class WilksCalculatorController: UIViewController {
     @IBOutlet weak var wilksScoreTF: UITextField!
     @IBOutlet weak var genderSelection: UISegmentedControl!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
+        
         title = "Wilks Calculator"
         self.hideKeyboardWhenTappedAround()
         genderValue = "Male"
-
+        
     }
-    
-    
-    
+
     @IBAction func calculateWilksButton(_ sender: UIButton) {
         guard let bodyWeight = bodyWeightTF.text, !bodyWeight.isEmpty, let maxBench = maxBenchTF.text, !maxBench.isEmpty,
               let maxSquat = maxSquatTF.text, !maxSquat.isEmpty, let maxDeadLift = maxDeadLiftTF.text, !maxDeadLift.isEmpty
-        else{
+        else
+        {
             showAlert(title: "Blank Values", message: "Bodyweight, Max Bench, Max Squat, & Max Deadlift Cannot Be Left Blank")
             return
         }
@@ -42,10 +42,10 @@ class WilksCalculatorController: UIViewController {
         let doubleMaxBench = Double(maxBenchTF.text!) ?? 0.0
         let doubleMaxSquat = Double(maxSquatTF.text!) ?? 0.0
         let doubleMaxDeadLift = Double(maxDeadLiftTF.text!) ?? 0.0
-       
+        
         if genderValue == "Male"
         {
-           let wilksOutput = calcServ.calculateMensWilksNumberInPounds(maxBench: doubleMaxBench, maxSquat: doubleMaxSquat, maxDeadlift: doubleMaxDeadLift, bodyWeight: doubleBodyWeight)
+            let wilksOutput = calcServ.calculateMensWilksNumberInPounds(maxBench: doubleMaxBench, maxSquat: doubleMaxSquat, maxDeadlift: doubleMaxDeadLift, bodyWeight: doubleBodyWeight)
             wilksScoreTF.text = String(wilksOutput)
         }
         if genderValue == "Female"
@@ -53,24 +53,24 @@ class WilksCalculatorController: UIViewController {
             let wilksOutput = calcServ.calculateWomensWilksNumberInPounds(maxBench: doubleMaxBench, maxSquat: doubleMaxSquat, maxDeadlift: doubleMaxDeadLift, bodyWeight: doubleBodyWeight)
             wilksScoreTF.text = String(wilksOutput)
         }
-        
     }
     
-    override func didReceiveMemoryWarning() {
-           super.didReceiveMemoryWarning()
-           // Dispose of any resources that can be recreated.
-       }
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
-    @IBAction func setGenderValue(_ sender: Any)  {
-        
+    @IBAction func setGenderValue(_ sender: Any)
+    {
         if(genderSelection.selectedSegmentIndex == 0)
-                {
-                    genderValue = "Male"
-                }
+        {
+            genderValue = "Male"
+        }
         else if(genderSelection.selectedSegmentIndex == 1)
-                {
-                    genderValue = "Female"
-                }
+        {
+            genderValue = "Female"
+        }
     }
 }
 

@@ -21,7 +21,7 @@ class DatabaseService
         let db = Firestore.firestore()
         
         let todaysDate:String = getCurrentMonthDayYear()
-
+        
         db.collection(todaysDate).addDocument(data: [
             "Workout Type" : workout.workoutType,
             "Reps" : workout.reps,
@@ -81,7 +81,7 @@ class DatabaseService
         { documents in
             for document in documents
             {
-                 arrayOfWorkouts.append(document.documentID)
+                arrayOfWorkouts.append(document.documentID)
             }
         }
     }
