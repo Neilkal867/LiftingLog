@@ -34,7 +34,32 @@ class DatabaseService
     }
     
     //I think this method can be used to grab the individual workout when the user clicks one from the lists of dates
-    func loadSpecificWorkout(){}
+    func getDocumentIdsForCollection(collection: String)
+    {
+        let db = Firestore.firestore()
+        
+        db.collection(collection).getDocuments { documents, error in
+            if (error != nil)
+            {
+                print(error!.localizedDescription)
+            }
+            
+            for doc in documents!.documents
+            {
+                self.getWorkoutFromDocumentId(collection: collection, workoutId: doc.documentID)
+            }
+        }
+    }
+    
+    func getWorkoutFromDocumentId(collection: String, workoutId: String)
+    {
+        let db = Firestore.firestore()
+        
+        db.collection(collection).document(workoutId).getDocument { workout, error in
+            
+            print(workout!.data()!)
+        }
+    }
     
     //I think this method will grab all collections in the DB
     func getAllCollections(completion: @escaping([QueryDocumentSnapshot]) -> Void)

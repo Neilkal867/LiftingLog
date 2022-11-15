@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         { authresponse in
             if(!authresponse.SuccesfulSignin)
             {
-                self.showAlert(title: "User Not Found", message: authresponse.Error)
+                self.showAlert(title: "Error", message: authresponse.Error)
                 return
             }
             self.navigateToMainDash()
@@ -54,6 +54,8 @@ class ViewController: UIViewController {
         {
             //This is a hack to populate the workouts array when logging in for test
             DatabaseService().intalizeWorkoutsArray()
+            
+            DatabaseService().getDocumentIdsForCollection(collection: "November-04-2022")
             
             self.navigateToMainDash()
         }
