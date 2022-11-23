@@ -34,25 +34,7 @@ class DatabaseService
         addDateToWorkoutCollection(date: todaysDate)
     }
     
-    //I think this method can be used to grab the individual workout when the user clicks one from the lists of dates
-    func getDocumentIdsForCollection(collection: String)
-    {
-        let db = Firestore.firestore()
-        
-        db.collection(collection).getDocuments { documents, error in
-            if (error != nil)
-            {
-                print(error!.localizedDescription)
-            }
-            
-            for doc in documents!.documents
-            {
-                self.getWorkoutFromDocumentId(collection: collection, workoutId: doc.documentID)
-            }
-        }
-    }
-    
-    func getWorkoutFromDocumentId(collection: String, workoutId: String)
+    func getWorkoutDocumentsFromCollection(collection: String)
     {
         let db = Firestore.firestore()
         
@@ -63,34 +45,19 @@ class DatabaseService
                 {
                     workouts = snapshot.documents.map { d in
                         
-                        return Workout(date: collection,workoutType: d["Workout Type"] as? String  ?? "",weight: d["Weight"] as? Int  ?? 0,reps: d["Reps"] as? Int  ?? 0,sets: d["Sets"] as? Int  ?? 0,comments: d["Comments"] as? String  ?? "")
-                    
+                        return Workout(date: collection,
+                                       workoutType: d["Workout Type"] as? String  ?? "",
+                                       weight: d["Weight"] as? Int  ?? 0,
+                                       reps: d["Reps"] as? Int  ?? 0,
+                                       sets: d["Sets"] as? Int  ?? 0,
+                                       comments: d["Comments"] as? String  ?? "")
                     }
-                
                 }
                 print(workouts)
             }
-            
             else
             {
-                print(error)
-            }
-        }
-    }
-    
-    //I think this method will grab all collections in the DB
-    func getAllCollections(completion: @escaping([QueryDocumentSnapshot]) -> Void)
-    {
-        let db = Firestore.firestore()
-        
-        db.collection(workoutCollection).getDocuments()
-        { (snapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            }
-            else
-            {
-                completion(snapshot!.documents)
+                print(error!)
             }
         }
     }
@@ -119,12 +86,67 @@ class DatabaseService
     
     func intalizeWorkoutsArray()
     {
-        getAllCollections
-        { documents in
-            for document in documents
+        //        getAllCollections
+        //        { documents in
+        //            for document in documents
+        //            {
+        //                arrayOfWorkouts.append(document.documentID)
+        //            }
+        //        }
+        
+        let db = Firestore.firestore()
+        
+        db.collection(workoutCollection).getDocuments()
+        { (snapshot, err) in
+            if let err = err
             {
-                arrayOfWorkouts.append(document.documentID)
+                print("Error getting documents: \(err)")
+            }
+            else
+            {
+                let docs = snapshot?.documents
+                
+                for d in docs!
+                {
+                    arrayOfWorkouts.append(d.documentID)
+                }
             }
         }
     }
+    
+    //I think this method can be used to grab the individual workout when the user clicks one from the lists of dates
+    //    func getDocumentIdsForCollection(collection: String)
+    //    {
+    //        let db = Firestore.firestore()
+    //
+    //        db.collection(collection).getDocuments { documents, error in
+    //            if (error != nil)
+    //            {
+    //                print(error!.localizedDescription)
+    //            }
+    //
+    //            for doc in documents!.documents
+    //            {
+    //                self.getWorkoutFromDocumentId(collection: collection, workoutId: doc.documentID)
+    //            }
+    //        }
+    //    }
+    //
+    //    //This method gets all of the workout collections
+    //    func getAllCollections(completion: @escaping([QueryDocumentSnapshot]) -> Void)
+    //    {
+    //        let db = Firestore.firestore()
+    //
+    //        db.collection(workoutCollection).getDocuments()
+    //        { (snapshot, err) in
+    //            if let err = err
+    //            {
+    //                print("Error getting documents: \(err)")
+    //            }
+    //            else
+    //            {
+    //                completion(snapshot!.documents)
+    //            }
+    //        }
+    //    }
 }

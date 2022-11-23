@@ -38,7 +38,6 @@ class PastWorkoutsController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        print(indexPath)
           let cell = tableView.dequeueReusableCell(withIdentifier: "PastWorkoutCells", for: indexPath)
           cell.textLabel?.text = arrayOfWorkouts[indexPath.row]
           return cell
@@ -96,8 +95,8 @@ class PastWorkoutsController: UITableViewController {
 //
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-      
-        DatabaseService().getDocumentIdsForCollection(collection: arrayOfWorkouts[indexPath.row])
+        let collectionName: String = arrayOfWorkouts[indexPath.row]
+        DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
         
         //let vc = DetailViewController() // new detail view controller that will need to be created to format what insdie each cell looks like
                 // look at hacking with swift project 7

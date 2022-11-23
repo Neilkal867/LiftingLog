@@ -4,7 +4,6 @@
 //
 //  Created by Neil Kalanish on 11/10/22.
 //
-
 import Foundation
 
 struct Authresponse

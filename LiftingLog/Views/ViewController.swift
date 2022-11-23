@@ -47,6 +47,7 @@ class ViewController: UIViewController {
                 self.showAlert(title: "Error", message: authresponse.Error)
                 return
             }
+            DatabaseService().intalizeWorkoutsArray()
             self.navigateToMainDash()
         }
         
@@ -54,9 +55,6 @@ class ViewController: UIViewController {
         {
             //This is a hack to populate the workouts array when logging in for test
             DatabaseService().intalizeWorkoutsArray()
-            
-            //DatabaseService().getDocumentIdsForCollection(collection: "November-22-2022")
-            
             self.navigateToMainDash()
         }
     }
