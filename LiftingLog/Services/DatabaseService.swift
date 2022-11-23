@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 
 var arrayOfWorkouts = [String]()
+var workouts = [Workouts]()
 
 class DatabaseService
 {
