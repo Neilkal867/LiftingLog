@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 
 var arrayOfWorkouts = [String]()
-var workouts = [Workouts]()
+var workouts = [Workout]()
 
 class DatabaseService
 {
@@ -56,13 +56,25 @@ class DatabaseService
     {
         let db = Firestore.firestore()
         
-        let decoder = JSONDecoder()
-        
-        db.collection(collection).document(workoutId).getDocument { workout, error in
+        db.collection(collection).getDocuments { snapshot, error in
+            if error == nil
+            {
+                if let snapshot = snapshot
+                {
+                    workouts = snapshot.documents.map { d in
+                        
+                        return Workout(date: collection,workoutType: d["Workout Type"] as? String  ?? "",weight: d["Weight"] as? Int  ?? 0,reps: d["Reps"] as? Int  ?? 0,sets: d["Sets"] as? Int  ?? 0,comments: d["Comments"] as? String  ?? "")
+                    
+                    }
+                
+                }
+                print(workouts)
+            }
             
-            let workoutData = workout!.data()!
-            
-            let data = try? JSONSerialization.data(withJSONObject: workoutData)
+            else
+            {
+                print(error)
+            }
         }
     }
     

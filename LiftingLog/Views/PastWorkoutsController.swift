@@ -96,13 +96,13 @@ class PastWorkoutsController: UITableViewController {
 //
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        print(indexPath)
+      
+        DatabaseService().getDocumentIdsForCollection(collection: arrayOfWorkouts[indexPath.row])
         
-        
-        let vc = DetailViewController() // new detail view controller that will need to be created to format what insdie each cell looks like
+        //let vc = DetailViewController() // new detail view controller that will need to be created to format what insdie each cell looks like
                 // look at hacking with swift project 7
-        vc.workoutItem = workout[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
+       //vc.workoutItem = workout[indexPath.row]
+        //navigationController?.pushViewController(vc, animated: true)
     }
 }
 

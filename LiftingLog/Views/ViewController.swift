@@ -55,7 +55,7 @@ class ViewController: UIViewController {
             //This is a hack to populate the workouts array when logging in for test
             DatabaseService().intalizeWorkoutsArray()
             
-            DatabaseService().getDocumentIdsForCollection(collection: "November-04-2022")
+            //DatabaseService().getDocumentIdsForCollection(collection: "November-22-2022")
             
             self.navigateToMainDash()
         }
