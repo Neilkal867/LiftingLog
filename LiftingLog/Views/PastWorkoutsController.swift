@@ -19,7 +19,7 @@ class PastWorkoutsController: UITableViewController {
         super.viewDidLoad()
             title = "Past Workouts"
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Search", style: .plain, target: self, action: #selector(askFilter))
-//        workout.append(Workout(date: "November-11-2022", workoutType: "Lift1", weight: 100, reps: 100, sets: 100, comments: "comment1"))
+//       workout.append(Workout(date: "November-22-2022", workoutType: "Lift1", weight: 100, reps: 100, sets: 100, comments: "comment1"))
 //        workout.append(Workout(date: "November-12-2022", workoutType: "Lift2", weight: 200, reps: 200, sets: 200, comments: "comment2"))
 //        workout.append(Workout(date: "November-13-2022", workoutType: "Lift3", weight: 300, reps: 300, sets: 300, comments: "comment3"))
     }
@@ -95,13 +95,11 @@ class PastWorkoutsController: UITableViewController {
 //
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let collectionName: String = arrayOfWorkouts[indexPath.row]
-        DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
-        
-        //let vc = DetailViewController() // new detail view controller that will need to be created to format what insdie each cell looks like
-                // look at hacking with swift project 7
-       //vc.workoutItem = workout[indexPath.row]
-        //navigationController?.pushViewController(vc, animated: true)
+      //  let collectionName: String = arrayOfWorkouts[indexPath.row]
+        let vc = DetailViewController()
+       // DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
+        vc.workoutItem =  workout[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

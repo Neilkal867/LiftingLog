@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E04158729243AB600158619 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E04158629243AB500158619 /* DetailViewController.swift */; };
+		1E1D5390292E656100DD233C /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D538E292E656100DD233C /* DetailTableViewCell.swift */; };
+		1E1D5391292E656100DD233C /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E1D538F292E656100DD233C /* DetailTableViewCell.xib */; };
 		1E287B5928E3DBE9003A66AD /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */; };
 		1E287B5B28E3DF36003A66AD /* WelcomeDashBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E287B5A28E3DF36003A66AD /* WelcomeDashBoardController.swift */; };
 		1E287B5D28E3E1A5003A66AD /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E287B5C28E3E1A5003A66AD /* SettingsController.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		1E04158629243AB500158619 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1E1D538E292E656100DD233C /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		1E1D538F292E656100DD233C /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		1E287B5A28E3DF36003A66AD /* WelcomeDashBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDashBoardController.swift; sourceTree = "<group>"; };
 		1E287B5C28E3E1A5003A66AD /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				1E2FA05A290F337D0016B726 /* NewWorkoutView.swift */,
 				1E2FA04D290CA2B40016B726 /* PastWorkoutsController.swift */,
 				1E04158629243AB500158619 /* DetailViewController.swift */,
+				1E1D538E292E656100DD233C /* DetailTableViewCell.swift */,
+				1E1D538F292E656100DD233C /* DetailTableViewCell.xib */,
 				1E2FA04F290CA3090016B726 /* WilksCalculatorController.swift */,
 				1E2FA053290CA3F00016B726 /* OneRMCalculatorViewController.swift */,
 			);
@@ -245,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D1062A628DD0411008AD000 /* LaunchScreen.storyboard in Resources */,
+				1E1D5391292E656100DD233C /* DetailTableViewCell.xib in Resources */,
 				1EB484EF28DD220A0024B9F0 /* GoogleService-Info.plist in Resources */,
 				8D1062A328DD0411008AD000 /* Assets.xcassets in Resources */,
 				8D10629E28DD040F008AD000 /* Main.storyboard in Resources */,
@@ -276,6 +283,7 @@
 				8D10629928DD040F008AD000 /* SceneDelegate.swift in Sources */,
 				8DD03714291D7DF100B7B547 /* AuthResponseStruct.swift in Sources */,
 				1EEE38E5291BF32B00029972 /* WorkoutStruct.swift in Sources */,
+				1E1D5390292E656100DD233C /* DetailTableViewCell.swift in Sources */,
 				1E287B5928E3DBE9003A66AD /* CreateAccountController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
