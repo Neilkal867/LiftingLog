@@ -55,9 +55,13 @@ class DatabaseService
     {
         let db = Firestore.firestore()
         
+        let decoder = JSONDecoder()
+        
         db.collection(collection).document(workoutId).getDocument { workout, error in
             
-            print(workout!.data()!)
+            let workoutData = workout!.data()!
+            
+            let data = try? JSONSerialization.data(withJSONObject: workoutData)
         }
     }
     
