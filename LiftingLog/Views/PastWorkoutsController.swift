@@ -8,8 +8,9 @@
 import UIKit
 import SwiftUI
 
-var workoutTypePerDay = 0
+
 var workout = [Workout]()
+
 class PastWorkoutsController: UITableViewController {
     override func viewDidLoad()
     {
@@ -48,27 +49,21 @@ class PastWorkoutsController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        //  let collectionName: String = arrayOfWorkouts[indexPath.row]
-        //  DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
-        let workoutDetails = TESTTableViewController()
+        let collectionName: String = arrayOfWorkouts[indexPath.row]
+        DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
+        let workoutDetails = DetailTableViewController()
         
-        for w in workouts
-        {
-            workoutDetails.workoutItem?.workoutType = "test"//w.workoutType
-            workoutDetails.workoutItem?.weight = 100 //w.weight
-            workoutDetails.workoutItem?.sets = 100//w.sets
-            workoutDetails.workoutItem?.reps = 100//w.reps
-            workoutDetails.workoutItem?.comments = "strong"//w.comments
-            //            workout.append(Workout(date: "\(w.date)", workoutType: "\(w.weight)", weight: w.weight, reps: w.reps, sets: w.sets, comments: "\(w.comments)"))
-            workout.append(Workout(date: "Todays DATE", workoutType: "\(workoutDetails.workoutItem?.workoutType ?? "")", weight: workoutDetails.workoutItem?.weight ?? 00, reps: workoutDetails.workoutItem?.reps ?? 00, sets: workoutDetails.workoutItem?.sets ?? 00, comments: "\(workoutDetails.workoutItem?.comments ?? "")"))
-            workoutTypePerDay+=1
-        }
+       // for w in workouts
+        //   {
+        //        workoutDetails.workoutItem?.workoutType = w.workoutType
+         //       workoutDetails.workoutItem?.weight = w.weight
+          //      workoutDetails.workoutItem?.sets = w.sets
+           //     workoutDetails.workoutItem?.reps = w.reps
+            //    workoutDetails.workoutItem?.comments = w.comments
+          // }
             navigationController?.pushViewController(workoutDetails, animated: true)
             
-            // here is where i have the entire array now for each through it and display everything on the detail view
-            // let vc = DetailViewController()
-            // vc.workoutItem = workouts[indexPath.row]
-            //  navigationController?.pushViewController(vc, animated: true)
+    
         }
     }
     

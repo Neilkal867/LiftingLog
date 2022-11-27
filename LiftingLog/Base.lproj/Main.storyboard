@@ -314,40 +314,10 @@
             </objects>
             <point key="canvasLocation" x="2454" y="-68"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="Shc-Zy-1TO">
-            <objects>
-                <viewController storyboardIdentifier="DetailView" id="2S0-ov-wqm" customClass="DetailViewController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fZg-Ta-M9z">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ba7-Si-jVx">
-                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="gBq-8e-a0I"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="gBq-8e-a0I" firstAttribute="trailing" secondItem="ba7-Si-jVx" secondAttribute="trailing" id="4DN-Va-eAg"/>
-                            <constraint firstItem="ba7-Si-jVx" firstAttribute="top" secondItem="gBq-8e-a0I" secondAttribute="top" id="4xh-9p-oIr"/>
-                            <constraint firstItem="gBq-8e-a0I" firstAttribute="bottom" secondItem="ba7-Si-jVx" secondAttribute="bottom" id="Cad-x7-sgc"/>
-                            <constraint firstItem="ba7-Si-jVx" firstAttribute="leading" secondItem="gBq-8e-a0I" secondAttribute="leading" id="PJE-Qq-M9B"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="ba7-Si-jVx" id="7BZ-bL-qKr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jhS-3T-iUY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3154" y="-68"/>
-        </scene>
-        <!--Table View Controller-->
+        <!--Detail Table View Controller-->
         <scene sceneID="bT5-93-vQj">
             <objects>
-                <tableViewController id="t8e-3P-Esh" customClass="TESTTableViewController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="t8e-3P-Esh" customClass="DetailTableViewController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aV4-wx-f14">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -360,7 +330,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSv-Rs-9hQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3803" y="-68"/>
+            <point key="canvasLocation" x="3154" y="-68"/>
         </scene>
         <!--Wilks Calculator Controller-->
         <scene sceneID="3Qj-qJ-01y">

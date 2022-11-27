@@ -10,7 +10,6 @@ import Firebase
 
 var arrayOfWorkouts = [String]()
 var workouts = [Workout]()
-
 class DatabaseService
 {
     init(){}
