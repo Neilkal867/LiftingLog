@@ -301,8 +301,8 @@
                                 <rect key="frame" x="16" y="5" width="112.33333333333333" height="34.333333333333329"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Search" imagePadding="0.0">
-                                    <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="default"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Refresh" imagePadding="0.0">
+                                    <imageReference key="image" image="arrow.clockwise" catalog="system" symbolScale="default"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
                                 </buttonConfiguration>
                             </button>
@@ -337,12 +337,30 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="ba7-Si-jVx" id="gXr-aK-3AD"/>
+                        <outlet property="tableView" destination="ba7-Si-jVx" id="7BZ-bL-qKr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhS-3T-iUY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3154" y="-68"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="bT5-93-vQj">
+            <objects>
+                <tableViewController id="t8e-3P-Esh" customClass="TESTTableViewController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aV4-wx-f14">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="t8e-3P-Esh" id="jv0-zc-Nwy"/>
+                            <outlet property="delegate" destination="t8e-3P-Esh" id="4u2-Pl-zsi"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GSv-Rs-9hQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3803" y="-68"/>
         </scene>
         <!--Wilks Calculator Controller-->
         <scene sceneID="3Qj-qJ-01y">
@@ -643,7 +661,7 @@
         <segue reference="6zK-DS-ZU6"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

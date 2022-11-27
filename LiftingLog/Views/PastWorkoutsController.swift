@@ -8,99 +8,69 @@
 import UIKit
 import SwiftUI
 
+var workoutTypePerDay = 0
+var workout = [Workout]()
 class PastWorkoutsController: UITableViewController {
-    var workout = [Workout]()
-    var filteredWorkouts = [Workout]()
-    var filterKeyword: String = ""
-   
-   
     override func viewDidLoad()
     {
         super.viewDidLoad()
-            title = "Past Workouts"
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Search", style: .plain, target: self, action: #selector(askFilter))
-//       workout.append(Workout(date: "November-22-2022", workoutType: "Lift1", weight: 100, reps: 100, sets: 100, comments: "comment1"))
-//        workout.append(Workout(date: "November-12-2022", workoutType: "Lift2", weight: 200, reps: 200, sets: 200, comments: "comment2"))
-//        workout.append(Workout(date: "November-13-2022", workoutType: "Lift3", weight: 300, reps: 300, sets: 300, comments: "comment3"))
+        title = "Past Workouts"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(reloadTable))
     }
     //shows error if data is not loaded from db
-//    func showError(){
-//        let ac = UIAlertController(title: "Loading Error", message: "There was a problem loading the data. Please refresh and try again.", preferredStyle: .alert)
-//        ac.addAction(UIAlertAction(title:"OK", style: .default))
-//            present(ac, animated: true)
-//        }
-
+    func showError(){
+        let ac = UIAlertController(title: "Loading Error", message: "There was a problem loading the data. Please refresh and try again.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title:"OK", style: .default))
+        present(ac, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        // returns individual indexs of the array to our table view
         return arrayOfWorkouts.count
         
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-          let cell = tableView.dequeueReusableCell(withIdentifier: "PastWorkoutCells", for: indexPath)
-          cell.textLabel?.text = arrayOfWorkouts[indexPath.row]
-          return cell
+        //takes the values of the corrosponding index of the array and assigns it to the text of the table view cells
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PastWorkoutCells", for: indexPath)
+        cell.textLabel?.text = arrayOfWorkouts[indexPath.row]
+        return cell
     }
-
     
-//
-//    @objc func askFilter() {
-//            let ac = UIAlertController(title: "Filter", message: "Filter the petitions on the following keyword (leave empty to reset filtering)", preferredStyle: .alert)
-//            ac.addTextField()
-//
-//            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-//            ac.addAction(UIAlertAction(title: "OK", style: .default) {
-//                [weak self, weak ac] _ in
-//                self?.filterKeyword = ac?.textFields?[0].text ?? ""
-//                self?.filterData()
-//                self?.tableView.reloadData()
-//            })
-//
-//            present(ac, animated: true)
-//
-//        }
-//
-//    func filterData() {
-//           if filterKeyword.isEmpty {
-//               filteredWorkouts = workout
-//               navigationItem.leftBarButtonItem?.title = "Filter"
-//               return
-//           }
-//        navigationItem.leftBarButtonItem?.title = "Filter (current: \(filterKeyword))"
-//        filteredWorkouts = workout.filter() { workout in
-//            if let _ = workout.date.range(of: filterKeyword, options: .caseInsensitive) {
-//                   return true
-//               }
-//               if let _ =  workout.date.range(of: filterKeyword, options: .caseInsensitive) {
-//                   return true
-//               }
-//               return false
-//           }
-//       }
-//
-
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        filterData()
-//       // tableView.reloadData()
-//        return filteredWorkouts.count
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "PastWorkoutCells", for: indexPath)
-//        let workout = filteredWorkouts[indexPath.row]
-//        cell.textLabel?.text = workout.date
-//        return cell
-//    }
-//
+    @objc func reloadTable() {
+        //reloads the table data
+        self.tableView.reloadData()
+    }
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-      //  let collectionName: String = arrayOfWorkouts[indexPath.row]
-        let vc = DetailViewController()
-       // DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
-        vc.workoutItem =  workout[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
+        //  let collectionName: String = arrayOfWorkouts[indexPath.row]
+        //  DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
+        let workoutDetails = TESTTableViewController()
+        
+        for w in workouts
+        {
+            workoutDetails.workoutItem?.workoutType = "test"//w.workoutType
+            workoutDetails.workoutItem?.weight = 100 //w.weight
+            workoutDetails.workoutItem?.sets = 100//w.sets
+            workoutDetails.workoutItem?.reps = 100//w.reps
+            workoutDetails.workoutItem?.comments = "strong"//w.comments
+            //            workout.append(Workout(date: "\(w.date)", workoutType: "\(w.weight)", weight: w.weight, reps: w.reps, sets: w.sets, comments: "\(w.comments)"))
+            workout.append(Workout(date: "Todays DATE", workoutType: "\(workoutDetails.workoutItem?.workoutType ?? "")", weight: workoutDetails.workoutItem?.weight ?? 00, reps: workoutDetails.workoutItem?.reps ?? 00, sets: workoutDetails.workoutItem?.sets ?? 00, comments: "\(workoutDetails.workoutItem?.comments ?? "")"))
+            workoutTypePerDay+=1
+        }
+            navigationController?.pushViewController(workoutDetails, animated: true)
+            
+            // here is where i have the entire array now for each through it and display everything on the detail view
+            // let vc = DetailViewController()
+            // vc.workoutItem = workouts[indexPath.row]
+            //  navigationController?.pushViewController(vc, animated: true)
+        }
     }
-}
-
+    
+    
 

@@ -1,30 +1,30 @@
 //
-//  DetailViewController.swift
-//  Project7
+//  TESTTableViewController.swift
+//  LiftingLog
 //
-//  Created by Joseph Melito on 10/7/22.
+//  Created by Joseph Melito on 11/27/22.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TESTTableViewController: UITableViewController {
     var workoutItem: Workout?
     
-    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let nib = UINib(nibName: "DetailTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DetailTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
-        
 }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return workoutTypePerDay
+        return 10
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
             cell.workoutTypeTF.text = workoutItem?.workoutType
             cell.weightTF.text = "\(workoutItem?.weight ?? 00)"
@@ -33,4 +33,5 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.commentsTF.text = workoutItem?.comments
         return cell
     }
+
 }

@@ -14,7 +14,7 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet weak var setsTF: UITextField!
     @IBOutlet weak var commentsTF: UITextView!
     override func awakeFromNib() {
-        super.awakeFromNib()
+        //super.awakeFromNib()
         // Initialization code
     }
 
