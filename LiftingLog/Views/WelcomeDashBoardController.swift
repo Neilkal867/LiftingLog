@@ -9,27 +9,31 @@ import UIKit
 
 class WelcomeDashBoardController: UITableViewController {
     
-    var welcomeDashOptions = ["Start Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings"]
+    var welcomeDashOptions = ["Log a Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings"]
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         title = "Lifting Log Dashboard!"
         navigationItem.setHidesBackButton(true, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return welcomeDashOptions.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainDashTableCells", for: indexPath)
         cell.textLabel?.text = welcomeDashOptions [indexPath.row]
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == welcomeDashOptions.firstIndex(of: "Start Workout"){
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "Log a Workout"){
             mainDashUIVC(vcToDisplay: "NewWorkout", viewController: NewWorkoutView.self)
         }
         

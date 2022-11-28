@@ -14,10 +14,13 @@ class NewWorkoutView: UIViewController {
     @IBOutlet weak var numOfRepsTF: UITextField!
     @IBOutlet weak var numOfSetsTF: UITextField!
     @IBOutlet weak var commentsTF: UITextView!
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
+        
         super.viewDidLoad()
         
-        title = "New Workout"
+        title = "Log a Workout"
         navigationItem.setHidesBackButton(true, animated: true)
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -27,15 +30,13 @@ class NewWorkoutView: UIViewController {
         self.addKeyboardObserver()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool)
+    {
         self.removeKeyboardObserver()
     }
-    
-    @IBAction func cancelNewWorkout(_ sender: UIButton) {
-        self.showCancelAlert(title: "Cancel Workout", message: "Are You Sure You Want To Cancel Workout? All Data Will Be Lost.")
-    }
-    
-    @IBAction func submitNewWorkout(_ sender: UIButton) {
+      
+    @IBAction func submitNewWorkout(_ sender: UIButton)
+    {
         submitWorkout()
         self.showAlert(title: "Submitted", message: "Workout Sucessfully Submitted")
         clearTextFields()

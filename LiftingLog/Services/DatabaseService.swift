@@ -33,7 +33,7 @@ class DatabaseService
         addDateToWorkoutCollection(date: todaysDate)
     }
     
-    func getWorkoutDocumentsFromCollection(collection: String)
+    func getWorkoutDocumentsFromCollection(collection: String, completion: @escaping()->())
     {
         let db = Firestore.firestore()
         
@@ -44,21 +44,26 @@ class DatabaseService
                 {
                     workouts = snapshot.documents.map { d in
                         
+                        print("STARTING")
+                        
                         return Workout(date: collection,
                                        workoutType: d["Workout Type"] as? String  ?? "",
                                        weight: d["Weight"] as? Int  ?? 0,
                                        reps: d["Reps"] as? Int  ?? 0,
                                        sets: d["Sets"] as? Int  ?? 0,
                                        comments: d["Comments"] as? String  ?? "")
+                        
                     }
+                    
+                    completion()
                 }
-                print(workouts)
             }
             else
             {
                 print(error!)
             }
         }
+        
     }
     
     func getCurrentMonthDayYear() -> String

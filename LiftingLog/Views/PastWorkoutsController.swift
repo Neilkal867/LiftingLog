@@ -51,13 +51,16 @@ class PastWorkoutsController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let collectionName: String = arrayOfWorkouts[indexPath.row]
-        DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
-        let workoutDetails = DetailTableViewController()
         
-        navigationController?.pushViewController(workoutDetails, animated: true)
-    
+        DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
+        {
+            print("DONE")
+            let workoutDetails = DetailTableViewController()
+            self.navigationController?.pushViewController(workoutDetails, animated: true)
         }
+        
     }
-    
-    
+}
+
+
 
