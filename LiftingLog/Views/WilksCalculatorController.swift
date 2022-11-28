@@ -48,6 +48,7 @@ class WilksCalculatorController: UIViewController {
             let wilksOutput = calcServ.calculateMensWilksNumberInPounds(maxBench: doubleMaxBench, maxSquat: doubleMaxSquat, maxDeadlift: doubleMaxDeadLift, bodyWeight: doubleBodyWeight)
             wilksScoreTF.text = String(wilksOutput)
         }
+        
         if genderValue == "Female"
         {
             let wilksOutput = calcServ.calculateWomensWilksNumberInPounds(maxBench: doubleMaxBench, maxSquat: doubleMaxSquat, maxDeadlift: doubleMaxDeadLift, bodyWeight: doubleBodyWeight)

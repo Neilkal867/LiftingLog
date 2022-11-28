@@ -8,10 +8,8 @@
 import UIKit
 import SwiftUI
 
-
-var workout = [Workout]()
-
 class PastWorkoutsController: UITableViewController {
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -19,8 +17,10 @@ class PastWorkoutsController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(reloadTable))
     }
+    
     //shows error if data is not loaded from db
-    func showError(){
+    func showError()
+    {
         let ac = UIAlertController(title: "Loading Error", message: "There was a problem loading the data. Please refresh and try again.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title:"OK", style: .default))
         present(ac, animated: true)
@@ -30,7 +30,6 @@ class PastWorkoutsController: UITableViewController {
     {
         // returns individual indexs of the array to our table view
         return arrayOfWorkouts.count
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -38,10 +37,12 @@ class PastWorkoutsController: UITableViewController {
         //takes the values of the corrosponding index of the array and assigns it to the text of the table view cells
         let cell = tableView.dequeueReusableCell(withIdentifier: "PastWorkoutCells", for: indexPath)
         cell.textLabel?.text = arrayOfWorkouts[indexPath.row]
+        
         return cell
     }
     
-    @objc func reloadTable() {
+    @objc func reloadTable()
+    {
         //reloads the table data
         self.tableView.reloadData()
     }
@@ -53,23 +54,7 @@ class PastWorkoutsController: UITableViewController {
         DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
         let workoutDetails = DetailTableViewController()
         
-        for w in workouts
-           {
-                workoutDetails.workoutItem?.workoutType = w.workoutType
-                workoutDetails.workoutItem?.weight = w.weight
-                workoutDetails.workoutItem?.sets = w.sets
-                workoutDetails.workoutItem?.reps = w.reps
-                workoutDetails.workoutItem?.comments = w.comments
-            
-            workout.append(Workout(date: "\(workoutDetails.workoutItem?.date ?? "No Date")",
-                                   workoutType: "\(workoutDetails.workoutItem?.workoutType ?? "No Workout")",
-                                   weight: workoutDetails.workoutItem?.weight ?? 00,
-                                   reps: workoutDetails.workoutItem?.reps ?? 00,
-                                   sets: workoutDetails.workoutItem?.sets ?? 00,
-                                   comments: "\(workoutDetails.workoutItem?.comments ?? "No Comments")"))
-           }
         navigationController?.pushViewController(workoutDetails, animated: true)
-            
     
         }
     }
