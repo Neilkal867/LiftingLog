@@ -53,15 +53,22 @@ class PastWorkoutsController: UITableViewController {
         DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
         let workoutDetails = DetailTableViewController()
         
-       // for w in workouts
-        //   {
-        //        workoutDetails.workoutItem?.workoutType = w.workoutType
-         //       workoutDetails.workoutItem?.weight = w.weight
-          //      workoutDetails.workoutItem?.sets = w.sets
-           //     workoutDetails.workoutItem?.reps = w.reps
-            //    workoutDetails.workoutItem?.comments = w.comments
-          // }
-            navigationController?.pushViewController(workoutDetails, animated: true)
+        for w in workouts
+           {
+                workoutDetails.workoutItem?.workoutType = w.workoutType
+                workoutDetails.workoutItem?.weight = w.weight
+                workoutDetails.workoutItem?.sets = w.sets
+                workoutDetails.workoutItem?.reps = w.reps
+                workoutDetails.workoutItem?.comments = w.comments
+            
+            workout.append(Workout(date: "\(workoutDetails.workoutItem?.date ?? "No Date")",
+                                   workoutType: "\(workoutDetails.workoutItem?.workoutType ?? "No Workout")",
+                                   weight: workoutDetails.workoutItem?.weight ?? 00,
+                                   reps: workoutDetails.workoutItem?.reps ?? 00,
+                                   sets: workoutDetails.workoutItem?.sets ?? 00,
+                                   comments: "\(workoutDetails.workoutItem?.comments ?? "No Comments")"))
+           }
+        navigationController?.pushViewController(workoutDetails, animated: true)
             
     
         }
