@@ -104,6 +104,7 @@ class DatabaseService
         
         let db = Firestore.firestore()
         
+        arrayOfWorkouts.removeAll()
         db.collection(workoutCollection).getDocuments()
         { (snapshot, err) in
             if let err = err
@@ -126,7 +127,7 @@ class DatabaseService
     {
         var result = false
         print("intalizeDateArray")
-        
+        dateArray.removeAll()
         getWorkoutDocumentsFromCollection
         {
             for w in workouts
@@ -143,7 +144,7 @@ class DatabaseService
                    }
                 }
                 
-                if(!result)
+                if(!result && w.date != "")
                 {
                     dateArray.append(w)
                     print(dateArray)
