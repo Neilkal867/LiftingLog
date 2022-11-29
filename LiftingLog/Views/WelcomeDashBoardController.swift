@@ -11,12 +11,15 @@ class WelcomeDashBoardController: UITableViewController {
     
     var welcomeDashOptions = ["Log a Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings"]
     
+    let db = DatabaseService()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         title = "Lifting Log Dashboard!"
         navigationItem.setHidesBackButton(true, animated: true)
+        db.intalizeDateArray()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int

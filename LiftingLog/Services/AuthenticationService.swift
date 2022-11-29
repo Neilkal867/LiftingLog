@@ -41,8 +41,6 @@ class AuthenticationService
             
             if result != nil
             {
-                //If the user logs in successfully populate the workouts array
-                db.intalizeDateArray()
                 completion(Authresponse(SuccesfulSignin: true, Error: "Successful login"))
             }
         }
