@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Workouts
+struct zzzzzzzzWorkouts
 {
     var results : [Workout]
 }

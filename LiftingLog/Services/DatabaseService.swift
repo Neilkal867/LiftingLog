@@ -10,6 +10,8 @@ import Firebase
 
 var arrayOfWorkouts = [String]()
 var workouts = [Workout]()
+var dateArray = [Workout]()
+
 class DatabaseService
 {
     init(){}
@@ -21,32 +23,35 @@ class DatabaseService
         let db = Firestore.firestore()
         
         let todaysDate:String = getCurrentMonthDayYear()
+        let currentUser = AuthenticationService().getCurrentUser()
         
-        db.collection(todaysDate).addDocument(data: [
-            "Workout Type" : workout.workoutType,
-            "Reps" : workout.reps,
-            "Sets" : workout.sets,
-            "Weight" : workout.weight,
-            "Comments": workout.comments
-        ])
-        
-        addDateToWorkoutCollection(date: todaysDate)
+        if currentUser != "nil"
+        {
+            db.collection(currentUser).addDocument(data: [
+                "Date" : todaysDate,
+                "Workout Type" : workout.workoutType,
+                "Reps" : workout.reps,
+                "Sets" : workout.sets,
+                "Weight" : workout.weight,
+                "Comments": workout.comments
+            ])
+        }
     }
     
-    func getWorkoutDocumentsFromCollection(collection: String, completion: @escaping()->())
+    func getWorkoutDocumentsFromCollection(completion: @escaping()->())
     {
         let db = Firestore.firestore()
+        let currentUser = AuthenticationService().getCurrentUser()
         
-        db.collection(collection).getDocuments { snapshot, error in
+        
+        db.collection(currentUser).getDocuments { snapshot, error in
             if error == nil
             {
                 if let snapshot = snapshot
                 {
                     workouts = snapshot.documents.map { d in
                         
-                        print("STARTING")
-                        
-                        return Workout(date: collection,
+                        return Workout(date: d["Date"] as? String ?? "",
                                        workoutType: d["Workout Type"] as? String  ?? "",
                                        weight: d["Weight"] as? Int  ?? 0,
                                        reps: d["Reps"] as? Int  ?? 0,
@@ -54,9 +59,8 @@ class DatabaseService
                                        comments: d["Comments"] as? String  ?? "")
                         
                     }
-                    
-                    completion()
                 }
+                completion()
             }
             else
             {
@@ -100,6 +104,7 @@ class DatabaseService
         
         let db = Firestore.firestore()
         
+        arrayOfWorkouts.removeAll()
         db.collection(workoutCollection).getDocuments()
         { (snapshot, err) in
             if let err = err
@@ -114,6 +119,37 @@ class DatabaseService
                 {
                     arrayOfWorkouts.append(d.documentID)
                 }
+            }
+        }
+    }
+    
+    func intalizeDateArray()
+    {
+        var result = false
+        print("intalizeDateArray")
+        dateArray.removeAll()
+        getWorkoutDocumentsFromCollection
+        {
+            for w in workouts
+            {
+                
+               result = dateArray.contains { element in
+                   if case element.date = w.date
+                   {
+                       return true
+                   }
+                   else
+                   {
+                       return false
+                   }
+                }
+                
+                if(!result && w.date != "")
+                {
+                    dateArray.append(w)
+                    print(dateArray)
+                }
+               
             }
         }
     }

@@ -8,6 +8,8 @@
 import UIKit
 import SwiftUI
 
+var workoutsForDate = [Workout]()
+
 class PastWorkoutsController: UITableViewController {
     
     override func viewDidLoad()
@@ -29,14 +31,17 @@ class PastWorkoutsController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // returns individual indexs of the array to our table view
-        return arrayOfWorkouts.count
+        return dateArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         //takes the values of the corrosponding index of the array and assigns it to the text of the table view cells
         let cell = tableView.dequeueReusableCell(withIdentifier: "PastWorkoutCells", for: indexPath)
-        cell.textLabel?.text = arrayOfWorkouts[indexPath.row]
+            
+        let date:String = dateArray[indexPath.row].date
+        
+        cell.textLabel?.text = date
         
         return cell
     }
@@ -50,15 +55,24 @@ class PastWorkoutsController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let collectionName: String = arrayOfWorkouts[indexPath.row]
+        let clickedDate: String = dateArray[indexPath.row].date
         
-        DatabaseService().getWorkoutDocumentsFromCollection(collection: collectionName)
+        getWorkoutsArrayForSpecificDate(clickedDate: clickedDate)
+       
+        let workoutDetails = DetailTableViewController()
+        self.navigationController?.pushViewController(workoutDetails, animated: true)
+    }
+    
+    func getWorkoutsArrayForSpecificDate(clickedDate: String)
+    {
+        workoutsForDate.removeAll()
+        for w in workouts
         {
-            print("DONE")
-            let workoutDetails = DetailTableViewController()
-            self.navigationController?.pushViewController(workoutDetails, animated: true)
+            if (w.date == clickedDate)
+            {
+                workoutsForDate.append(w)
+            }
         }
-        
     }
 }
 
