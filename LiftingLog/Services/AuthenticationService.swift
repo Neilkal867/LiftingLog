@@ -42,10 +42,22 @@ class AuthenticationService
             if result != nil
             {
                 //If the user logs in successfully populate the workouts array
-                db.intalizeWorkoutsArray()
+                db.intalizeDateArray()
                 completion(Authresponse(SuccesfulSignin: true, Error: "Successful login"))
             }
         }
+    }
+    
+    func getCurrentUser() -> String
+    {
+        let currentUser = Auth.auth().currentUser
+        
+        if currentUser == nil
+        {
+            return "nil"
+        }
+        
+        return currentUser!.uid
     }
 }
 

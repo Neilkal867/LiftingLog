@@ -47,7 +47,6 @@ class ViewController: UIViewController {
                 self.showAlert(title: "Error", message: authresponse.Error)
                 return
             }
-            DatabaseService().intalizeWorkoutsArray()
             self.navigateToMainDash()
         }
         
