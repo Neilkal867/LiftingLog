@@ -36,6 +36,7 @@
 		8D67F4F6290B1DE50008724F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F5290B1DE50008724F /* DatabaseService.swift */; };
 		8D67F4F8290B1E020008724F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F7290B1E020008724F /* AuthenticationService.swift */; };
 		8D67F4FB290B20A00008724F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8D67F4FA290B20A00008724F /* FirebaseAuth */; };
+		8D959FAB29381BFD009D405C /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D959FAA29381BFD009D405C /* ResetPasswordController.swift */; };
 		8DC4945C29146B920013D6D3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC4945B29146B920013D6D3 /* FirebaseFirestore */; };
 		8DD03714291D7DF100B7B547 /* AuthResponseStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD03713291D7DF100B7B547 /* AuthResponseStruct.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		8D1062A728DD0411008AD000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D67F4F5290B1DE50008724F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		8D67F4F7290B1E020008724F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		8D959FAA29381BFD009D405C /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		8DD03713291D7DF100B7B547 /* AuthResponseStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponseStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				1E2FA053290CA3F00016B726 /* OneRMCalculatorViewController.swift */,
 				1E1D538E292E656100DD233C /* DetailTableViewCell.swift */,
 				1E1D538F292E656100DD233C /* DetailTableViewCell.xib */,
+				8D959FAA29381BFD009D405C /* ResetPasswordController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				1EEE38E5291BF32B00029972 /* WorkoutStruct.swift in Sources */,
 				1E1D5390292E656100DD233C /* DetailTableViewCell.swift in Sources */,
 				1ECAB3E82933CF0B00828DE3 /* DetailTableViewController.swift in Sources */,
+				8D959FAB29381BFD009D405C /* ResetPasswordController.swift in Sources */,
 				1E287B5928E3DBE9003A66AD /* CreateAccountController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
