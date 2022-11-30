@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import UIKit
 
 class AuthenticationService
 {
@@ -57,6 +58,19 @@ class AuthenticationService
         
         return currentUser!.uid
     }
+    
+    func sendResetPasswordEmail(emailAddress: String, completion: @escaping(Authresponse) -> ())
+    {
+        
+        Auth.auth().sendPasswordReset(withEmail: emailAddress) { error in
+            if error != nil
+            {
+                completion(Authresponse(SuccesfulSignin: false, Error: error!.localizedDescription))
+            }
+            else
+            {
+                completion(Authresponse(SuccesfulSignin: true, Error: "No Error"))
+            }
+        }
+    }
 }
-
-
