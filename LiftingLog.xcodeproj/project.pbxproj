@@ -210,7 +210,6 @@
 			);
 			mainGroup = 8D10628A28DD040F008AD000;
 			packageReferences = (
-				1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8D10629428DD040F008AD000 /* Products */;
 			projectDirPath = "";
@@ -407,7 +406,7 @@
 				CODE_SIGN_ENTITLEMENTS = LiftingLog/LiftingLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D3FNCF3X56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiftingLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -435,7 +434,7 @@
 				CODE_SIGN_ENTITLEMENTS = LiftingLog/LiftingLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = D3FNCF3X56;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiftingLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -477,17 +476,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		1EB484F028DD23800024B9F0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		8D10629F28DD040F008AD000 /* LiftingLog.xcdatamodeld */ = {
