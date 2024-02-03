@@ -11,7 +11,7 @@ class WelcomeDashBoardController: UITableViewController {
     
     var welcomeDashOptions = ["Log a Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings"]
     
-    let db = DatabaseService()
+   // let db = DatabaseService()
     
     override func viewDidLoad()
     {
@@ -19,7 +19,7 @@ class WelcomeDashBoardController: UITableViewController {
         
         title = "Lifting Log Dashboard!"
         navigationItem.setHidesBackButton(true, animated: true)
-        db.intalizeDateArray()
+    //   db.intalizeDateArray()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -40,9 +40,9 @@ class WelcomeDashBoardController: UITableViewController {
             mainDashUIVC(vcToDisplay: "NewWorkout", viewController: NewWorkoutView.self)
         }
         
-        if indexPath.row == welcomeDashOptions.firstIndex(of: "View Past Workout"){
+      /*  if indexPath.row == welcomeDashOptions.firstIndex(of: "View Past Workout"){
             mainDashUIVC(vcToDisplay: "PastWorkouts", viewController: PastWorkoutsController.self)
-        }
+        }*/
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Wilks Calculator"){
             mainDashUIVC(vcToDisplay: "WilksCalc", viewController: WilksCalculatorController.self)

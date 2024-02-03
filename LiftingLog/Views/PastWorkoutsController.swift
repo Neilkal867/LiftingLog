@@ -7,7 +7,7 @@
 
 import UIKit
 import SwiftUI
-
+/*
 var workoutsForDate = [Workout]()
 
 class PastWorkoutsController: UITableViewController {
@@ -31,7 +31,7 @@ class PastWorkoutsController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // returns individual indexs of the array to our table view
-        return dateArray.count
+        //return dateArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -39,7 +39,7 @@ class PastWorkoutsController: UITableViewController {
         //takes the values of the corrosponding index of the array and assigns it to the text of the table view cells
         let cell = tableView.dequeueReusableCell(withIdentifier: "PastWorkoutCells", for: indexPath)
             
-        let date:String = dateArray[indexPath.row].date
+      //  let date:String = dateArray[indexPath.row].date
         
         cell.textLabel?.text = date
         
@@ -66,15 +66,16 @@ class PastWorkoutsController: UITableViewController {
     func getWorkoutsArrayForSpecificDate(clickedDate: String)
     {
         workoutsForDate.removeAll()
-        for w in workouts
-        {
-            if (w.date == clickedDate)
-            {
-                workoutsForDate.append(w)
-            }
-        }
+      //  for w in workouts
+      //  {
+      //      if (w.date == clickedDate)
+       //     {
+        //        workoutsForDate.append(w)
+        //    }
+       // }
     }
 }
 
 
 
+*/

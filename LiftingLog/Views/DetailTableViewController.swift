@@ -20,20 +20,20 @@ class DetailTableViewController: UITableViewController {
         tableView.dataSource = self
     }
        
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+ /*   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return workoutsForDate.count
-    }
+    //    return workoutsForDate.count
+    }*/
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
         
-        cell.workoutTypeTF.text = workoutsForDate[indexPath.row].workoutType
+   /*     cell.workoutTypeTF.text = workoutsForDate[indexPath.row].workoutType
         cell.weightTF.text = String(workoutsForDate[indexPath.row].weight)
         cell.repsTF.text = String(workoutsForDate[indexPath.row].reps)
         cell.setsTF.text = String(workoutsForDate[indexPath.row].sets)
-        cell.commentsTF.text = workoutsForDate[indexPath.row].comments
+        cell.commentsTF.text = workoutsForDate[indexPath.row].comments */
         
         return cell
     }

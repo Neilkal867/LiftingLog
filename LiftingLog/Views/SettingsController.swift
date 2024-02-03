@@ -16,7 +16,7 @@ class SettingsController: UIViewController {
         title = "Settings"
     }
     
-    @IBAction func deleteAccount(_ sender: UIButton) {
+   /* @IBAction func deleteAccount(_ sender: UIButton) {
         self.showDeleteAccountlAlert(title: "Account Deletion", message: "Are You Sure You Want To Delete Your Account? This Action is Permanent.")
-    }
+    }*/
 }

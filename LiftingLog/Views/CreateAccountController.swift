@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+//import FirebaseAuth
 
 class CreateAccountController: UIViewController {
     //first name textfield
@@ -20,7 +20,7 @@ class CreateAccountController: UIViewController {
     //datepicker or date of birth textfield (this later gets converted to a date picker in the code)
     @IBOutlet weak var datePickerTF: UITextField!
     
-    let auth = AuthenticationService()
+   // let auth = AuthenticationService()
     
     override func viewDidLoad()
     {
@@ -65,11 +65,11 @@ class CreateAccountController: UIViewController {
             let userName = self.userNameCA.text!
             let password = self.passwordCA.text!
             
-            createUser(emailAddress: userName, password: password)
+           // createUser(emailAddress: userName, password: password)
         }
     }
     
-    func createUser(emailAddress: String, password: String)
+  /*  func createUser(emailAddress: String, password: String)
     {
         auth.createUser(emailAddress: emailAddress, password: password) { Authresponse in
             if (!Authresponse.SuccesfulSignin)
@@ -81,5 +81,5 @@ class CreateAccountController: UIViewController {
             self.mainDashUIVC(vcToDisplay: "LoginView", viewController: ViewController.self)
             self.showAlert(title: "Account Created", message: "You have successfully created an account")
         }
-    }
+    }*/
 }

@@ -4,7 +4,7 @@
 //
 //  Created by Neil Kalanish on 10/27/22.
 //
-import FirebaseFirestore
+/*import FirebaseFirestore
 import Foundation
 import Firebase
 
@@ -152,8 +152,8 @@ class DatabaseService
                
             }
         }
-    }
-    
+    }*/
+    //alll this shit below was already commented out
     //I think this method can be used to grab the individual workout when the user clicks one from the lists of dates
     //    func getDocumentIdsForCollection(collection: String)
     //    {
@@ -189,4 +189,4 @@ class DatabaseService
     //            }
     //        }
     //    }
-}
+

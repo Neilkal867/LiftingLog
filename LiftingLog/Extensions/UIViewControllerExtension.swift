@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
+//import FirebaseAuth
 
 extension UIViewController {
     
@@ -44,7 +44,7 @@ extension UIViewController {
     }
     
     
-    func showDeleteAccountlAlert(title: String, message: String){
+   /* func showDeleteAccountlAlert(title: String, message: String){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action: UIAlertAction!) in
@@ -78,7 +78,7 @@ extension UIViewController {
         }))
         
         present(alertController, animated: true, completion: nil)
-    }
+    }*/
     
     func mainDashUIVC<UIVC: UIViewController> (vcToDisplay: String, viewController: UIVC.Type){
         if let displayUIVC = storyboard?.instantiateViewController(withIdentifier: "\(vcToDisplay)") as? UIVC {
