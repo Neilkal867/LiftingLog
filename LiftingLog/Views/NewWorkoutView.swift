@@ -38,7 +38,6 @@ class NewWorkoutView: UIViewController {
     @IBAction func submitNewWorkout(_ sender: UIButton)
     {
         submitWorkout()
-        self.showAlert(title: "Submitted", message: "Workout Sucessfully Submitted")
         clearTextFields()
     }
     
@@ -53,15 +52,15 @@ class NewWorkoutView: UIViewController {
             return
         }
         
-   //     let dbService = DatabaseService()
-     //   let todaysDate = dbService.getCurrentMonthDayYear()
-        let weightInt = Int(weightTF.text!) ?? 0
-        let numOfRepsInt = Int(numOfRepsTF.text!) ?? 0
-        let numOfSetsInt = Int(numOfSetsTF.text!) ?? 0
+        let dbService = DatabaseService()
+        let todaysDate = dbService.getCurrentMonthDayYear()
+        let weightInt = Double(weightTF.text!) ?? 0
+        let numOfRepsInt = Double(numOfRepsTF.text!) ?? 0
+        let numOfSetsInt = Double(numOfSetsTF.text!) ?? 0
         let comments = commentsTF.text ?? ""
-    //    let newWorkout = dbService.createWorkoutObject(date: todaysDate, workoutType: workoutType, weight: weightInt, reps: numOfRepsInt, sets: numOfSetsInt, comments: comments)
+        let newWorkout = dbService.createWorkoutObject(date: todaysDate, workoutType: workoutType, weight: weightInt, reps: numOfRepsInt, sets: numOfSetsInt, comments: comments)
         
-     //   dbService.saveWorkout(workout: newWorkout)
+        dbService.saveWorkout(workout: newWorkout)
     }
     
     func clearTextFields()

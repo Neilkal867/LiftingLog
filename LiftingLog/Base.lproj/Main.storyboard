@@ -35,9 +35,6 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="logInClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLw-Pb-LKT"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7o-8e-5vx">
                                 <rect key="frame" x="121" y="325" width="147" height="35"/>
@@ -77,12 +74,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="xaH-Uk-csN"/>
-                    <connections>
-                        <outlet property="createAccButton" destination="l7o-8e-5vx" id="KzW-CG-2ap"/>
-                        <outlet property="loginButton" destination="lk9-yi-h60" id="BBh-bs-WqE"/>
-                        <outlet property="passwordLogin" destination="7VV-Ai-BvN" id="Nc4-Uo-XKh"/>
-                        <outlet property="userNameLogin" destination="XRV-oH-uKe" id="dgp-AA-TFG"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -686,8 +677,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="p52-md-mt1"/>
-        <segue reference="NXH-dP-kxi"/>
+        <segue reference="6zK-DS-ZU6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
