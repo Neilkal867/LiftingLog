@@ -23,9 +23,7 @@ class OneRMCalculatorViewController: UIViewController
         self.hideKeyboardWhenTappedAround()
     }
     
-    @IBAction func calculateRM(_ sender: UIButton)
-    {
-        
+    @IBAction func calculateRM(_ sender: Any) {
         guard let bodyWeight = bodyWeightRMTF.text, !bodyWeight.isEmpty, let numOfReps = numberOfRepsRMTF.text, !numOfReps.isEmpty
         else
         {
@@ -38,4 +36,5 @@ class OneRMCalculatorViewController: UIViewController
         let rmCalc = calcServ.calculateOneRepMax(weight: doubleBodyWeight, reps: doubleNumberOfReps)
         oneRMOutputTF.text = String(rmCalc)
     }
+ //   @IBAction func calculateRM(_ sender: UIButton){}
 }

@@ -17,7 +17,7 @@ class WelcomeDashBoardController: UITableViewController {
     {
         super.viewDidLoad()
         
-        title = "Lifting Log Dashboard!"
+        title = "Pump Path!"
         navigationItem.setHidesBackButton(true, animated: true)
     //   db.intalizeDateArray()
     }

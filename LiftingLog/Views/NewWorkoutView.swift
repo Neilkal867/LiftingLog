@@ -20,7 +20,7 @@ class NewWorkoutView: UIViewController {
         
         super.viewDidLoad()
         
-        title = "Log a Workout"
+        title = "Log a Pump"
        // navigationItem.setHidesBackButton(true, animated: true)
         
         super.viewDidLoad()
