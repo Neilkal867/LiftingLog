@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "77F24E8B-9640-423A-8EF7-8FE11976A7C5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LiftingLog/Views/ViewController.swift"
@@ -97,22 +97,6 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "logInClicked(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "55A7A65A-A2AA-4EB5-8F34-C1BD6DC2FFFD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LiftingLog/Views/NewWorkoutView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "submitNewWorkout(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

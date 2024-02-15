@@ -21,7 +21,8 @@ class NewWorkoutView: UIViewController {
         super.viewDidLoad()
         
         title = "Log a Workout"
-        navigationItem.setHidesBackButton(true, animated: true)
+       // navigationItem.setHidesBackButton(true, animated: true)
+        
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
     }
@@ -35,8 +36,7 @@ class NewWorkoutView: UIViewController {
         self.removeKeyboardObserver()
     }
       
-    @IBAction func submitNewWorkout(_ sender: UIButton)
-    {
+    @IBAction func submitNewWorkout(_ sender: Any) {
         submitWorkout()
         self.showAlert(title: "Submitted", message: "Workout Sucessfully Submitted")
         clearTextFields()
