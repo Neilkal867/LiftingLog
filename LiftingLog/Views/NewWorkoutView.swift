@@ -53,7 +53,7 @@ class NewWorkoutView: UIViewController {
             return
         }
         
-       let dbService = DatabaseService()
+        let dbService = DatabaseService()
         let todaysDate = dbService.getCurrentMonthDayYear()
         let weightInt = Double(weightTF.text!) ?? 0
         let numOfRepsInt = Double(numOfRepsTF.text!) ?? 0
