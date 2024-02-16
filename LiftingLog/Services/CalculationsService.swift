@@ -33,7 +33,8 @@ class CalculationsService {
         let bottom = a + bx + cx + dx + ex + fx
         
         let coefficient = 600 / bottom
-        return coefficient * totalLightWeightInKilos
+        let mensWilksNum = coefficient * totalLightWeightInKilos
+        return roundToTwoDecimalPlaces(value: mensWilksNum)
     }
     
     func calculateWomensWilksNumberInPounds(maxBench: Double, maxSquat: Double, maxDeadlift: Double, bodyWeight: Double) -> Double
@@ -58,7 +59,8 @@ class CalculationsService {
         let bottom = a + bx + cx + dx + ex + fx
         
         let coefficient = 600 / bottom
-        return coefficient * totalLightWeightInKilos
+        let womanWilksNum = coefficient * totalLightWeightInKilos
+        return roundToTwoDecimalPlaces(value: womanWilksNum)
     }
     
     func calculateOneRepMax(weight: Double, reps: Double) -> Int
@@ -67,5 +69,10 @@ class CalculationsService {
         let repsxweightPlusWeight = repsxweight + weight
         let oneRepMax = Int(ceil(repsxweightPlusWeight))
         return oneRepMax;
+    }
+    
+    func roundToTwoDecimalPlaces(value: Double) -> Double {
+        let roundedValue = (value * 100).rounded() / 100
+        return roundedValue
     }
 }
