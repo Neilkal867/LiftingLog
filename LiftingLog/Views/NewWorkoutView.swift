@@ -55,9 +55,9 @@ class NewWorkoutView: UIViewController {
         
    //     let dbService = DatabaseService()
      //   let todaysDate = dbService.getCurrentMonthDayYear()
-        let weightInt = Int(weightTF.text!) ?? 0
-        let numOfRepsInt = Int(numOfRepsTF.text!) ?? 0
-        let numOfSetsInt = Int(numOfSetsTF.text!) ?? 0
+        let weightInt = Double(weightTF.text!) ?? 0
+        let numOfRepsInt = Double(numOfRepsTF.text!) ?? 0
+        let numOfSetsInt = Double(numOfSetsTF.text!) ?? 0
         let comments = commentsTF.text ?? ""
     //    let newWorkout = dbService.createWorkoutObject(date: todaysDate, workoutType: workoutType, weight: weightInt, reps: numOfRepsInt, sets: numOfSetsInt, comments: comments)
         

@@ -8,53 +8,76 @@
 // 1) Wire up the Ui to actually save the workout when the user types in the workout values
 // 2) Figure out how we want to read the data from the DB and make it usable
 import UIKit
-//import FirebaseDatabase
-//import FirebaseFirestore
-//import FirebaseAuth
-//import FirebaseCore
+import AuthenticationServices
 
 class ViewController: UIViewController {
-    //username textfield
+
     @IBOutlet var userNameLogin: UITextField!
-    //password textfield
-    @IBOutlet weak var passwordLogin: UITextField!
-    //login button
-    @IBOutlet weak var loginButton: UIButton!
-    // create account button
-    @IBOutlet weak var createAccButton: UIButton!
-    
-//    let auth = AuthenticationService()
+     @IBOutlet weak var passwordLogin: UITextField!
+     @IBOutlet weak var loginButton: UIButton!
+     @IBOutlet weak var createAccButton: UIButton!
+
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
         title = "Welcome to Pump Path!"
         navigationItem.setHidesBackButton(true, animated: true)
+        setupAppleSignInButton()
     }
     
     @IBAction func logInClicked(_ sender: UIButton)
     {
-        guard let userName = userNameLogin.text, !userName.isEmpty, let password = passwordLogin.text, !password.isEmpty
-        else
-        {
-            self.showAlert(title: "Invalid Username or Password", message: "Please Enter a Valid Username And Password.")
-            return
-        }
-        
-      /*  auth.logUserIn(emailAddress: userName, password: password)
-        { authresponse in
-            if(!authresponse.SuccesfulSignin)
-        {
-                self.showAlert(title: "Error", message: authresponse.Error)
-                return
-            }
-            self.navigateToMainDash()
-        }*/
-        
         if userNameLogin.text! == "dev" && passwordLogin.text! == "dev"
         {
-            //This is a hack to populate the workouts array when logging in for test
-            //DatabaseService().intalizeWorkoutsArray()
             self.navigateToMainDash()
         }
+    }
+    
+    private func setupAppleSignInButton()
+        {
+            let appleButton = ASAuthorizationAppleIDButton()
+            appleButton.addTarget(self, action: #selector(handleAppleIDRequest), for: .touchUpInside)
+
+            // Set the frame or use Auto Layout constraints
+            appleButton.frame = CGRect(x: 40, y: 400, width: view.frame.width - 80, height: 50) // Adjust as needed
+            view.addSubview(appleButton)
+        }
+
+        @objc func handleAppleIDRequest()
+        {
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            let request = appleIDProvider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = self
+            authorizationController.presentationContextProvider = self
+            authorizationController.performRequests()
+        }
+}
+
+extension ViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding
+{
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            // Handle successful authorization
+            let userIdentifier = appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email = appleIDCredential.email
+            self.navigateToMainDash()
+
+        }
+    }
+
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error)
+    {
+        // Handle error here
+        print("Error with Apple ID Authorization: \(error.localizedDescription)")
+    }
+
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor
+    {
+        return self.view.window!
     }
 }

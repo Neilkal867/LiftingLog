@@ -11,8 +11,8 @@ struct Workout
 {
     var date: String
     var workoutType: String
-    var weight: Int
-    var reps: Int
-    var sets: Int
+    var weight: Double
+    var reps: Double
+    var sets: Double
     var comments: String
 }
