@@ -53,15 +53,15 @@ class NewWorkoutView: UIViewController {
             return
         }
         
-   //     let dbService = DatabaseService()
-     //   let todaysDate = dbService.getCurrentMonthDayYear()
+       let dbService = DatabaseService()
+        let todaysDate = dbService.getCurrentMonthDayYear()
         let weightInt = Double(weightTF.text!) ?? 0
         let numOfRepsInt = Double(numOfRepsTF.text!) ?? 0
         let numOfSetsInt = Double(numOfSetsTF.text!) ?? 0
         let comments = commentsTF.text ?? ""
-    //    let newWorkout = dbService.createWorkoutObject(date: todaysDate, workoutType: workoutType, weight: weightInt, reps: numOfRepsInt, sets: numOfSetsInt, comments: comments)
+        let newWorkout = dbService.createWorkoutObject(date: todaysDate, workoutType: workoutType, weight: weightInt, reps: numOfRepsInt, sets: numOfSetsInt, comments: comments)
         
-     //   dbService.saveWorkout(workout: newWorkout)
+        dbService.saveWorkout(workout: newWorkout)
     }
     
     func clearTextFields()
