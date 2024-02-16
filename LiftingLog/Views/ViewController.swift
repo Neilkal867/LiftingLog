@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad()
     {
-        title = "Welcome to Lifting Log!"
+        title = "Welcome to Pump Path!"
         navigationItem.setHidesBackButton(true, animated: true)
     }
     

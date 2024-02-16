@@ -29,7 +29,7 @@ class WilksCalculatorController: UIViewController {
         
     }
 
-    @IBAction func calculateWilksButton(_ sender: UIButton) {
+    @IBAction func calculateWilksButton(_ sender: Any) {
         guard let bodyWeight = bodyWeightTF.text, !bodyWeight.isEmpty, let maxBench = maxBenchTF.text, !maxBench.isEmpty,
               let maxSquat = maxSquatTF.text, !maxSquat.isEmpty, let maxDeadLift = maxDeadLiftTF.text, !maxDeadLift.isEmpty
         else

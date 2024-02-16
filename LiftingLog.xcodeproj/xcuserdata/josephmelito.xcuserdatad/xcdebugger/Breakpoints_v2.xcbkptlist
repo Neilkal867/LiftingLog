@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "77F24E8B-9640-423A-8EF7-8FE11976A7C5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LiftingLog/Views/ViewController.swift"
@@ -97,102 +97,6 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "logInClicked(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "55A7A65A-A2AA-4EB5-8F34-C1BD6DC2FFFD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LiftingLog/Views/NewWorkoutView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "submitNewWorkout(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "18A1BA23-C18E-4FC7-89DB-11B3DA710DB1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LiftingLog/Views/WilksCalculatorController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "calculateWilksButton(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "18A1BA23-C18E-4FC7-89DB-11B3DA710DB1 - e0110255765444b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LiftingLog.WilksCalculatorController.calculateWilksButton(__C.UIButton) -&gt; ()"
-                  moduleName = "LiftingLog"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/josephmelito/Documents/GitHub/LiftingLog/LiftingLog/Views/WilksCalculatorController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "1820">
-               </Location>
-               <Location
-                  uuid = "18A1BA23-C18E-4FC7-89DB-11B3DA710DB1 - e0110255765444b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LiftingLog.WilksCalculatorController.calculateWilksButton(__C.UIButton) -&gt; ()"
-                  moduleName = "LiftingLog"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/josephmelito/Documents/GitHub/LiftingLog/LiftingLog/Views/WilksCalculatorController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "2012">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A2FAED2D-ED3C-41E8-B52E-33DF9F923FF4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LiftingLog/Views/WilksCalculatorController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "calculateWilksButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D1ABBA75-D78E-4222-B97A-0E8C86C1A2B4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LiftingLog/Views/WilksCalculatorController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "calculateWilksButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
