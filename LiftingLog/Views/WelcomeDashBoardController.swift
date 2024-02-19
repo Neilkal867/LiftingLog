@@ -9,7 +9,7 @@ import UIKit
 
 class WelcomeDashBoardController: UITableViewController {
     
-    var welcomeDashOptions = ["Log a Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings", "Lifting Buddy"]
+    var welcomeDashOptions = ["My Profile","Log a Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings", "Lifting Buddy"]
     
    // let db = DatabaseService()
     
@@ -36,6 +36,11 @@ class WelcomeDashBoardController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "My Profile"){
+            navigateToSwiftUIView {UserProfileView()}
+            //vcToDisplay: "Settings", viewController: SettingsController.self)
+        }
+        
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Log a Workout"){
             navigateToUIKitView(vcToDisplay: "NewWorkout", viewController: NewWorkoutView.self)
         }
@@ -56,7 +61,7 @@ class WelcomeDashBoardController: UITableViewController {
             navigateToUIKitView(vcToDisplay: "Settings", viewController: SettingsController.self)
         }
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Lifting Buddy"){
-            navigateToSwiftUIView {ChatView()}
+            navigateToSwiftUIView {LiftingBuddyView()}
             //vcToDisplay: "Settings", viewController: SettingsController.self)
         }
         

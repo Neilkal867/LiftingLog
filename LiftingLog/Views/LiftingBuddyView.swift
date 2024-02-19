@@ -71,7 +71,7 @@ class ChatViewModel: ObservableObject {
 
 
 }
-struct ChatView: View {
+struct LiftingBuddyView: View {
     @State private var newMessageText: String = ""
     @ObservedObject private var viewModel = ChatViewModel()
     
@@ -147,10 +147,10 @@ struct OpenAIChatResponse: Decodable {
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        LiftingBuddyView()
     }
 }
 
 #Preview {
-    ChatView()
+    LiftingBuddyView()
 }
