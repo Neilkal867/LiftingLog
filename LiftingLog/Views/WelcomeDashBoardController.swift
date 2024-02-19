@@ -9,7 +9,7 @@ import UIKit
 
 class WelcomeDashBoardController: UITableViewController {
     
-    var welcomeDashOptions = ["Log a Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings"]
+    var welcomeDashOptions = ["Log a Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings", "Lifting Buddy"]
     
    // let db = DatabaseService()
     
@@ -37,7 +37,7 @@ class WelcomeDashBoardController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Log a Workout"){
-            mainDashUIVC(vcToDisplay: "NewWorkout", viewController: NewWorkoutView.self)
+            navigateToUIKitView(vcToDisplay: "NewWorkout", viewController: NewWorkoutView.self)
         }
         
       /*  if indexPath.row == welcomeDashOptions.firstIndex(of: "View Past Workout"){
@@ -45,15 +45,22 @@ class WelcomeDashBoardController: UITableViewController {
         }*/
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Wilks Calculator"){
-            mainDashUIVC(vcToDisplay: "WilksCalc", viewController: WilksCalculatorController.self)
+            navigateToUIKitView(vcToDisplay: "WilksCalc", viewController: WilksCalculatorController.self)
         }
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "1RM Calculator"){
-            mainDashUIVC(vcToDisplay: "1RMCalc", viewController: OneRMCalculatorViewController.self )
+            navigateToUIKitView(vcToDisplay: "1RMCalc", viewController: OneRMCalculatorViewController.self )
         }
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Settings"){
-            mainDashUIVC(vcToDisplay: "Settings", viewController: SettingsController.self)
+            navigateToUIKitView(vcToDisplay: "Settings", viewController: SettingsController.self)
         }
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "Lifting Buddy"){
+            navigateToSwiftUIView {ChatView()}
+            //vcToDisplay: "Settings", viewController: SettingsController.self)
+        }
+        
+    
+        
     }
 }
