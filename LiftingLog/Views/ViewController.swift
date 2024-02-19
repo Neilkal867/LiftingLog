@@ -9,7 +9,6 @@
 // 2) Figure out how we want to read the data from the DB and make it usable
 import UIKit
 import AuthenticationServices
-
 class ViewController: UIViewController {
 
     @IBOutlet var userNameLogin: UITextField!
@@ -39,8 +38,15 @@ class ViewController: UIViewController {
             let appleButton = ASAuthorizationAppleIDButton()
             appleButton.addTarget(self, action: #selector(handleAppleIDRequest), for: .touchUpInside)
 
+            // Calculate the horizontal center: (view's width - button's width) / 2
+            let centerX = (view.frame.width - (view.frame.width - 80)) / 2
+
+            // Calculate the vertical center: (view's height - button's height) / 2
+            let centerY = (view.frame.height - 50) / 2
             // Set the frame or use Auto Layout constraints
-            appleButton.frame = CGRect(x: 40, y: 400, width: view.frame.width - 80, height: 50) // Adjust as needed
+            appleButton.frame = CGRect(x: centerX, y: centerY, width: view.frame.width - 80, height: 50)
+            
+           // appleButton.frame = CGRect(x: 40, y: 400, width: view.frame.width - 80, height: 50) // Adjust as needed
             view.addSubview(appleButton)
         }
 

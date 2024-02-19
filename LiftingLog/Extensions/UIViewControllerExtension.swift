@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 //import FirebaseAuth
 
 extension UIViewController {
@@ -80,10 +81,19 @@ extension UIViewController {
         present(alertController, animated: true, completion: nil)
     }*/
     
-    func mainDashUIVC<UIVC: UIViewController> (vcToDisplay: String, viewController: UIVC.Type){
+    func navigateToUIKitView<UIVC: UIViewController> (vcToDisplay: String, viewController: UIVC.Type){
         if let displayUIVC = storyboard?.instantiateViewController(withIdentifier: "\(vcToDisplay)") as? UIVC {
             navigationController?.pushViewController(displayUIVC, animated: true)
         }
+    }
+    
+    func navigateToSwiftUIView<Content: View>(_ viewCreator: @escaping () -> Content) {
+        // Create the SwiftUI view using the provided closure
+        let swiftUIView = viewCreator()
+        // Wrap the SwiftUI view in a UIHostingController
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        // Push the hosting controller onto the navigation stack
+        navigationController?.pushViewController(hostingController, animated: true)
     }
     
     func navigateToMainDash(){
