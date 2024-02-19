@@ -54,7 +54,7 @@ class WelcomeDashBoardController: UITableViewController {
         }
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "1RM Calculator"){
-            navigateToUIKitView(vcToDisplay: "1RMCalc", viewController: OneRMCalculatorViewController.self )
+            navigateToSwiftUIView {OneRMCalculatorView()}
         }
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Settings"){

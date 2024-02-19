@@ -14,7 +14,6 @@
 		1E287B5D28E3E1A5003A66AD /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E287B5C28E3E1A5003A66AD /* SettingsController.swift */; };
 		1E2FA04E290CA2B40016B726 /* PastWorkoutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA04D290CA2B40016B726 /* PastWorkoutsController.swift */; };
 		1E2FA050290CA3090016B726 /* WilksCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA04F290CA3090016B726 /* WilksCalculatorController.swift */; };
-		1E2FA054290CA3F00016B726 /* OneRMCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA053290CA3F00016B726 /* OneRMCalculatorViewController.swift */; };
 		1E2FA059290F2EB70016B726 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA058290F2EB70016B726 /* UIViewControllerExtension.swift */; };
 		1E2FA05B290F337D0016B726 /* NewWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA05A290F337D0016B726 /* NewWorkoutView.swift */; };
 		1EC858472B804B670078BCD1 /* LiftingBuddyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */; };
@@ -23,6 +22,7 @@
 		1EF30A64290B17A500E8FB22 /* CalculationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF30A63290B17A500E8FB22 /* CalculationsService.swift */; };
 		1EFA6E352B83FA05002BCEF6 /* UserProfileDataStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA6E342B83FA05002BCEF6 /* UserProfileDataStructure.swift */; };
 		1EFA6E372B83FB0F002BCEF6 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA6E362B83FB0F002BCEF6 /* UserProfileView.swift */; };
+		1EFA6E392B8400F5002BCEF6 /* OneRMCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA6E382B8400F5002BCEF6 /* OneRMCalculatorView.swift */; };
 		8D10629728DD040F008AD000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629628DD040F008AD000 /* AppDelegate.swift */; };
 		8D10629928DD040F008AD000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629828DD040F008AD000 /* SceneDelegate.swift */; };
 		8D10629B28DD040F008AD000 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629A28DD040F008AD000 /* ViewController.swift */; };
@@ -44,7 +44,6 @@
 		1E287B5C28E3E1A5003A66AD /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		1E2FA04D290CA2B40016B726 /* PastWorkoutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastWorkoutsController.swift; sourceTree = "<group>"; };
 		1E2FA04F290CA3090016B726 /* WilksCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WilksCalculatorController.swift; sourceTree = "<group>"; };
-		1E2FA053290CA3F00016B726 /* OneRMCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRMCalculatorViewController.swift; sourceTree = "<group>"; };
 		1E2FA058290F2EB70016B726 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1E2FA05A290F337D0016B726 /* NewWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutView.swift; sourceTree = "<group>"; };
 		1EB484ED28DD1C220024B9F0 /* LiftingLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiftingLog.entitlements; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		1EF30A63290B17A500E8FB22 /* CalculationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsService.swift; sourceTree = "<group>"; };
 		1EFA6E342B83FA05002BCEF6 /* UserProfileDataStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataStructure.swift; sourceTree = "<group>"; };
 		1EFA6E362B83FB0F002BCEF6 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		1EFA6E382B8400F5002BCEF6 /* OneRMCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRMCalculatorView.swift; sourceTree = "<group>"; };
 		8D10629328DD040F008AD000 /* LiftingLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiftingLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D10629628DD040F008AD000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D10629828DD040F008AD000 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,12 +155,12 @@
 				1E2FA04D290CA2B40016B726 /* PastWorkoutsController.swift */,
 				1ECAB3E72933CF0B00828DE3 /* DetailTableViewController.swift */,
 				1E2FA04F290CA3090016B726 /* WilksCalculatorController.swift */,
-				1E2FA053290CA3F00016B726 /* OneRMCalculatorViewController.swift */,
 				1E1D538E292E656100DD233C /* DetailTableViewCell.swift */,
 				1E1D538F292E656100DD233C /* DetailTableViewCell.xib */,
 				8D959FAA29381BFD009D405C /* ResetPasswordController.swift */,
 				1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */,
 				1EFA6E362B83FB0F002BCEF6 /* UserProfileView.swift */,
+				1EFA6E382B8400F5002BCEF6 /* OneRMCalculatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,7 +258,7 @@
 				8D10629B28DD040F008AD000 /* ViewController.swift in Sources */,
 				8D10629728DD040F008AD000 /* AppDelegate.swift in Sources */,
 				8D67F4F8290B1E020008724F /* AuthenticationService.swift in Sources */,
-				1E2FA054290CA3F00016B726 /* OneRMCalculatorViewController.swift in Sources */,
+				1EFA6E392B8400F5002BCEF6 /* OneRMCalculatorView.swift in Sources */,
 				1E287B5D28E3E1A5003A66AD /* SettingsController.swift in Sources */,
 				8D67F4F6290B1DE50008724F /* DatabaseService.swift in Sources */,
 				8D1062A128DD040F008AD000 /* LiftingLog.xcdatamodeld in Sources */,
