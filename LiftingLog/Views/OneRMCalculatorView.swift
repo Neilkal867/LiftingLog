@@ -36,10 +36,10 @@ struct OneRMCalculatorView: View {
                 
                 Section {
                     // Displays the calculated 1RM
-                    Text(oneRMOutput)
+                    Text(oneRMOutput.isEmpty ? "Enter values to calculate 1RM score" : oneRMOutput)
                 }
             }
-            .navigationBarTitle("1RM Calculator", displayMode: .inline)
+            .navigationBarTitle("1RM Calculator")
             // Alert for invalid input or calculation errors
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))

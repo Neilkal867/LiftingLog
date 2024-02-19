@@ -50,7 +50,7 @@ class WelcomeDashBoardController: UITableViewController {
         }*/
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Wilks Calculator"){
-            navigateToUIKitView(vcToDisplay: "WilksCalc", viewController: WilksCalculatorController.self)
+            navigateToSwiftUIView {WilksCalculatorView()}
         }
         
         if indexPath.row == welcomeDashOptions.firstIndex(of: "1RM Calculator"){
