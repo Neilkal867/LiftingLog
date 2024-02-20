@@ -9,7 +9,7 @@ import UIKit
 
 class WelcomeDashBoardController: UITableViewController {
     
-    var welcomeDashOptions = ["My Profile","Log a Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Settings", "Lifting Buddy"]
+    var welcomeDashOptions = ["My Profile","New Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Lifting Buddy"]
     
    // let db = DatabaseService()
     
@@ -38,11 +38,11 @@ class WelcomeDashBoardController: UITableViewController {
     {
         if indexPath.row == welcomeDashOptions.firstIndex(of: "My Profile"){
             navigateToSwiftUIView {UserProfileView()}
-            //vcToDisplay: "Settings", viewController: SettingsController.self)
         }
         
-        if indexPath.row == welcomeDashOptions.firstIndex(of: "Log a Workout"){
-            navigateToUIKitView(vcToDisplay: "NewWorkout", viewController: NewWorkoutView.self)
+        if indexPath.row == welcomeDashOptions.firstIndex(of: "New Workout"){
+            navigateToSwiftUIView {NewWorkoutView()}
+        
         }
         
       /*  if indexPath.row == welcomeDashOptions.firstIndex(of: "View Past Workout"){
@@ -57,12 +57,8 @@ class WelcomeDashBoardController: UITableViewController {
             navigateToSwiftUIView {OneRMCalculatorView()}
         }
         
-        if indexPath.row == welcomeDashOptions.firstIndex(of: "Settings"){
-            navigateToUIKitView(vcToDisplay: "Settings", viewController: SettingsController.self)
-        }
         if indexPath.row == welcomeDashOptions.firstIndex(of: "Lifting Buddy"){
             navigateToSwiftUIView {LiftingBuddyView()}
-            //vcToDisplay: "Settings", viewController: SettingsController.self)
         }
         
     

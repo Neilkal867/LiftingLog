@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="LoginView" title="Login View" id="BYZ-38-t0r" customClass="ViewController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7VV-Ai-BvN">
@@ -105,6 +105,7 @@
         <!--Settings Controller-->
         <scene sceneID="ynV-YO-dTN">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dvU-Nb-9pT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Settings" id="9qu-2L-009" customClass="SettingsController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eed-WW-5z2">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -148,132 +149,8 @@
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dvU-Nb-9pT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="950.76923076923072" y="-650.47393364928905"/>
-        </scene>
-        <!--New Workout-->
-        <scene sceneID="qdw-QU-f4f">
-            <objects>
-                <viewController storyboardIdentifier="NewWorkout" title="New Workout" id="8iH-TA-ydH" customClass="NewWorkoutView" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9WQ-Wf-1Sm">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dO-Eh-GeQ">
-                                <rect key="frame" x="236" y="132" width="97" height="34"/>
-                                <color key="backgroundColor" systemColor="separatorColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="HX8-4y-dWa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Reps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bR1-aT-4VL">
-                                <rect key="frame" x="53" y="226" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNW-tN-zAY">
-                                <rect key="frame" x="236" y="226" width="97" height="34"/>
-                                <color key="backgroundColor" systemColor="separatorColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Sets: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7w-fi-Bfe">
-                                <rect key="frame" x="53" y="273" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tyh-y6-aGz">
-                                <rect key="frame" x="236" y="273" width="97" height="34"/>
-                                <color key="backgroundColor" systemColor="separatorColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight (lbs): " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7or-R0-PDo">
-                                <rect key="frame" x="53" y="179" width="102" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J8e-DR-Qqw">
-                                <rect key="frame" x="236" y="179" width="97" height="34"/>
-                                <color key="backgroundColor" systemColor="separatorColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7u-qq-hXo">
-                                <rect key="frame" x="53" y="320" width="88" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F6k-2O-lvI">
-                                <rect key="frame" x="53" y="349" width="280" height="128"/>
-                                <color key="backgroundColor" systemColor="separatorColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Type: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXf-8t-jaW">
-                                <rect key="frame" x="50" y="132" width="114" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="yEB-F3-CdE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bR1-aT-4VL" firstAttribute="top" secondItem="fNW-tN-zAY" secondAttribute="top" id="33n-Ps-Yc3"/>
-                            <constraint firstItem="J8e-DR-Qqw" firstAttribute="trailing" secondItem="fNW-tN-zAY" secondAttribute="trailing" id="3ip-mK-Zy9"/>
-                            <constraint firstItem="yEB-F3-CdE" firstAttribute="trailing" secondItem="8dO-Eh-GeQ" secondAttribute="trailing" constant="57" id="5Kp-w9-AZ6"/>
-                            <constraint firstItem="J8e-DR-Qqw" firstAttribute="leading" secondItem="fNW-tN-zAY" secondAttribute="leading" id="5UO-g8-Bl1"/>
-                            <constraint firstItem="Tyh-y6-aGz" firstAttribute="trailing" secondItem="F6k-2O-lvI" secondAttribute="trailing" id="6wN-C1-KiH"/>
-                            <constraint firstItem="8dO-Eh-GeQ" firstAttribute="leading" secondItem="gXf-8t-jaW" secondAttribute="trailing" constant="72" id="8uP-8k-reg"/>
-                            <constraint firstItem="gXf-8t-jaW" firstAttribute="top" secondItem="8dO-Eh-GeQ" secondAttribute="top" id="AfF-5l-hwl"/>
-                            <constraint firstItem="O7w-fi-Bfe" firstAttribute="leading" secondItem="v7u-qq-hXo" secondAttribute="leading" id="BOT-po-nuf"/>
-                            <constraint firstItem="O7w-fi-Bfe" firstAttribute="top" secondItem="Tyh-y6-aGz" secondAttribute="top" id="GNE-rX-MoL"/>
-                            <constraint firstItem="fNW-tN-zAY" firstAttribute="leading" secondItem="Tyh-y6-aGz" secondAttribute="leading" id="Gz6-2n-oHJ"/>
-                            <constraint firstItem="yEB-F3-CdE" firstAttribute="bottom" secondItem="F6k-2O-lvI" secondAttribute="bottom" constant="333" id="MbF-Vg-XhP"/>
-                            <constraint firstItem="fNW-tN-zAY" firstAttribute="trailing" secondItem="Tyh-y6-aGz" secondAttribute="trailing" id="Mq6-QY-SFF"/>
-                            <constraint firstItem="bR1-aT-4VL" firstAttribute="leading" secondItem="O7w-fi-Bfe" secondAttribute="leading" id="Ngw-bO-OyK"/>
-                            <constraint firstItem="J8e-DR-Qqw" firstAttribute="top" secondItem="8dO-Eh-GeQ" secondAttribute="bottom" constant="13" id="PvR-U2-5LO"/>
-                            <constraint firstItem="gXf-8t-jaW" firstAttribute="top" secondItem="yEB-F3-CdE" secondAttribute="top" constant="85" id="WZc-nG-4wW"/>
-                            <constraint firstItem="gXf-8t-jaW" firstAttribute="leading" secondItem="yEB-F3-CdE" secondAttribute="leading" constant="50" id="Yo1-3u-mlB"/>
-                            <constraint firstItem="v7u-qq-hXo" firstAttribute="top" secondItem="O7w-fi-Bfe" secondAttribute="bottom" constant="26" id="exz-hG-610"/>
-                            <constraint firstItem="7or-R0-PDo" firstAttribute="top" secondItem="J8e-DR-Qqw" secondAttribute="top" id="glM-mG-YOH"/>
-                            <constraint firstItem="gXf-8t-jaW" firstAttribute="leading" secondItem="F6k-2O-lvI" secondAttribute="leading" id="hKa-aa-a5h"/>
-                            <constraint firstItem="8dO-Eh-GeQ" firstAttribute="leading" secondItem="J8e-DR-Qqw" secondAttribute="leading" id="hYk-xy-Weo"/>
-                            <constraint firstItem="7or-R0-PDo" firstAttribute="leading" secondItem="bR1-aT-4VL" secondAttribute="leading" id="jpH-Hh-58U"/>
-                            <constraint firstItem="8dO-Eh-GeQ" firstAttribute="trailing" secondItem="J8e-DR-Qqw" secondAttribute="trailing" id="lCy-XU-NLp"/>
-                            <constraint firstItem="7or-R0-PDo" firstAttribute="leading" secondItem="yEB-F3-CdE" secondAttribute="leading" constant="53" id="qFl-TS-dqn"/>
-                            <constraint firstItem="Tyh-y6-aGz" firstAttribute="top" secondItem="fNW-tN-zAY" secondAttribute="bottom" constant="13" id="quw-AT-QbP"/>
-                            <constraint firstItem="fNW-tN-zAY" firstAttribute="top" secondItem="J8e-DR-Qqw" secondAttribute="bottom" constant="13" id="rDc-U8-V4Q"/>
-                            <constraint firstItem="F6k-2O-lvI" firstAttribute="top" secondItem="v7u-qq-hXo" secondAttribute="bottom" constant="8" id="yWN-1K-mVU"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Title" id="Bpw-dp-mSR">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="H9K-9A-Ulz">
-                            <connections>
-                                <action selector="submitNewWorkout:" destination="8iH-TA-ydH" id="MJq-Ru-vwQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="commentsTF" destination="F6k-2O-lvI" id="7D8-rp-iqS"/>
-                        <outlet property="numOfRepsTF" destination="fNW-tN-zAY" id="zEM-Ob-dkz"/>
-                        <outlet property="numOfSetsTF" destination="Tyh-y6-aGz" id="kQ7-aZ-idq"/>
-                        <outlet property="weightTF" destination="J8e-DR-Qqw" id="lh0-Nx-aN8"/>
-                        <outlet property="workoutTypeTF" destination="8dO-Eh-GeQ" id="MOq-Z2-Zgw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X8e-7H-OdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2453.8461538461538" y="-717.29857819905214"/>
         </scene>
         <!--Welcome Dash Board Controller-->
         <scene sceneID="8GG-M7-kAu">
@@ -367,7 +244,7 @@
             <objects>
                 <viewController title="Create Account View" id="UDL-xf-Lmu" customClass="CreateAccountController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cW1-8U-8sv">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-y1-hwb">
@@ -454,6 +331,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ZMy-29-K5U">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o23-ee-uKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ouM-qL-UPM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OVx-8B-4AP">
@@ -465,7 +343,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="M4R-5M-R1o"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o23-ee-uKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="21.538461538461537" y="3.5545023696682461"/>
         </scene>
@@ -474,7 +351,7 @@
             <objects>
                 <viewController title="Reset PW View" id="X9a-Tt-BhG" customClass="ResetPasswordController" customModule="LiftingLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cx6-FZ-PVt">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ys5-Ka-eC8">
@@ -514,13 +391,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M4R-5M-R1o"/>
+        <segue reference="6zK-DS-ZU6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="separatorColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
