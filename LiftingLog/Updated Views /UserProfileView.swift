@@ -39,7 +39,7 @@ struct UserProfileView: View {
                 
                 Section(header: Text("Max Lifts")) {
                     TextField("Max Bench Press", text: $maxBenchText)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                         .onAppear {
                             if userProfile.maxBench != 0 {
                                 maxBenchText = "\(userProfile.maxBench)"
@@ -50,7 +50,7 @@ struct UserProfileView: View {
                         }
                     
                     TextField("Max Squat", text: $maxSquatText)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                         .onAppear {
                             if userProfile.maxSquat != 0 {
                                 maxSquatText = "\(userProfile.maxSquat)"
@@ -61,7 +61,7 @@ struct UserProfileView: View {
                         }
                     
                     TextField("Max Deadlift", text: $maxDeadliftText)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                         .onAppear {
                             if userProfile.maxDeadlift != 0 {
                                 maxDeadliftText = "\(userProfile.maxDeadlift)"
@@ -72,7 +72,7 @@ struct UserProfileView: View {
                         }
                     
                     TextField("Max Overhead Press", text: $maxOHPText)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                         .onAppear {
                             if userProfile.maxOHP != 0 {
                                 maxOHPText = "\(userProfile.maxOHP)"

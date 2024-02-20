@@ -92,6 +92,10 @@ struct LoginView: View {
     private func resetPassword() {
         // Implement the reset password functionality
     }
+    
+    private func createAccount() {
+        // Implement the reset password functionality
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

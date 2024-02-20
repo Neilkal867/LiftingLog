@@ -19,22 +19,28 @@ struct NewWorkoutView: View {
     @State private var showUnsavedDataAlert: Bool = false // Alert for unsaved changes
     @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
-    
+    @FocusState private var isTextEditorFocused: Bool
     var body: some View {
             Form {
                 TextField("Workout Type", text: $workoutType)
-                TextField("Weight", text: $weight)
-                TextField("Number of Reps", text: $numOfReps)
-                TextField("Number of Sets", text: $numOfSets)
+                
+                TextField("Weight", text: 
+                    $weight).keyboardType(.decimalPad)
+                
+                TextField("Number of Reps", text: $numOfReps).keyboardType(.numberPad)
+                
+                TextField("Number of Sets", text: $numOfSets).keyboardType(.numberPad)
                 // Custom TextEditor with placeholder
                 ZStack(alignment: .topLeading) {
-                    if comments.isEmpty {
-                        Text("Additional Comments")
-                            .foregroundColor(.secondary)
-                            }
-                            TextEditor(text: $comments)
-                            .frame(height: 100)
-                        }
+                           if comments.isEmpty && !isTextEditorFocused {
+                               Text("Additional Comments")
+                                   .foregroundColor(.secondary)
+                                   .padding(.bottom, -200)
+                           }
+                           TextEditor(text: $comments)
+                               .frame(height: 100)
+                               .focused($isTextEditorFocused)
+                       }
                                
                 Button("Submit Workout") {
                     submitWorkout()

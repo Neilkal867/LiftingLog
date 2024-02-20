@@ -49,13 +49,6 @@ struct WelcomeDashboardView: View {
         }
     }
 }
-
-// Define a struct for each destination view, assuming they are not yet implemented. For example:
-
-
-// Repeat the above struct definition for NewWorkoutView, WilksCalculatorView, OneRMCalculatorView, and LiftingBuddyView.
-
-
 #Preview {
     WelcomeDashboardView()
 }

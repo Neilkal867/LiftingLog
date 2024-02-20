@@ -16,7 +16,6 @@ class WilksCalculatorViewModel: ObservableObject {
     @Published var wilksScore: String = ""
     @Published var gender: String = "Male"
     var calcServ = CalculationsService() // Assuming CalculationsService exists and is adapted for SwiftUI usage
-
     func calculateWilksScore() {
         guard let doubleBodyWeight = Double(bodyWeight), let doubleMaxBench = Double(maxBench),
               let doubleMaxSquat = Double(maxSquat), let doubleMaxDeadlift = Double(maxDeadlift) else {
@@ -43,14 +42,17 @@ struct WilksCalculatorView: View {
     var body: some View {
             Form {
                 Section(header: Text("Input your data")) {
-                    TextField("Body Weight", text: numericalBinding($viewModel.bodyWeight))
+                    TextField("Body Weight", text: ($viewModel.bodyWeight))
                         .keyboardType(.decimalPad)
-                    TextField("Max Bench", text: numericalBinding($viewModel.maxBench))
-                        .keyboardType(.decimalPad)
-                    TextField("Max Squat", text: numericalBinding($viewModel.maxSquat))
-                        .keyboardType(.decimalPad)
-                    TextField("Max Deadlift", text: numericalBinding($viewModel.maxDeadlift))
-                        .keyboardType(.decimalPad)
+                    
+                    TextField("Max Bench", text: ($viewModel.maxBench))
+                        .keyboardType(.numberPad)
+                    
+                    TextField("Max Squat", text: ($viewModel.maxSquat))
+                        .keyboardType(.numberPad)
+                    
+                    TextField("Max Deadlift", text: ($viewModel.maxDeadlift))
+                        .keyboardType(.numberPad)
 
                     Picker("Gender", selection: $viewModel.gender) {
                         Text("Male").tag("Male")
@@ -70,18 +72,6 @@ struct WilksCalculatorView: View {
             }
             .navigationTitle("Wilks Calculator")
         }
-    
-    // Custom binding to filter out non-numerical input
-    private func numericalBinding(_ binding: Binding<String>) -> Binding<String> {
-        Binding<String>(
-            get: {
-                binding.wrappedValue
-            },
-            set: {
-                binding.wrappedValue = $0.filter { "0123456789.".contains($0) }
-            }
-        )
-    }
 }
 
 // Preview provider for SwiftUI previews in Xcode

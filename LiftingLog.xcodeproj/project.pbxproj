@@ -96,6 +96,20 @@
 			path = Structures;
 			sourceTree = "<group>";
 		};
+		1EFA6E4F2B84E837002BCEF6 /* Updated Views  */ = {
+			isa = PBXGroup;
+			children = (
+				1EFA6E432B8425F9002BCEF6 /* LoginView.swift */,
+				1EFA6E452B842760002BCEF6 /* WelcomeDashboardView.swift */,
+				1EFA6E362B83FB0F002BCEF6 /* UserProfileView.swift */,
+				1EFA6E3C2B840E38002BCEF6 /* NewWorkoutView.swift */,
+				1EFA6E3A2B84089C002BCEF6 /* WilksCalculatorView.swift */,
+				1EFA6E382B8400F5002BCEF6 /* OneRMCalculatorView.swift */,
+				1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */,
+			);
+			path = "Updated Views ";
+			sourceTree = "<group>";
+		};
 		8D10628A28DD040F008AD000 = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +141,8 @@
 				1EF9F7DE291C07EE001257D1 /* Structures */,
 				8D67F4F3290B1CC00008724F /* Services */,
 				1E2FA057290F2E9B0016B726 /* Extensions */,
-				8D67F4F4290B1CD10008724F /* Views */,
+				1EFA6E4F2B84E837002BCEF6 /* Updated Views  */,
+				8D67F4F4290B1CD10008724F /* Old Views */,
 			);
 			path = LiftingLog;
 			sourceTree = "<group>";
@@ -142,7 +157,7 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		8D67F4F4290B1CD10008724F /* Views */ = {
+		8D67F4F4290B1CD10008724F /* Old Views */ = {
 			isa = PBXGroup;
 			children = (
 				1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */,
@@ -151,15 +166,8 @@
 				1E1D538E292E656100DD233C /* DetailTableViewCell.swift */,
 				1E1D538F292E656100DD233C /* DetailTableViewCell.xib */,
 				8D959FAA29381BFD009D405C /* ResetPasswordController.swift */,
-				1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */,
-				1EFA6E362B83FB0F002BCEF6 /* UserProfileView.swift */,
-				1EFA6E382B8400F5002BCEF6 /* OneRMCalculatorView.swift */,
-				1EFA6E3A2B84089C002BCEF6 /* WilksCalculatorView.swift */,
-				1EFA6E3C2B840E38002BCEF6 /* NewWorkoutView.swift */,
-				1EFA6E432B8425F9002BCEF6 /* LoginView.swift */,
-				1EFA6E452B842760002BCEF6 /* WelcomeDashboardView.swift */,
 			);
-			path = Views;
+			path = "Old Views";
 			sourceTree = "<group>";
 		};
 		8D67F4F9290B20A00008724F /* Frameworks */ = {
