@@ -10,7 +10,6 @@
 		1E1D5390292E656100DD233C /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D538E292E656100DD233C /* DetailTableViewCell.swift */; };
 		1E1D5391292E656100DD233C /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E1D538F292E656100DD233C /* DetailTableViewCell.xib */; };
 		1E287B5928E3DBE9003A66AD /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */; };
-		1E287B5B28E3DF36003A66AD /* WelcomeDashBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E287B5A28E3DF36003A66AD /* WelcomeDashBoardController.swift */; };
 		1E2FA04E290CA2B40016B726 /* PastWorkoutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA04D290CA2B40016B726 /* PastWorkoutsController.swift */; };
 		1E2FA059290F2EB70016B726 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA058290F2EB70016B726 /* UIViewControllerExtension.swift */; };
 		1EC858472B804B670078BCD1 /* LiftingBuddyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */; };
@@ -22,13 +21,14 @@
 		1EFA6E392B8400F5002BCEF6 /* OneRMCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA6E382B8400F5002BCEF6 /* OneRMCalculatorView.swift */; };
 		1EFA6E3B2B84089C002BCEF6 /* WilksCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA6E3A2B84089C002BCEF6 /* WilksCalculatorView.swift */; };
 		1EFA6E3D2B840E38002BCEF6 /* NewWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA6E3C2B840E38002BCEF6 /* NewWorkoutView.swift */; };
+		1EFA6E442B8425F9002BCEF6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA6E432B8425F9002BCEF6 /* LoginView.swift */; };
+		1EFA6E462B842760002BCEF6 /* WelcomeDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA6E452B842760002BCEF6 /* WelcomeDashboardView.swift */; };
+		1EFA6E4A2B842EED002BCEF6 /* LiftingLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA6E492B842EED002BCEF6 /* LiftingLog.swift */; };
 		8D10629728DD040F008AD000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629628DD040F008AD000 /* AppDelegate.swift */; };
 		8D10629928DD040F008AD000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629828DD040F008AD000 /* SceneDelegate.swift */; };
-		8D10629B28DD040F008AD000 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629A28DD040F008AD000 /* ViewController.swift */; };
 		8D10629E28DD040F008AD000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D10629C28DD040F008AD000 /* Main.storyboard */; };
 		8D1062A128DD040F008AD000 /* LiftingLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629F28DD040F008AD000 /* LiftingLog.xcdatamodeld */; };
 		8D1062A328DD0411008AD000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1062A228DD0411008AD000 /* Assets.xcassets */; };
-		8D1062A628DD0411008AD000 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D1062A428DD0411008AD000 /* LaunchScreen.storyboard */; };
 		8D67F4F6290B1DE50008724F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F5290B1DE50008724F /* DatabaseService.swift */; };
 		8D67F4F8290B1E020008724F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F7290B1E020008724F /* AuthenticationService.swift */; };
 		8D959FAB29381BFD009D405C /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D959FAA29381BFD009D405C /* ResetPasswordController.swift */; };
@@ -39,7 +39,6 @@
 		1E1D538E292E656100DD233C /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		1E1D538F292E656100DD233C /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
-		1E287B5A28E3DF36003A66AD /* WelcomeDashBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDashBoardController.swift; sourceTree = "<group>"; };
 		1E2FA04D290CA2B40016B726 /* PastWorkoutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastWorkoutsController.swift; sourceTree = "<group>"; };
 		1E2FA058290F2EB70016B726 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1EB484ED28DD1C220024B9F0 /* LiftingLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiftingLog.entitlements; sourceTree = "<group>"; };
@@ -52,14 +51,15 @@
 		1EFA6E382B8400F5002BCEF6 /* OneRMCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRMCalculatorView.swift; sourceTree = "<group>"; };
 		1EFA6E3A2B84089C002BCEF6 /* WilksCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WilksCalculatorView.swift; sourceTree = "<group>"; };
 		1EFA6E3C2B840E38002BCEF6 /* NewWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutView.swift; sourceTree = "<group>"; };
+		1EFA6E432B8425F9002BCEF6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1EFA6E452B842760002BCEF6 /* WelcomeDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDashboardView.swift; sourceTree = "<group>"; };
+		1EFA6E492B842EED002BCEF6 /* LiftingLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftingLog.swift; sourceTree = "<group>"; };
 		8D10629328DD040F008AD000 /* LiftingLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiftingLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D10629628DD040F008AD000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D10629828DD040F008AD000 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8D10629A28DD040F008AD000 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D10629D28DD040F008AD000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D1062A028DD040F008AD000 /* LiftingLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LiftingLog.xcdatamodel; sourceTree = "<group>"; };
 		8D1062A228DD0411008AD000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8D1062A528DD0411008AD000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D1062A728DD0411008AD000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D67F4F5290B1DE50008724F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		8D67F4F7290B1E020008724F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -116,12 +116,12 @@
 		8D10629528DD040F008AD000 /* LiftingLog */ = {
 			isa = PBXGroup;
 			children = (
+				1EFA6E492B842EED002BCEF6 /* LiftingLog.swift */,
 				1EB484ED28DD1C220024B9F0 /* LiftingLog.entitlements */,
 				8D10629628DD040F008AD000 /* AppDelegate.swift */,
 				8D10629828DD040F008AD000 /* SceneDelegate.swift */,
 				8D10629C28DD040F008AD000 /* Main.storyboard */,
 				8D1062A228DD0411008AD000 /* Assets.xcassets */,
-				8D1062A428DD0411008AD000 /* LaunchScreen.storyboard */,
 				8D1062A728DD0411008AD000 /* Info.plist */,
 				8D10629F28DD040F008AD000 /* LiftingLog.xcdatamodeld */,
 				1EF9F7DE291C07EE001257D1 /* Structures */,
@@ -145,9 +145,7 @@
 		8D67F4F4290B1CD10008724F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8D10629A28DD040F008AD000 /* ViewController.swift */,
 				1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */,
-				1E287B5A28E3DF36003A66AD /* WelcomeDashBoardController.swift */,
 				1E2FA04D290CA2B40016B726 /* PastWorkoutsController.swift */,
 				1ECAB3E72933CF0B00828DE3 /* DetailTableViewController.swift */,
 				1E1D538E292E656100DD233C /* DetailTableViewCell.swift */,
@@ -158,6 +156,8 @@
 				1EFA6E382B8400F5002BCEF6 /* OneRMCalculatorView.swift */,
 				1EFA6E3A2B84089C002BCEF6 /* WilksCalculatorView.swift */,
 				1EFA6E3C2B840E38002BCEF6 /* NewWorkoutView.swift */,
+				1EFA6E432B8425F9002BCEF6 /* LoginView.swift */,
+				1EFA6E452B842760002BCEF6 /* WelcomeDashboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,7 +231,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D1062A628DD0411008AD000 /* LaunchScreen.storyboard in Resources */,
 				1E1D5391292E656100DD233C /* DetailTableViewCell.xib in Resources */,
 				8D1062A328DD0411008AD000 /* Assets.xcassets in Resources */,
 				8D10629E28DD040F008AD000 /* Main.storyboard in Resources */,
@@ -245,13 +244,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E287B5B28E3DF36003A66AD /* WelcomeDashBoardController.swift in Sources */,
 				1EFA6E3B2B84089C002BCEF6 /* WilksCalculatorView.swift in Sources */,
+				1EFA6E4A2B842EED002BCEF6 /* LiftingLog.swift in Sources */,
 				1E2FA04E290CA2B40016B726 /* PastWorkoutsController.swift in Sources */,
 				1EFA6E352B83FA05002BCEF6 /* UserProfileDataStructure.swift in Sources */,
+				1EFA6E442B8425F9002BCEF6 /* LoginView.swift in Sources */,
 				1EF30A64290B17A500E8FB22 /* CalculationsService.swift in Sources */,
 				1E2FA059290F2EB70016B726 /* UIViewControllerExtension.swift in Sources */,
-				8D10629B28DD040F008AD000 /* ViewController.swift in Sources */,
 				8D10629728DD040F008AD000 /* AppDelegate.swift in Sources */,
 				8D67F4F8290B1E020008724F /* AuthenticationService.swift in Sources */,
 				1EFA6E392B8400F5002BCEF6 /* OneRMCalculatorView.swift in Sources */,
@@ -264,6 +263,7 @@
 				1EEE38E5291BF32B00029972 /* WorkoutStruct.swift in Sources */,
 				1E1D5390292E656100DD233C /* DetailTableViewCell.swift in Sources */,
 				1ECAB3E82933CF0B00828DE3 /* DetailTableViewController.swift in Sources */,
+				1EFA6E462B842760002BCEF6 /* WelcomeDashboardView.swift in Sources */,
 				8D959FAB29381BFD009D405C /* ResetPasswordController.swift in Sources */,
 				1EC858472B804B670078BCD1 /* LiftingBuddyView.swift in Sources */,
 				1E287B5928E3DBE9003A66AD /* CreateAccountController.swift in Sources */,
@@ -279,14 +279,6 @@
 				8D10629D28DD040F008AD000 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8D1062A428DD0411008AD000 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8D1062A528DD0411008AD000 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

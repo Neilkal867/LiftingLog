@@ -17,7 +17,6 @@ struct UserProfileView: View {
     let sexes = ["Male", "Female"]
     
     var body: some View {
-        NavigationView {
             Form {
                 Section(header: Text("Personal Information")) {
                     Picker("Sex", selection: $userProfile.sex) {
@@ -82,12 +81,13 @@ struct UserProfileView: View {
                         .onChange(of: maxOHPText) { newValue in
                             userProfile.maxOHP = Double(newValue) ?? 0
                         }
+                
                 }
             }
             .navigationTitle("My Profile")
+        
         }
     }
-}
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {

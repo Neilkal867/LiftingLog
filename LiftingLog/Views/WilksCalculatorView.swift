@@ -41,7 +41,6 @@ struct WilksCalculatorView: View {
     @StateObject private var viewModel = WilksCalculatorViewModel()
 
     var body: some View {
-        NavigationView {
             Form {
                 Section(header: Text("Input your data")) {
                     TextField("Body Weight", text: numericalBinding($viewModel.bodyWeight))
@@ -71,7 +70,6 @@ struct WilksCalculatorView: View {
             }
             .navigationTitle("Wilks Calculator")
         }
-    }
     
     // Custom binding to filter out non-numerical input
     private func numericalBinding(_ binding: Binding<String>) -> Binding<String> {

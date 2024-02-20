@@ -21,7 +21,6 @@ struct NewWorkoutView: View {
     @State private var alertMessage: String = ""
     
     var body: some View {
-        NavigationView {
             Form {
                 TextField("Workout Type", text: $workoutType)
                 TextField("Weight", text: $weight)
@@ -42,7 +41,6 @@ struct NewWorkoutView: View {
                 }
             }
             .navigationBarTitle("New Workout")
-            .navigationBarBackButtonHidden(true) // Hide the default back button
             .navigationBarItems(leading: Button(action: {
                 // Custom back button action
                 if hasUnsavedData() {
@@ -52,7 +50,6 @@ struct NewWorkoutView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             }) {
-                Image(systemName: "arrow.left")
             })
             .alert(isPresented: $showAlert) {
                 Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
@@ -67,7 +64,6 @@ struct NewWorkoutView: View {
                 )
             }
         }
-    }
     
     private func submitWorkout() {
         guard !workoutType.isEmpty, !weight.isEmpty, !numOfReps.isEmpty, !numOfSets.isEmpty else {

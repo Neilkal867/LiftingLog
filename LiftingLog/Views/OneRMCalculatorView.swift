@@ -18,7 +18,6 @@ struct OneRMCalculatorView: View {
     var calcServ = CalculationsService() // Instance of the calculations service
     
     var body: some View {
-        NavigationView {
             Form {
                 Section(header: Text("1RM Calculator")) {
                     // TextField for body weight with decimal pad for numerical input
@@ -52,7 +51,6 @@ struct OneRMCalculatorView: View {
                 Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
         }
-    }
     
     // Function to calculate the 1RM using the inputs
     private func calculateRM() {
