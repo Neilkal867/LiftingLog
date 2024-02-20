@@ -26,11 +26,41 @@ struct LoginView: View {
                 Text("Welcome to Pump Path!")
                     .font(.largeTitle)
                     .padding()
-                
+                    .buttonStyle(.bordered)
+                    
+                    SignInWithAppleButton(
+                        onRequest: { request in
+                            // Configure the request here.
+                        },
+                        onCompletion: { [self] result in // Added [self] to capture list
+                            switch result {
+                            case .success(let authResults):
+                                switch authResults.credential {
+                                case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                                    // Handle success
+                                    self.isAuthenticated = true
+                                default:
+                                    break
+                                }
+                            case .failure(let error):
+                                // Handle error
+                                print(error)
+                            }
+                        }
+                    )
+                 
+                    .frame(height: 50)
+                    .signInWithAppleButtonStyle(.whiteOutline)
+                    .padding()
+                    
+                Text("------------------ OR ------------------")
+                                .foregroundColor(.primary)
+                                .padding()
+
                 TextField("Username", text: $userName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-
+                    
                 SecureField("Password", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -40,44 +70,29 @@ struct LoginView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .padding()
+                .frame(width: 380, height: 50)
                 
-                Button("Create Account") {
-                    // Placeholder for account creation
-                }
-                .buttonStyle(.bordered)
-                
-                SignInWithAppleButton(
-                    onRequest: { request in
-                        // Configure the request here.
-                    },
-                    onCompletion: { [self] result in // Added [self] to capture list
-                        switch result {
-                        case .success(let authResults):
-                            switch authResults.credential {
-                            case let appleIDCredential as ASAuthorizationAppleIDCredential:
-                                // Handle success
-                                self.isAuthenticated = true
-                            default:
-                                break
-                            }
-                        case .failure(let error):
-                            // Handle error
-                            print(error)
-                        }
-                    }
-                )
-                .signInWithAppleButtonStyle(.black)
-                .frame(height: 50)
-                .padding()
-                                
-                Text("Reset Password")
+                Text("Forgot Password?")
                     .foregroundColor(.blue) // Hyperlink color
-                    .underline()
                     .onTapGesture {
                         resetPassword()
                     }
                     .padding()
+                
+                HStack(spacing: 0) {
+                           Text("Don't Have An Account? ")
+                               .foregroundColor(.primary)
+                           
+                           Text("Create One.")
+                               .foregroundColor(.blue)
+                               .onTapGesture {
+                                   // Call your function here
+                                   print("Tapped Create One.")
+                               }
+                      }
+                    
             }
+                
             .navigationTitle("Login")
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
