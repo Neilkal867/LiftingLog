@@ -1,3 +1,10 @@
+//
+//  NewWorkoutView.swift
+//  LiftingLog
+//
+//  Created by Joseph Melito on 2/19/24.
+//
+
 import SwiftUI
 
 struct UserProfileView: View {
@@ -10,7 +17,6 @@ struct UserProfileView: View {
     let sexes = ["Male", "Female"]
     
     var body: some View {
-        NavigationView {
             Form {
                 Section(header: Text("Personal Information")) {
                     Picker("Sex", selection: $userProfile.sex) {
@@ -33,7 +39,7 @@ struct UserProfileView: View {
                 
                 Section(header: Text("Max Lifts")) {
                     TextField("Max Bench Press", text: $maxBenchText)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                         .onAppear {
                             if userProfile.maxBench != 0 {
                                 maxBenchText = "\(userProfile.maxBench)"
@@ -44,7 +50,7 @@ struct UserProfileView: View {
                         }
                     
                     TextField("Max Squat", text: $maxSquatText)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                         .onAppear {
                             if userProfile.maxSquat != 0 {
                                 maxSquatText = "\(userProfile.maxSquat)"
@@ -55,7 +61,7 @@ struct UserProfileView: View {
                         }
                     
                     TextField("Max Deadlift", text: $maxDeadliftText)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                         .onAppear {
                             if userProfile.maxDeadlift != 0 {
                                 maxDeadliftText = "\(userProfile.maxDeadlift)"
@@ -66,7 +72,7 @@ struct UserProfileView: View {
                         }
                     
                     TextField("Max Overhead Press", text: $maxOHPText)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                         .onAppear {
                             if userProfile.maxOHP != 0 {
                                 maxOHPText = "\(userProfile.maxOHP)"
@@ -75,12 +81,13 @@ struct UserProfileView: View {
                         .onChange(of: maxOHPText) { newValue in
                             userProfile.maxOHP = Double(newValue) ?? 0
                         }
+                
                 }
             }
             .navigationTitle("My Profile")
+        
         }
     }
-}
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
