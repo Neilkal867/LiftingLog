@@ -41,7 +41,7 @@ struct NewWorkoutView: View {
                     submitWorkout()
                 }
             }
-            .navigationBarTitle("Enter a Workout")
+            .navigationBarTitle("New Workout")
             .navigationBarBackButtonHidden(true) // Hide the default back button
             .navigationBarItems(leading: Button(action: {
                 // Custom back button action
