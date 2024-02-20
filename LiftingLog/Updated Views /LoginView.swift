@@ -52,11 +52,19 @@ struct LoginView: View {
                     .frame(height: 50)
                     .signInWithAppleButtonStyle(.whiteOutline)
                     .padding()
-                    
-                Text("------------------ OR ------------------")
-                                .foregroundColor(.primary)
-                                .padding()
-
+                
+                
+                HStack {
+                           Line() // Custom Line view
+                               .frame(height: 1)
+                           Text("OR")
+                               .foregroundColor(.primary)
+                               .padding(.horizontal, 5)
+                           Line() // Custom Line view
+                               .frame(height: 1)
+                       }
+                       .padding()
+                   
                 TextField("Username", text: $userName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -112,7 +120,12 @@ struct LoginView: View {
         // Implement the reset password functionality
     }
 }
-
+struct Line: View {
+    var body: some View {
+        Rectangle()
+            .fill(Color.secondary) // Set the color of the line here
+    }
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
