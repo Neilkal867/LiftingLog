@@ -35,9 +35,8 @@ struct WelcomeDashboardView: View {
             return AnyView(UserProfileView())
         case "New Workout":
             return AnyView(NewWorkoutView())
-       // case "View Past Workout":
-            // Assuming PastWorkoutsView is the SwiftUI view for past workouts
-            //return AnyView(PastWorkoutsView())
+       case "View Past Workout":
+            return AnyView(SubmittedWorkoutsView())
         case "Wilks Calculator":
             return AnyView(WilksCalculatorView())
         case "1RM Calculator":

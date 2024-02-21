@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Workout
-{
+struct Workout: Identifiable {
+    let id = UUID() // Add this line
     var date: String
     var workoutType: String
     var weight: Double
@@ -16,3 +16,4 @@ struct Workout
     var sets: Double
     var comments: String
 }
+
