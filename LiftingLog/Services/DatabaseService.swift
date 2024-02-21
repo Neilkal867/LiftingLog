@@ -17,6 +17,7 @@ class DatabaseService: UIViewController
     func saveWorkout(workout:Workout)
     {
         let record = CKRecord(recordType: "Workout")
+        record["userID"] = userID
         record["date"] = workout.date
         record["workoutType"] = workout.workoutType
         record["weight"] = workout.weight
@@ -46,12 +47,13 @@ class DatabaseService: UIViewController
             var workouts = [Workout]()
             records?.forEach { record in
                 if let date = record["date"] as? String,
+                   let userid = record["userID"] as? String,
                    let workoutType = record["workoutType"] as? String,
                    let weight = record["weight"] as? Double,
                    let reps = record["reps"] as? Double,
                    let sets = record["sets"] as? Double,
                    let comments = record["comments"] as? String {
-                    let workout = Workout(date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
+                    let workout = Workout(id: userid, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
                     workouts.append(workout)
                     workoutsArray.append(workout)
                     print(workout)
@@ -60,6 +62,28 @@ class DatabaseService: UIViewController
             completion(workouts, nil)
         }
     }
+    
+    func saveEmailandID(email: String)
+    {
+        let record = CKRecord(recordType: "Lifter")
+        record["email"] = email
+        record["userID"] = userID
+        
+        privateDB.save(record) { (savedRecord, error) in
+            if let error = error
+            {
+                self.showAlert(title: "Error", message: error.localizedDescription)
+                return
+            }
+            print(record)
+        }
+    }
+    
+    func retrieveUserFromUserID(userID:String)
+    {
+        
+    }
+    
     
     func getCurrentMonthDayYear() -> String
     {
@@ -71,9 +95,9 @@ class DatabaseService: UIViewController
         return MonthDayYear
     }
     
-    func createWorkoutObject(date: String, workoutType: String, weight: Double, reps: Double, sets: Double, comments: String) -> Workout
+    func createWorkoutObject(id: String, date: String, workoutType: String, weight: Double, reps: Double, sets: Double, comments: String) -> Workout
     {
-        return Workout(date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
+        return Workout(id: id, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
     }
     
 }

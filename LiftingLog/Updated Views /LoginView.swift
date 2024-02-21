@@ -8,11 +8,15 @@
 import SwiftUI
 import AuthenticationServices
 
+var userID: String?
+
 struct LoginView: View {
     @State private var userName: String = ""
     @State private var password: String = ""
+    @State private var userEmail: String?
     @State private var isAuthenticated = false // Declare the state variable for authentication status
-
+    let dbService = DatabaseService()
+    
     var body: some View {
             if isAuthenticated {
                 WelcomeDashboardView()
@@ -37,8 +41,9 @@ struct LoginView: View {
                             case .success(let authResults):
                                 switch authResults.credential {
                                 case let appleIDCredential as ASAuthorizationAppleIDCredential:
-                                    // Handle success
-                                    self.isAuthenticated = true
+                                    self.userEmail = appleIDCredential.email
+                                    userID = appleIDCredential.user
+                                    login()
                                 default:
                                     break
                                 }
@@ -109,6 +114,19 @@ struct LoginView: View {
     
     func login() {
         // Perform login logic here
+        
+        //This is a new user because the userEmail is NOT nil.  We want to store the userID and email together
+        if (self.userEmail != nil)
+        {
+            dbService.saveEmailandID(email: userEmail!)
+        }
+        
+        //This is a user who has logged in before
+        if (self.userEmail == nil && userID != nil)
+        {
+      
+        }
+        
         self.isAuthenticated = true // Set this to true when login is successful
     }
     

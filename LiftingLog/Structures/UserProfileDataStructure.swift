@@ -8,6 +8,8 @@
 import Foundation
 
 struct UserProfile {
+    var email: String
+    var userID: String
     var sex: String
     var bodyweight: Double
     var maxBench: Double

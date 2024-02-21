@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserProfileView: View {
-    @State private var userProfile = UserProfile(sex: "Male", bodyweight: 0, maxBench: 0, maxSquat: 0, maxDeadlift: 0, maxOHP: 0)
+    @State private var userProfile = UserProfile(email: "",userID: "", sex: "Male", bodyweight: 0, maxBench: 0, maxSquat: 0, maxDeadlift: 0, maxOHP: 0)
     @State private var bodyweightText: String = ""
     @State private var maxBenchText: String = ""
     @State private var maxSquatText: String = ""
