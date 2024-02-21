@@ -54,6 +54,7 @@ class DatabaseService: UIViewController
                     let workout = Workout(date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
                     workouts.append(workout)
                     workoutsArray.append(workout)
+                    print(workout)
                 }
             }
             completion(workouts, nil)

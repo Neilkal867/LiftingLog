@@ -75,7 +75,4 @@ class PastWorkoutsController: UITableViewController {
        // }
     }
 }
-
-
-
-
+*/

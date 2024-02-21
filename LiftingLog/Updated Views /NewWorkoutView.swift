@@ -71,23 +71,24 @@ struct NewWorkoutView: View {
             }
         }
     
-    private func submitWorkout() {
+    private func submitWorkout() 
+    {
         guard !workoutType.isEmpty, !weight.isEmpty, !numOfReps.isEmpty, !numOfSets.isEmpty else {
             alertTitle = "Required Data"
             alertMessage = "All Fields Must Contain Data. However, Comments Are Optional"
             showAlert = true
             return
         }
-       // implement DB Calls here 
-        /*let dbService = DatabaseService()
+        //implement DB Calls here
+        let dbService = DatabaseService()
              let todaysDate = dbService.getCurrentMonthDayYear()
-             let weightInt = Double(weightTF.text!) ?? 0
-             let numOfRepsInt = Double(numOfRepsTF.text!) ?? 0
-             let numOfSetsInt = Double(numOfSetsTF.text!) ?? 0
-             let comments = commentsTF.text ?? ""
+             let weightInt = Double(weight) ?? 0
+             let numOfRepsInt = Double(numOfReps) ?? 0
+             let numOfSetsInt = Double(numOfSets) ?? 0
+             let comments = comments
              let newWorkout = dbService.createWorkoutObject(date: todaysDate, workoutType: workoutType, weight: weightInt, reps: numOfRepsInt, sets: numOfSetsInt, comments: comments)
              
-             dbService.saveWorkout(workout: newWorkout)*/
+             dbService.saveWorkout(workout: newWorkout)
         
         alertTitle = "Submitted"
         alertMessage = "Workout Successfully Submitted"
