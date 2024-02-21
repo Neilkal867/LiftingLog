@@ -10,7 +10,9 @@ import UIKit
 
 let container = CKContainer.default()
 let privateDB = container.privateCloudDatabase
+
 var workoutsArray = [Workout]()
+var userProfile: UserProfile?
 
 class DatabaseService: UIViewController
 {
@@ -63,11 +65,17 @@ class DatabaseService: UIViewController
         }
     }
     
-    func saveEmailandID(email: String)
+    func createNewUser(profile: UserProfile)
     {
         let record = CKRecord(recordType: "Lifter")
-        record["email"] = email
-        record["userID"] = userID
+               record["email"] = profile.email
+               record["userID"] = userID
+               record["sex"] = profile.sex
+               record["bodyweight"] = profile.bodyweight
+               record["maxBench"] = profile.maxBench
+               record["maxSquat"] = profile.maxSquat
+               record["maxDeadlift"] = profile.maxDeadlift
+               record["maxOHP"] = profile.maxOHP 
         
         privateDB.save(record) { (savedRecord, error) in
             if let error = error
@@ -75,11 +83,12 @@ class DatabaseService: UIViewController
                 self.showAlert(title: "Error", message: error.localizedDescription)
                 return
             }
+        
             print(record)
         }
     }
     
-    func retrieveUserFromUserID(userID:String)
+    func loadUserProfile(userID:String)
     {
         
     }
@@ -98,6 +107,21 @@ class DatabaseService: UIViewController
     func createWorkoutObject(id: String, date: String, workoutType: String, weight: Double, reps: Double, sets: Double, comments: String) -> Workout
     {
         return Workout(id: id, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
+    }
+    
+    func createUserProfile(email: String,sex: String, bodyweight: Double, maxBench: Double,maxSquat: Double,maxDeadlift: Double,maxOHP: Double ) -> UserProfile
+    {
+        return UserProfile (
+                 email: email,
+                 userID: userID!,
+                 sex: sex,
+                 bodyweight: bodyweight,
+                 maxBench: maxBench,
+                 maxSquat: maxSquat,
+                 maxDeadlift: maxDeadlift,
+                 maxOHP: maxOHP
+            
+        )
     }
     
 }

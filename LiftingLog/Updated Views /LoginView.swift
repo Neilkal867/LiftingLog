@@ -118,16 +118,23 @@ struct LoginView: View {
         //This is a new user because the userEmail is NOT nil.  We want to store the userID and email together
         if (self.userEmail != nil)
         {
-            dbService.saveEmailandID(email: userEmail!)
+            //Joe, we need to this block is reached then we are dealing with a new user.We need to take them to another screen to the get all of the information required to create a
+            //userprofile.  The two lines below will create a user profile object and then save it.  You can either do that in the new screen or pass the information and do it here.
+            
+            // var userprofile = dbService.createUserProfile(email: <#T##String#>, sex: <#T##String#>, bodyweight: <#T##Double#>, maxBench: <#T##Double#>, maxSquat: <#T##Double#>, maxDeadlift: <#T##Double#>, maxOHP: <#T##Double#>)
+            // dbService.createNewUser(profile: userprofile)
+            //
+            return;
         }
         
         //This is a user who has logged in before
         if (self.userEmail == nil && userID != nil)
         {
-      
+            self.isAuthenticated = true // Set this to true when login is successful
         }
         
         self.isAuthenticated = true // Set this to true when login is successful
+       
     }
     
     private func resetPassword() {
