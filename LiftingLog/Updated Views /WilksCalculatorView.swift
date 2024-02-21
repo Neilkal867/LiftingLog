@@ -41,7 +41,7 @@ struct WilksCalculatorView: View {
 
     var body: some View {
             Form {
-                Section(header: Text("Input your data")) {
+                Section(header: Text("Input your personal data (lbs.)")) {
                     TextField("Body Weight", text: ($viewModel.bodyWeight))
                         .keyboardType(.decimalPad)
                     

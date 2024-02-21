@@ -25,7 +25,7 @@ struct SubmittedWorkoutsView: View {
                     Text(workout.workoutType)
                         .font(.subheadline)
                     HStack {
-                        Text("Weight: \(workout.weight, specifier: "%.1f") kg")
+                        Text("Weight: \(workout.weight, specifier: "%.1f") lbs.")
                         Spacer()
                         Text("Reps: \(Int(workout.reps))")
                         Spacer()

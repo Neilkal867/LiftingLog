@@ -24,7 +24,7 @@ struct NewWorkoutView: View {
             Form {
                 TextField("Workout Type", text: $workoutType)
                 
-                TextField("Weight", text: 
+                TextField("Weight (lbs.)", text: 
                     $weight).keyboardType(.decimalPad)
                 
                 TextField("Number of Reps", text: $numOfReps).keyboardType(.numberPad)
@@ -79,7 +79,6 @@ struct NewWorkoutView: View {
             showAlert = true
             return
         }
-        //implement DB Calls here
         let dbService = DatabaseService()
              let todaysDate = dbService.getCurrentMonthDayYear()
              let weightInt = Double(weight) ?? 0

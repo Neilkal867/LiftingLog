@@ -123,7 +123,7 @@ struct LiftingBuddyView: View {
                 }
             }.padding()
         }
-        .navigationTitle("Chat")
+        .navigationTitle("Lifting Buddy")
     }
 }
 struct ChatMessage: Identifiable {
