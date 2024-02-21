@@ -4,19 +4,18 @@
 //
 //  Created by Neil Kalanish on 10/27/22.
 //
-
 import CloudKit
 import Foundation
 import UIKit
 
 let container = CKContainer.default()
 let privateDB = container.privateCloudDatabase
+var workoutsArray = [Workout]()
 
 class DatabaseService: UIViewController
 {
     func saveWorkout(workout:Workout)
     {
-        
         let record = CKRecord(recordType: "Workout")
         record["date"] = workout.date
         record["workoutType"] = workout.workoutType
@@ -28,15 +27,37 @@ class DatabaseService: UIViewController
         privateDB.save(record) { (savedRecord, error) in
             if let error = error
             {
-                // Handle the error here
-                
                 self.showAlert(title: "Error", message: error.localizedDescription)
                 return
             }
             // Handle the successful save here
-            self.showAlert(title: "Submitted", message: "Workout Sucessfully Submitted SAVE WORKOUT")
         }
-        
+    }
+    
+    func loadWorkouts(completion: @escaping ([Workout]?, Error?) -> Void) {
+        let query = CKQuery(recordType: "Workout", predicate: NSPredicate(value: true))
+        privateDB.perform(query, inZoneWith: nil) { (records, error) in
+            guard error == nil else
+            {
+                completion(nil, error)
+                return
+            }
+            
+            var workouts = [Workout]()
+            records?.forEach { record in
+                if let date = record["date"] as? String,
+                   let workoutType = record["workoutType"] as? String,
+                   let weight = record["weight"] as? Double,
+                   let reps = record["reps"] as? Double,
+                   let sets = record["sets"] as? Double,
+                   let comments = record["comments"] as? String {
+                    let workout = Workout(date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
+                    workouts.append(workout)
+                    workoutsArray.append(workout)
+                }
+            }
+            completion(workouts, nil)
+        }
     }
     
     func getCurrentMonthDayYear() -> String
