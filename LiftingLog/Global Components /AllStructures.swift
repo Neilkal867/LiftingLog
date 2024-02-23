@@ -17,3 +17,21 @@ struct Workout: Identifiable {
     var comments: String
 }
 
+struct UserProfile {
+    var email: String
+    var userID: String
+    var sex: String
+    var bodyweight: Double
+    var maxBench: Double
+    var maxSquat: Double
+    var maxDeadlift: Double
+    var maxOHP: Double
+}
+
+struct Authresponse
+{
+    var SuccesfulSignin: Bool
+    var Error: String
+}
+
+

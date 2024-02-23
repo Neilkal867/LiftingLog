@@ -37,7 +37,7 @@ struct SubmittedWorkoutsView: View {
                     }
                 }
             }
-            .navigationTitle("Workouts")
+            .navigationTitle("Submitted Workouts")
             .onAppear {
                 dbServ.loadWorkouts { [self] (workouts, error) in
                     DispatchQueue.main.async {
