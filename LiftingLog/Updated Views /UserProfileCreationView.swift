@@ -75,7 +75,7 @@ struct UserProfileCreationView: View {
                     print("Error: One or more inputs are invalid.")
                 }
             }
-        }
+        }.navigationTitle("New User Profile Setup")
     }
     
 }
