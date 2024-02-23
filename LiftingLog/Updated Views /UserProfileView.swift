@@ -25,7 +25,7 @@ struct UserProfileView: View {
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                     
-                    TextField("Bodyweight", text: $bodyweightText)
+                    TextField("Bodyweight (lbs.)", text: $bodyweightText)
                         .keyboardType(.decimalPad)
                         .onAppear {
                             if userProfile.bodyweight != 0 {
@@ -37,7 +37,7 @@ struct UserProfileView: View {
                         }
                 }
                 
-                Section(header: Text("Max Lifts")) {
+                Section(header: Text("Max Lifts (lbs.)")) {
                     TextField("Max Bench Press", text: $maxBenchText)
                         .keyboardType(.numberPad)
                         .onAppear {

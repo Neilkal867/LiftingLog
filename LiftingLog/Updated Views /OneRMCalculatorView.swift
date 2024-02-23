@@ -19,7 +19,7 @@ struct OneRMCalculatorView: View {
    
     var body: some View {
             Form {
-                Section(header: Text("1RM Calculator")) {
+                Section(header: Text("Input your personal data (lbs.)")) {
                     // TextField for body weight with decimal pad for numerical input
                     TextField("Body Weight", text: $bodyWeight)
                         .keyboardType(.decimalPad) // Shows a keyboard suitable for numerical input including decimals
