@@ -131,7 +131,7 @@ struct LoginView: View {
         }
         
         //This is a user who has logged in before
-        if (self.userEmail == nil && userID != nil)
+        if (self.userEmail == "No Email Found" && userID != nil)
         {
            // this is for testing --->  self.isNewUser = true
             self.isAuthenticated = true // Set this to true when login is successful
