@@ -62,8 +62,8 @@
             filePath = "LiftingLog/Updated Views /LoginView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "loginForm"
             landmarkType = "24">
             <Locations>
@@ -126,6 +126,117 @@
                   startingLineNumber = "44"
                   endingLineNumber = "44"
                   offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54F76B6D-9D42-4F54-A6ED-6124C74CC069"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LiftingLog/Updated Views /LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "login()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "54F76B6D-9D42-4F54-A6ED-6124C74CC069 - 1041b2cf86ae6168"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiftingLog.LoginView.login() -&gt; ()"
+                  moduleName = "LiftingLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neilkalanish/Desktop/Pump%20Path/LiftingLog/LiftingLog/Updated%20Views%20/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "816">
+               </Location>
+               <Location
+                  uuid = "54F76B6D-9D42-4F54-A6ED-6124C74CC069 - 1041b2cf86ae61d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiftingLog.LoginView.login() -&gt; ()"
+                  moduleName = "LiftingLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neilkalanish/Desktop/Pump%20Path/LiftingLog/LiftingLog/Updated%20Views%20/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "656">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5FE0DF3-FCE8-4AF9-9FFC-4EF848875D10"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LiftingLog/Updated Views /LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "login()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C5FE0DF3-FCE8-4AF9-9FFC-4EF848875D10 - 1041b2cf86ae6083"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiftingLog.LoginView.login() -&gt; ()"
+                  moduleName = "LiftingLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neilkalanish/Desktop/Pump%20Path/LiftingLog/LiftingLog/Updated%20Views%20/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "1872">
+               </Location>
+               <Location
+                  uuid = "C5FE0DF3-FCE8-4AF9-9FFC-4EF848875D10 - 1041b2cf86ae60ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiftingLog.LoginView.login() -&gt; ()"
+                  moduleName = "LiftingLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neilkalanish/Desktop/Pump%20Path/LiftingLog/LiftingLog/Updated%20Views%20/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1260">
+               </Location>
+               <Location
+                  uuid = "C5FE0DF3-FCE8-4AF9-9FFC-4EF848875D10 - 1041b2cf86ae60ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LiftingLog.LoginView.login() -&gt; ()"
+                  moduleName = "LiftingLog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/neilkalanish/Desktop/Pump%20Path/LiftingLog/LiftingLog/Updated%20Views%20/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "1364">
                </Location>
             </Locations>
          </BreakpointContent>

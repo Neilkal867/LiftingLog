@@ -28,8 +28,8 @@ struct UserProfileView: View {
                     TextField("Bodyweight (lbs.)", text: $bodyweightText)
                         .keyboardType(.decimalPad)
                         .onAppear {
-                            if userProfile.bodyweight != 0 {
-                                bodyweightText = "\(userProfile.bodyweight)"
+                            if GlobalManager.shared.userProfile!.bodyweight != 0 {
+                                bodyweightText = "\(GlobalManager.shared.userProfile!.bodyweight)"
                             }
                         }
                         .onChange(of: bodyweightText) { newValue in
@@ -41,8 +41,8 @@ struct UserProfileView: View {
                     TextField("Max Bench Press", text: $maxBenchText)
                         .keyboardType(.numberPad)
                         .onAppear {
-                            if userProfile.maxBench != 0 {
-                                maxBenchText = "\(userProfile.maxBench)"
+                            if GlobalManager.shared.userProfile!.maxBench != 0 {
+                                maxBenchText = "\(GlobalManager.shared.userProfile!.maxBench)"
                             }
                         }
                         .onChange(of: maxBenchText) { newValue in
@@ -52,8 +52,8 @@ struct UserProfileView: View {
                     TextField("Max Squat", text: $maxSquatText)
                         .keyboardType(.numberPad)
                         .onAppear {
-                            if userProfile.maxSquat != 0 {
-                                maxSquatText = "\(userProfile.maxSquat)"
+                            if GlobalManager.shared.userProfile!.maxSquat != 0 {
+                                maxSquatText = "\(GlobalManager.shared.userProfile!.maxSquat)"
                             }
                         }
                         .onChange(of: maxSquatText) { newValue in
@@ -63,8 +63,8 @@ struct UserProfileView: View {
                     TextField("Max Deadlift", text: $maxDeadliftText)
                         .keyboardType(.numberPad)
                         .onAppear {
-                            if userProfile.maxDeadlift != 0 {
-                                maxDeadliftText = "\(userProfile.maxDeadlift)"
+                            if GlobalManager.shared.userProfile!.maxDeadlift != 0 {
+                                maxDeadliftText = "\(GlobalManager.shared.userProfile!.maxDeadlift)"
                             }
                         }
                         .onChange(of: maxDeadliftText) { newValue in
@@ -74,8 +74,8 @@ struct UserProfileView: View {
                     TextField("Max Overhead Press", text: $maxOHPText)
                         .keyboardType(.numberPad)
                         .onAppear {
-                            if userProfile.maxOHP != 0 {
-                                maxOHPText = "\(userProfile.maxOHP)"
+                            if GlobalManager.shared.userProfile!.maxOHP != 0 {
+                                maxOHPText = "\(GlobalManager.shared.userProfile!.maxOHP)"
                             }
                         }
                         .onChange(of: maxOHPText) { newValue in

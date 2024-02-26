@@ -64,7 +64,7 @@ struct UserProfileCreationView: View {
                    
                     let newUserEmail = GlobalManager.shared.newUserEmail
                     
-                    var userprofile = dbService.createUserProfile(email: newUserEmail, sex: sex , bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble)
+                    var userprofile = dbService.createUserProfile(email: GlobalManager.shared.newUserEmail!, sex: sex , bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble)
                    
                     dbService.createNewUser(profile: userprofile)
                    

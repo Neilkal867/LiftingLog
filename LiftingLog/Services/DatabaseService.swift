@@ -12,14 +12,13 @@ let container = CKContainer.default()
 let privateDB = container.privateCloudDatabase
 
 var workoutsArray = [Workout]()
-var userProfile: UserProfile?
 
 class DatabaseService: UIViewController
 {
     func saveWorkout(workout:Workout)
     {
         let record = CKRecord(recordType: "Workout")
-        record["userID"] = userID
+        record["userID"] = GlobalManager.shared.userID
         record["date"] = workout.date
         record["workoutType"] = workout.workoutType
         record["weight"] = workout.weight
@@ -37,45 +36,44 @@ class DatabaseService: UIViewController
         }
     }
     
-    func loadWorkouts(completion: @escaping ([Workout]?, Error?) -> Void) {
-        let query = CKQuery(recordType: "Workout", predicate: NSPredicate(value: true))
+    func loadWorkouts() {
+        let predicate = NSPredicate(format: "userID == %@", GlobalManager.shared.userID!)
+        let query = CKQuery(recordType: "Workout", predicate: predicate)
+
         privateDB.perform(query, inZoneWith: nil) { (records, error) in
-            guard error == nil else
-            {
-                completion(nil, error)
+            guard error == nil else {
                 return
             }
-            
+
             var workouts = [Workout]()
             records?.forEach { record in
                 if let date = record["date"] as? String,
-                   let userid = record["userID"] as? String,
                    let workoutType = record["workoutType"] as? String,
                    let weight = record["weight"] as? Double,
                    let reps = record["reps"] as? Double,
                    let sets = record["sets"] as? Double,
                    let comments = record["comments"] as? String {
-                    let workout = Workout(id: userid, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
+                    let workout = Workout(id: GlobalManager.shared.userID!, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
                     workouts.append(workout)
-                    workoutsArray.append(workout)
-                    print(workout)
                 }
             }
-            completion(workouts, nil)
+
+            // Update the global workoutArray
+            GlobalManager.shared.workoutArray = workouts
         }
     }
     
     func createNewUser(profile: UserProfile)
     {
         let record = CKRecord(recordType: "Lifter")
-               record["email"] = profile.email
-               record["userID"] = userID
-               record["sex"] = profile.sex
-               record["bodyweight"] = profile.bodyweight
-               record["maxBench"] = profile.maxBench
-               record["maxSquat"] = profile.maxSquat
-               record["maxDeadlift"] = profile.maxDeadlift
-               record["maxOHP"] = profile.maxOHP 
+        record["email"] = profile.email
+        record["userID"] = GlobalManager.shared.userID
+        record["sex"] = profile.sex
+        record["bodyweight"] = profile.bodyweight
+        record["maxBench"] = profile.maxBench
+        record["maxSquat"] = profile.maxSquat
+        record["maxDeadlift"] = profile.maxDeadlift
+        record["maxOHP"] = profile.maxOHP
         
         privateDB.save(record) { (savedRecord, error) in
             if let error = error
@@ -83,16 +81,40 @@ class DatabaseService: UIViewController
                 self.showAlert(title: "Error", message: error.localizedDescription)
                 return
             }
-        
             print(record)
         }
     }
-    
-    func loadUserProfile(userID:String)
-    {
+   
+    func loadUserProfile(userID: String) {
+        let predicate = NSPredicate(format: "userID == %@", userID)
+        let query = CKQuery(recordType: "Lifter", predicate: predicate)
         
+        privateDB.perform(query, inZoneWith: nil) { records, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let record = records?.first else {
+                print("No record found for the given userID.")
+                return
+            }
+            
+            var userProfile = UserProfile(
+                email: record["email"] as? String ?? "",
+                userID: userID,
+                sex: record["sex"] as? String ?? "",
+                bodyweight: record["bodyweight"] as? Double ?? 0,
+                maxBench: record["maxBench"] as? Double ?? 0,
+                maxSquat: record["maxSquat"] as? Double ?? 0,
+                maxDeadlift: record["maxDeadlift"] as? Double ?? 0,
+                maxOHP: record["maxOHP"] as? Double ?? 0
+            )
+            
+            // Update the global userProfile
+            GlobalManager.shared.userProfile = userProfile
+        }
     }
-    
     
     func getCurrentMonthDayYear() -> String
     {
@@ -112,16 +134,15 @@ class DatabaseService: UIViewController
     func createUserProfile(email: String,sex: String, bodyweight: Double, maxBench: Double,maxSquat: Double,maxDeadlift: Double,maxOHP: Double ) -> UserProfile
     {
         return UserProfile (
-                 email: email,
-                 userID: userID!,
-                 sex: sex,
-                 bodyweight: bodyweight,
-                 maxBench: maxBench,
-                 maxSquat: maxSquat,
-                 maxDeadlift: maxDeadlift,
-                 maxOHP: maxOHP
+            email: email,
+            userID: GlobalManager.shared.userID!,
+            sex: sex,
+            bodyweight: bodyweight,
+            maxBench: maxBench,
+            maxSquat: maxSquat,
+            maxDeadlift: maxDeadlift,
+            maxOHP: maxOHP
             
         )
     }
-    
 }

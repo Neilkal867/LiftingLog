@@ -10,8 +10,10 @@ import SwiftUI
 class GlobalManager {
     static let shared = GlobalManager()
     
-    var newUserEmail: String = ""
-    
+    var newUserEmail: String?
+    var userID: String?
+    var userProfile: UserProfile?
+    var workoutArray: [Workout]?
     private init() {} // Private initialization to ensure only one instance is created.
 }
 

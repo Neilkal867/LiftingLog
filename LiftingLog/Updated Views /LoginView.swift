@@ -8,8 +8,6 @@
 import SwiftUI
 import AuthenticationServices
 
-var userID: String?
-
 struct LoginView: View {
     @State private var userName: String = ""
     @State private var password: String = ""
@@ -47,9 +45,8 @@ struct LoginView: View {
                     case .success(let authResults):
                         switch authResults.credential {
                         case let appleIDCredential as ASAuthorizationAppleIDCredential:
-                            self.userEmail = appleIDCredential.email
-                            GlobalManager.shared.newUserEmail = self.userEmail ?? "No Email Found"
-                            userID = appleIDCredential.user
+                            GlobalManager.shared.newUserEmail = appleIDCredential.email
+                            GlobalManager.shared.userID = appleIDCredential.user
                             login()
                         default:
                             break
@@ -124,16 +121,18 @@ struct LoginView: View {
        
         
         //This is a new user because the userEmail is NOT nil.  We want to store the userID and email together
-        if (self.userEmail != nil)
+        if ( GlobalManager.shared.newUserEmail != nil)
         {
             self.isNewUser = true
             return;
         }
         
         //This is a user who has logged in before
-        if (self.userEmail == "No Email Found" && userID != nil)
+        if ( GlobalManager.shared.newUserEmail == nil && GlobalManager.shared.userID != nil )
         {
-           // this is for testing --->  self.isNewUser = true
+            dbService.loadUserProfile(userID: GlobalManager.shared.userID!)
+            dbService.loadWorkouts()
+            print(GlobalManager.shared.userProfile)
             self.isAuthenticated = true // Set this to true when login is successful
             return; 
         }
