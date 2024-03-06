@@ -40,21 +40,21 @@ struct CreateAccountView: View {
                 TextField("Last Name", text: $lastName)
                 
                 // Username/Email Field
-                TextField("Username or Email", text: $userName)
+                TextField("Email", text: $userName)
                 
                 // Password Field
                 SecureField("Password", text: $password)
                 
                 // Date of Birth Picker
                 DatePicker("Date of Birth", selection: $dateOfBirth, displayedComponents: .date)
-                    .datePickerStyle(GraphicalDatePickerStyle()) // or CompactDatePickerStyle(), WheelDatePickerStyle() based on preference
+                    .datePickerStyle(CompactDatePickerStyle()) // or CompactDatePickerStyle(), WheelDatePickerStyle() based on preference
                 
                 // Button to trigger account creation
                 Button("Create Account") {
                     createAccountClicked()
                 }
             }
-            .navigationBarTitle("Account Creation", displayMode: .inline)
+            .navigationBarTitle("Account Creation")
             .navigationBarItems(trailing: Button(action: {
                 // Implement navigation or action to go back
             }) {
