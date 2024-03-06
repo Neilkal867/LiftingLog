@@ -17,68 +17,71 @@ struct CreateAccountView: View {
     
     @State private var isAuthenticated = false
     @State private var isCancel = false
+    @State private var showAlert = false
+    @State private var showFillOutAlert = false
     @State private var isDatePickerPresented = false
+
     var body: some View {
-            if isAuthenticated {
-                WelcomeDashboardView()
-            }
-            else if isCancel{
-                UserProfileCreationView()
-            }
-            else {
-                createAccForm
-            }
+        if isAuthenticated {
+            WelcomeDashboardView()
+        } else if isCancel {
+            LoginView()
+        } else {
+            createAccForm
         }
+    }
     
     var createAccForm: some View {
         NavigationView {
             Form {
-                // First Name Field
                 TextField("First Name", text: $firstName)
-                
-                // Last Name Field
                 TextField("Last Name", text: $lastName)
-                
-                // Username/Email Field
                 TextField("Email", text: $userName)
-                
-                // Password Field
                 SecureField("Password", text: $password)
-                
-                // Date of Birth Picker
                 DatePicker("Date of Birth", selection: $dateOfBirth, displayedComponents: .date)
-                    .datePickerStyle(CompactDatePickerStyle()) // or CompactDatePickerStyle(), WheelDatePickerStyle() based on preference
+                    .datePickerStyle(CompactDatePickerStyle())
                 
-                // Button to trigger account creation
                 Button("Create Account") {
                     createAccountClicked()
                 }
+                .alert(isPresented: $showFillOutAlert) { // New alert for missing information
+                    Alert(
+                        title: Text("Missing Information"),
+                        message: Text("Please fill out all fields to create an account."),
+                        dismissButton: .default(Text("OK"))
+                    )
+                }
             }
             .navigationBarTitle("Account Creation")
-            .navigationBarItems(trailing: Button(action: {
-                // Implement navigation or action to go back
-            }) {
-                Text("Cancel")
-                    .onTapGesture {
-                        self.isCancel = true
-                    print("Tapped Create One.")
-                }
+            .navigationBarItems(trailing: Button("Cancel") {
+                self.showAlert = true
             })
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Confirmation"),
+                    message: Text("Are you sure you want to cancel?"),
+                    primaryButton: .destructive(Text("Yes")) {
+                        self.isCancel = true
+                        print("Cancelled.")
+                        // Logic to handle cancellation here
+                    },
+                    secondaryButton: .cancel()
+                )
+            }
         }
     }
     
     func createAccountClicked() {
         // Implement account creation logic here
         print(firstName, lastName, userName, password, dateOfBirth)
-        
-        // Example: Validate and then create user account
         if !userName.isEmpty && !password.isEmpty {
             self.isAuthenticated = true
-            // Example call to create user account
+            // User account creation logic here
+        }
+        else {
+            self.showFillOutAlert = true
         }
     }
-    
-    // Additional methods can be added here, such as a method for formatting the date
 }
 
 struct CreateAccountView_Previews: PreviewProvider {
