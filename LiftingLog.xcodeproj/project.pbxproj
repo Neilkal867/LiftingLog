@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E287B5928E3DBE9003A66AD /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */; };
 		1E2FA059290F2EB70016B726 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA058290F2EB70016B726 /* UIViewControllerExtension.swift */; };
 		1E9ECD682B88F9EC00988C4E /* UserProfileCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9ECD672B88F9EC00988C4E /* UserProfileCreationView.swift */; };
+		1E9EE2212B98D1E400D4AB65 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EE2202B98D1E400D4AB65 /* CreateAccountView.swift */; };
 		1EC858472B804B670078BCD1 /* LiftingBuddyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */; };
 		1EEE38E5291BF32B00029972 /* AllStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE38E4291BF32B00029972 /* AllStructures.swift */; };
 		1EF2AA5E2B890C060091480A /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2AA5D2B890C060091480A /* GlobalVariables.swift */; };
@@ -33,9 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		1E2FA058290F2EB70016B726 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1E9ECD672B88F9EC00988C4E /* UserProfileCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCreationView.swift; sourceTree = "<group>"; };
+		1E9EE2202B98D1E400D4AB65 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		1EB484ED28DD1C220024B9F0 /* LiftingLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiftingLog.entitlements; sourceTree = "<group>"; };
 		1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftingBuddyView.swift; sourceTree = "<group>"; };
 		1EEE38E4291BF32B00029972 /* AllStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStructures.swift; sourceTree = "<group>"; };
@@ -101,6 +101,7 @@
 				1EFA6E3A2B84089C002BCEF6 /* WilksCalculatorView.swift */,
 				1EFA6E382B8400F5002BCEF6 /* OneRMCalculatorView.swift */,
 				1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */,
+				1E9EE2202B98D1E400D4AB65 /* CreateAccountView.swift */,
 			);
 			path = "Updated Views ";
 			sourceTree = "<group>";
@@ -155,7 +156,6 @@
 		8D67F4F4290B1CD10008724F /* Old Views */ = {
 			isa = PBXGroup;
 			children = (
-				1E287B5828E3DBE9003A66AD /* CreateAccountController.swift */,
 				8D959FAA29381BFD009D405C /* ResetPasswordController.swift */,
 			);
 			path = "Old Views";
@@ -242,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E9EE2212B98D1E400D4AB65 /* CreateAccountView.swift in Sources */,
 				1EFA6E3B2B84089C002BCEF6 /* WilksCalculatorView.swift in Sources */,
 				1EFA6E4A2B842EED002BCEF6 /* LiftingLog.swift in Sources */,
 				1EFA6E442B8425F9002BCEF6 /* LoginView.swift in Sources */,
@@ -262,7 +263,6 @@
 				8D959FAB29381BFD009D405C /* ResetPasswordController.swift in Sources */,
 				1EF2AA5E2B890C060091480A /* GlobalVariables.swift in Sources */,
 				1EC858472B804B670078BCD1 /* LiftingBuddyView.swift in Sources */,
-				1E287B5928E3DBE9003A66AD /* CreateAccountController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

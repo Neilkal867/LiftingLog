@@ -14,6 +14,8 @@ struct LoginView: View {
     @State private var userEmail: String?
     @State private var isAuthenticated = false // Declare the state variable for authentication status
     @State private var isNewUser = false
+    @State private var isNoAcc = false
+    @State private var isPWForgot = false
     let dbService = DatabaseService()
     
     var body: some View {
@@ -22,6 +24,9 @@ struct LoginView: View {
         } 
         else if isNewUser{
             UserProfileCreationView()
+        }
+        else if isNoAcc{
+            CreateAccountView()
         }
         else {
             loginForm
@@ -103,7 +108,7 @@ struct LoginView: View {
                 Text("Create One.")
                     .foregroundColor(.blue)
                     .onTapGesture {
-                        // Call your function here
+                        self.isNoAcc = true 
                         print("Tapped Create One.")
                     }
             }
