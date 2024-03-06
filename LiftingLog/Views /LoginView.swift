@@ -28,6 +28,9 @@ struct LoginView: View {
         else if isNoAcc{
             CreateAccountView()
         }
+        else if isPWForgot{
+            ResetPasswordView()
+        }
         else {
             loginForm
             //LoginView()
@@ -98,6 +101,7 @@ struct LoginView: View {
                 .foregroundColor(.blue) // Hyperlink color
                 .onTapGesture {
                     resetPassword()
+                    self.isPWForgot = true
                 }
                 .padding()
             

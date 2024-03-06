@@ -10,6 +10,8 @@
 		1E2FA059290F2EB70016B726 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA058290F2EB70016B726 /* UIViewControllerExtension.swift */; };
 		1E9ECD682B88F9EC00988C4E /* UserProfileCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9ECD672B88F9EC00988C4E /* UserProfileCreationView.swift */; };
 		1E9EE2212B98D1E400D4AB65 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EE2202B98D1E400D4AB65 /* CreateAccountView.swift */; };
+		1E9EE2232B98F8ED00D4AB65 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EE2222B98F8ED00D4AB65 /* ResetPasswordView.swift */; };
+		1E9EE2252B98FA1800D4AB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9EE2242B98FA1800D4AB65 /* Main.storyboard */; };
 		1EC858472B804B670078BCD1 /* LiftingBuddyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */; };
 		1EEE38E5291BF32B00029972 /* AllStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE38E4291BF32B00029972 /* AllStructures.swift */; };
 		1EF2AA5E2B890C060091480A /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF2AA5D2B890C060091480A /* GlobalVariables.swift */; };
@@ -24,18 +26,18 @@
 		1EFA6E512B85A60F002BCEF6 /* SubmittedWorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA6E502B85A60F002BCEF6 /* SubmittedWorkoutsView.swift */; };
 		8D10629728DD040F008AD000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629628DD040F008AD000 /* AppDelegate.swift */; };
 		8D10629928DD040F008AD000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629828DD040F008AD000 /* SceneDelegate.swift */; };
-		8D10629E28DD040F008AD000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D10629C28DD040F008AD000 /* Main.storyboard */; };
 		8D1062A128DD040F008AD000 /* LiftingLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D10629F28DD040F008AD000 /* LiftingLog.xcdatamodeld */; };
 		8D1062A328DD0411008AD000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1062A228DD0411008AD000 /* Assets.xcassets */; };
 		8D67F4F6290B1DE50008724F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F5290B1DE50008724F /* DatabaseService.swift */; };
 		8D67F4F8290B1E020008724F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F7290B1E020008724F /* AuthenticationService.swift */; };
-		8D959FAB29381BFD009D405C /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D959FAA29381BFD009D405C /* ResetPasswordController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E2FA058290F2EB70016B726 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1E9ECD672B88F9EC00988C4E /* UserProfileCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCreationView.swift; sourceTree = "<group>"; };
 		1E9EE2202B98D1E400D4AB65 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		1E9EE2222B98F8ED00D4AB65 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		1E9EE2242B98FA1800D4AB65 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1EB484ED28DD1C220024B9F0 /* LiftingLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiftingLog.entitlements; sourceTree = "<group>"; };
 		1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftingBuddyView.swift; sourceTree = "<group>"; };
 		1EEE38E4291BF32B00029972 /* AllStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStructures.swift; sourceTree = "<group>"; };
@@ -52,13 +54,11 @@
 		8D10629328DD040F008AD000 /* LiftingLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiftingLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D10629628DD040F008AD000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D10629828DD040F008AD000 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8D10629D28DD040F008AD000 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D1062A028DD040F008AD000 /* LiftingLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LiftingLog.xcdatamodel; sourceTree = "<group>"; };
 		8D1062A228DD0411008AD000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D1062A728DD0411008AD000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D67F4F5290B1DE50008724F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		8D67F4F7290B1E020008724F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
-		8D959FAA29381BFD009D405C /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			path = "Global Components ";
 			sourceTree = "<group>";
 		};
-		1EFA6E4F2B84E837002BCEF6 /* Updated Views  */ = {
+		1EFA6E4F2B84E837002BCEF6 /* Views  */ = {
 			isa = PBXGroup;
 			children = (
 				1EFA6E432B8425F9002BCEF6 /* LoginView.swift */,
@@ -102,8 +102,9 @@
 				1EFA6E382B8400F5002BCEF6 /* OneRMCalculatorView.swift */,
 				1EC858462B804B670078BCD1 /* LiftingBuddyView.swift */,
 				1E9EE2202B98D1E400D4AB65 /* CreateAccountView.swift */,
+				1E9EE2222B98F8ED00D4AB65 /* ResetPasswordView.swift */,
 			);
-			path = "Updated Views ";
+			path = "Views ";
 			sourceTree = "<group>";
 		};
 		8D10628A28DD040F008AD000 = {
@@ -127,18 +128,17 @@
 			isa = PBXGroup;
 			children = (
 				1EFA6E492B842EED002BCEF6 /* LiftingLog.swift */,
+				1E9EE2242B98FA1800D4AB65 /* Main.storyboard */,
 				1EB484ED28DD1C220024B9F0 /* LiftingLog.entitlements */,
 				8D10629628DD040F008AD000 /* AppDelegate.swift */,
 				8D10629828DD040F008AD000 /* SceneDelegate.swift */,
-				8D10629C28DD040F008AD000 /* Main.storyboard */,
 				8D1062A228DD0411008AD000 /* Assets.xcassets */,
 				8D1062A728DD0411008AD000 /* Info.plist */,
 				8D10629F28DD040F008AD000 /* LiftingLog.xcdatamodeld */,
 				1EF9F7DE291C07EE001257D1 /* Global Components  */,
 				8D67F4F3290B1CC00008724F /* Services */,
 				1E2FA057290F2E9B0016B726 /* Extensions */,
-				1EFA6E4F2B84E837002BCEF6 /* Updated Views  */,
-				8D67F4F4290B1CD10008724F /* Old Views */,
+				1EFA6E4F2B84E837002BCEF6 /* Views  */,
 			);
 			path = LiftingLog;
 			sourceTree = "<group>";
@@ -151,14 +151,6 @@
 				8D67F4F7290B1E020008724F /* AuthenticationService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		8D67F4F4290B1CD10008724F /* Old Views */ = {
-			isa = PBXGroup;
-			children = (
-				8D959FAA29381BFD009D405C /* ResetPasswordController.swift */,
-			);
-			path = "Old Views";
 			sourceTree = "<group>";
 		};
 		8D67F4F9290B20A00008724F /* Frameworks */ = {
@@ -231,7 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D1062A328DD0411008AD000 /* Assets.xcassets in Resources */,
-				8D10629E28DD040F008AD000 /* Main.storyboard in Resources */,
+				1E9EE2252B98FA1800D4AB65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +241,7 @@
 				1EF30A64290B17A500E8FB22 /* CalculationsService.swift in Sources */,
 				1E2FA059290F2EB70016B726 /* UIViewControllerExtension.swift in Sources */,
 				8D10629728DD040F008AD000 /* AppDelegate.swift in Sources */,
+				1E9EE2232B98F8ED00D4AB65 /* ResetPasswordView.swift in Sources */,
 				1EFA6E512B85A60F002BCEF6 /* SubmittedWorkoutsView.swift in Sources */,
 				1E9ECD682B88F9EC00988C4E /* UserProfileCreationView.swift in Sources */,
 				8D67F4F8290B1E020008724F /* AuthenticationService.swift in Sources */,
@@ -260,24 +253,12 @@
 				1EFA6E3D2B840E38002BCEF6 /* NewWorkoutView.swift in Sources */,
 				1EEE38E5291BF32B00029972 /* AllStructures.swift in Sources */,
 				1EFA6E462B842760002BCEF6 /* WelcomeDashboardView.swift in Sources */,
-				8D959FAB29381BFD009D405C /* ResetPasswordController.swift in Sources */,
 				1EF2AA5E2B890C060091480A /* GlobalVariables.swift in Sources */,
 				1EC858472B804B670078BCD1 /* LiftingBuddyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		8D10629C28DD040F008AD000 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8D10629D28DD040F008AD000 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8D1062A828DD0411008AD000 /* Debug */ = {
@@ -402,7 +383,7 @@
 				CODE_SIGN_ENTITLEMENTS = LiftingLog/LiftingLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D3FNCF3X56;
+				DEVELOPMENT_TEAM = GSU5RW7J6T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiftingLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -414,7 +395,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KalanishMelito2023.LiftingLog;
+				PRODUCT_BUNDLE_IDENTIFIER = KalanishMelito2024.LiftingLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -430,7 +411,7 @@
 				CODE_SIGN_ENTITLEMENTS = LiftingLog/LiftingLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = D3FNCF3X56;
+				DEVELOPMENT_TEAM = GSU5RW7J6T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiftingLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -442,7 +423,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = KalanishMelito2023.LiftingLog;
+				PRODUCT_BUNDLE_IDENTIFIER = KalanishMelito2024.LiftingLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
