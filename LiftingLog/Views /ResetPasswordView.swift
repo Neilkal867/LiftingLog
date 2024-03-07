@@ -15,10 +15,17 @@ struct ResetPasswordView: View {
     @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
    
-    @State private var isEmailBlank = false
     @State private var isEmailPresent = false
-    
+    @State private var returnToWelcome = false
+   
     var body: some View {
+            if returnToWelcome{
+                LoginView()
+            } else {
+                resetPasswordForm
+            }
+        }
+    var resetPasswordForm: some View {
         NavigationView {
             VStack {
                 TextField("Email", text: $email)
@@ -32,29 +39,31 @@ struct ResetPasswordView: View {
                                 } else {
                                     alertTitle = "Success"
                                     alertMessage = "Email submitted successfully."
+                                    self.isEmailPresent = true
+                                    
+                                    
                                 }
                                 showAlert = true
+                                
                             }
                             .alert(isPresented: $showAlert) {
                                 Alert(title: Text(alertTitle),
                                       message: Text(alertMessage),
-                                      dismissButton: .default(Text("OK")))
+                                      dismissButton: .default(Text("OK"),action: {
+                                    if self.isEmailPresent{
+                                        self.returnToWelcome = true
+                                    }
+                                }))
                             }
                         }
                         .padding()
                         .navigationTitle("Reset Password")
+                        .navigationBarItems(trailing: Button("Cancel") {
+                                        self.returnToWelcome = true
+                                    })
         }
     }
     
-    func resetAccountPassword() {
-        print(email)
-        if !email.isEmpty{
-                self.isEmailBlank = false
-            }
-            else {
-                self.isEmailPresent = true
-            }
-        }
 }
 
 // Entry point for the SwiftUI app or a specific view, depending on your app structure
