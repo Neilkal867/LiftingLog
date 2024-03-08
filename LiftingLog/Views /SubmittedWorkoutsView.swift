@@ -32,9 +32,9 @@ struct SubmittedWorkoutsView: View {
             }
         }
         .navigationTitle("Submitted Workouts")
-        .onAppear {
-                    DatabaseService.loadWorkouts() // Call this method to refresh data
-                }
+        .refreshable {
+            DatabaseService.loadWorkouts()
+        }
         .alert(isPresented: .constant(errorMessage != nil), content: {
             Alert(title: Text("Error"), message: Text(errorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
         })
