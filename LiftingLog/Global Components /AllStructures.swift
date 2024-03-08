@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Workout {
-    var id: String 
+struct Workout: Identifiable{
+    var id: String
     var date: String
     var workoutType: String
     var weight: Double

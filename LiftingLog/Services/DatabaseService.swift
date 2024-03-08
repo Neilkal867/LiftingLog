@@ -36,32 +36,35 @@ class DatabaseService: UIViewController
         }
     }
     
-    func loadWorkouts() {
-        let predicate = NSPredicate(format: "userID == %@", GlobalManager.shared.userID!)
-        let query = CKQuery(recordType: "Workout", predicate: predicate)
-
-        privateDB.perform(query, inZoneWith: nil) { (records, error) in
-            guard error == nil else {
-                return
-            }
-
-            var workouts = [Workout]()
-            records?.forEach { record in
-                if let date = record["date"] as? String,
-                   let workoutType = record["workoutType"] as? String,
-                   let weight = record["weight"] as? Double,
-                   let reps = record["reps"] as? Double,
-                   let sets = record["sets"] as? Double,
-                   let comments = record["comments"] as? String {
-                    let workout = Workout(id: GlobalManager.shared.userID!, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
-                    workouts.append(workout)
+    static func loadWorkouts() {
+            let predicate = NSPredicate(format: "userID == %@", GlobalManager.shared.userID ?? "")
+            let query = CKQuery(recordType: "Workout", predicate: predicate)
+            
+            privateDB.perform(query, inZoneWith: nil) { (records, error) in
+                if let error = error {
+                    // Handle error appropriately
+                    print("Error loading workouts: \(error.localizedDescription)")
+                    return
+                }
+                
+                var workouts: [Workout] = []
+                records?.forEach { record in
+                    let workoutID = record.recordID.recordName  // Use the record's unique identifier
+                    if let date = record["date"] as? String,
+                       let workoutType = record["workoutType"] as? String,
+                       let weight = record["weight"] as? Double,
+                       let reps = record["reps"] as? Double,
+                       let sets = record["sets"] as? Double,
+                       let comments = record["comments"] as? String {
+                        workouts.append(Workout(id: workoutID, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments))
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    GlobalManager.shared.workoutArray = workouts
                 }
             }
-
-            // Update the global workoutArray
-            GlobalManager.shared.workoutArray = workouts
         }
-    }
     
     func createNewUser(profile: UserProfile)
     {

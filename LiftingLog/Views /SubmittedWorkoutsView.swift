@@ -9,9 +9,10 @@ import CloudKit
 
 struct SubmittedWorkoutsView: View {
     @State private var errorMessage: String?
-
+    @ObservedObject var globalManager = GlobalManager.shared
+    
     var body: some View {
-        List(GlobalManager.shared.workoutArray ?? [], id: \.id) { workout in
+        List(GlobalManager.shared.workoutArray) { workout in
             VStack(alignment: .leading) {
                 Text(workout.date)
                     .font(.headline)
@@ -31,6 +32,9 @@ struct SubmittedWorkoutsView: View {
             }
         }
         .navigationTitle("Submitted Workouts")
+        .onAppear {
+                    DatabaseService.loadWorkouts() // Call this method to refresh data
+                }
         .alert(isPresented: .constant(errorMessage != nil), content: {
             Alert(title: Text("Error"), message: Text(errorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
         })
