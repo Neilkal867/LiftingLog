@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Workout: Identifiable{
+struct Workout: Hashable{
     var id: String
     var date: String
     var workoutType: String

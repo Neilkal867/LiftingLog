@@ -12,25 +12,27 @@ struct SubmittedWorkoutsView: View {
     @ObservedObject var globalManager = GlobalManager.shared
     
     var body: some View {
-        List(GlobalManager.shared.workoutArray) { workout in
-            VStack(alignment: .leading) {
-                Text(workout.date)
-                    .font(.headline)
-                Text(workout.workoutType)
-                    .font(.subheadline)
-                HStack {
-                    Text("Weight: \(workout.weight, specifier: "%.1f") lbs.")
-                    Spacer()
-                    Text("Reps: \(Int(workout.reps))")
-                    Spacer()
-                    Text("Sets: \(Int(workout.sets))")
-                }
-                if !workout.comments.isEmpty {
-                    Text("Comments: \(workout.comments)")
-                        .font(.caption)
+            List {
+                ForEach(GlobalManager.shared.workoutArray, id: \.self) { workout in
+                    VStack(alignment: .leading) {
+                        Text(workout.date)
+                            .font(.headline)
+                        Text(workout.workoutType)
+                            .font(.subheadline)
+                        HStack {
+                            Text("Weight: \(workout.weight, specifier: "%.1f") lbs.")
+                            Spacer()
+                            Text("Reps: \(Int(workout.reps))")
+                            Spacer()
+                            Text("Sets: \(Int(workout.sets))")
+                        }
+                        if !workout.comments.isEmpty {
+                            Text("Comments: \(workout.comments)")
+                                .font(.caption)
+                        }
+                    }
                 }
             }
-        }
         .navigationTitle("Submitted Workouts")
         .refreshable {
             DatabaseService.loadWorkouts()

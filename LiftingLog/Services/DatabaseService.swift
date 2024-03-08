@@ -16,8 +16,7 @@ class DatabaseService: UIViewController
 {
     func saveWorkout(workout:Workout)
     {
-        GlobalManager.shared.workoutArray.append(workout)
-        
+       
         let record = CKRecord(recordType: "Workout")
         record["userID"] = GlobalManager.shared.userID
         record["workoutID"] = record.recordID.recordName
@@ -35,6 +34,9 @@ class DatabaseService: UIViewController
                 return
             }
         }
+        GlobalManager.shared.workoutArray.append(workout)
+        print(workout)
+        print(GlobalManager.shared.workoutArray)
     }
     
     static func loadWorkouts() {

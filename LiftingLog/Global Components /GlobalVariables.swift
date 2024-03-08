@@ -13,7 +13,7 @@ class GlobalManager: ObservableObject {
     var newUserEmail: String?
     var userID: String?
     var userProfile: UserProfile?
-    @Published var workoutArray: [Workout] = []
+    var workoutArray: [Workout] = []
     private init() {} // Private initialization to ensure only one instance is created.
 }
 
