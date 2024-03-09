@@ -53,7 +53,7 @@ struct CreateAccountView: View {
                 }
             }
             .navigationBarTitle("Account Creation")
-            .navigationBarItems(trailing: Button("Cancel") {
+            .navigationBarItems(leading: Button("Cancel") {
                 self.showAlert = true
             })
             .alert(isPresented: $showAlert) {
