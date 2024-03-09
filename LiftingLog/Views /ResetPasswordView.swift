@@ -14,17 +14,17 @@ struct ResetPasswordView: View {
     @State private var showAlert: Bool = false
     @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
-   
+    
     @State private var isEmailPresent = false
     @State private var returnToWelcome = false
-   
+    
     var body: some View {
-            if returnToWelcome{
-                LoginView()
-            } else {
-                resetPasswordForm
-            }
+        if returnToWelcome{
+            LoginView()
+        } else {
+            resetPasswordForm
         }
+    }
     var resetPasswordForm: some View {
         NavigationView {
             VStack {
@@ -33,34 +33,34 @@ struct ResetPasswordView: View {
                     .padding()
                 
                 Button("Submit") {
-                                if email.isEmpty {
-                                    alertTitle = "Missing Information"
-                                    alertMessage = "Please Enter Your Email Address."
-                                } else {
-                                    alertTitle = "Success"
-                                    alertMessage = "Email submitted successfully."
-                                    self.isEmailPresent = true
-                                    
-                                    
-                                }
-                                showAlert = true
-                                
-                            }
-                            .alert(isPresented: $showAlert) {
-                                Alert(title: Text(alertTitle),
-                                      message: Text(alertMessage),
-                                      dismissButton: .default(Text("OK"),action: {
-                                    if self.isEmailPresent{
-                                        self.returnToWelcome = true
-                                    }
-                                }))
-                            }
+                    if email.isEmpty {
+                        alertTitle = "Missing Information"
+                        alertMessage = "Please Enter Your Email Address."
+                    } else {
+                        alertTitle = "Success"
+                        alertMessage = "Email submitted successfully."
+                        self.isEmailPresent = true
+                        
+                        
+                    }
+                    showAlert = true
+                    
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text(alertTitle),
+                          message: Text(alertMessage),
+                          dismissButton: .default(Text("OK"),action: {
+                        if self.isEmailPresent{
+                            self.returnToWelcome = true
                         }
-                        .padding()
-                        .navigationTitle("Reset Password")
-                        .navigationBarItems(leading: Button("Cancel") {
-                                        self.returnToWelcome = true
-                                    })
+                    }))
+                }
+            }
+            .padding()
+            .navigationTitle("Reset Password")
+            .navigationBarItems(leading: Button("Cancel") {
+                self.returnToWelcome = true
+            })
         }
     }
     
