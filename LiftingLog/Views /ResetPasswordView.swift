@@ -58,7 +58,7 @@ struct ResetPasswordView: View {
                         }
                         .padding()
                         .navigationTitle("Reset Password")
-                        .navigationBarItems(trailing: Button("Cancel") {
+                        .navigationBarItems(leading: Button("Cancel") {
                                         self.returnToWelcome = true
                                     })
         }
