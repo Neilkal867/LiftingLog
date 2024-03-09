@@ -19,7 +19,7 @@ class DatabaseService: UIViewController
        
         let record = CKRecord(recordType: "Workout")
         record["userID"] = GlobalManager.shared.userID
-       // record["workoutID"] = record.recordID.recordName
+        record["workoutID"] = record.recordID.recordName
         record["date"] = workout.date
         record["workoutType"] = workout.workoutType
         record["weight"] = workout.weight
