@@ -139,8 +139,8 @@ struct UserProfileView: View {
                         dbService.createNewUser(profile: userprofile)
                         
                         self.successfulSubmission = true
-                        alertTitle = "Submitted"
-                        alertMessage = "Workout Successfully Submitted"
+                        alertTitle = "Updated"
+                        alertMessage = "Your Profile Has Been Update."
                         showAlert = true
                         
                     } else {
