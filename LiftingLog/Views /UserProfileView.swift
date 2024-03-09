@@ -2,7 +2,6 @@ import SwiftUI
 
 struct UserProfileView: View {
     
-        @State private var userProfile = UserProfile(email: "", userID: "", sex: "Male", bodyweight: 0, maxBench: 0, maxSquat: 0, maxDeadlift: 0, maxOHP: 0)
         @State private var sex: String = "Male"
         @State private var bodyweight: String = ""
         @State private var maxBench: String = ""
@@ -11,6 +10,11 @@ struct UserProfileView: View {
         @State private var maxOHP: String = ""
         @State private var successfulSubmission = false
         @State private var isLogout = false
+    
+        @State private var showAlert: Bool = false
+        @State private var showUnsavedDataAlert: Bool = false // Alert for unsaved changes
+        @State private var alertTitle: String = ""
+        @State private var alertMessage: String = ""
     
         let sexOptions = ["Male", "Female"]
         let dbService = DatabaseService()
@@ -27,13 +31,25 @@ struct UserProfileView: View {
     var userProfileForm: some View {
         Form {
             Section(header: Text("Personal Information")) {
-                Picker("Sex", selection: $userProfile.sex) {
+                Picker("Sex", selection: $sex) {
                     ForEach(sexOptions, id: \.self) {
                         Text($0)
+                        //print(userProfile.sex)
+                       // print(sex)
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-
+                .onAppear {
+                    if GlobalManager.shared.userProfile!.sex != "" {
+                        sex = "\((GlobalManager.shared.userProfile!.sex))"
+                    }
+                }
+                .onChange(of: sex) { newValue in
+                    GlobalManager.shared.userProfile!.sex = String(newValue)
+                }
+                
+                
+                
                 HStack {
                     Text("Bodyweight:")
                     Spacer()
@@ -45,7 +61,7 @@ struct UserProfileView: View {
                             }
                         }
                         .onChange(of: bodyweight) { newValue in
-                            userProfile.bodyweight = Double(newValue) ?? 0
+                            GlobalManager.shared.userProfile!.bodyweight = Double(newValue) ?? 0
                         }
                 }
             }
@@ -62,7 +78,7 @@ struct UserProfileView: View {
                             }
                         }
                         .onChange(of: maxBench) { newValue in
-                            userProfile.maxBench = Double(newValue) ?? 0
+                            GlobalManager.shared.userProfile!.maxBench = Double(newValue) ?? 0
                         }
                 }
 
@@ -77,7 +93,7 @@ struct UserProfileView: View {
                             }
                         }
                         .onChange(of: maxSquat) { newValue in
-                            userProfile.maxSquat = Double(newValue) ?? 0
+                            GlobalManager.shared.userProfile!.maxSquat = Double(newValue) ?? 0
                         }
                 }
 
@@ -92,7 +108,7 @@ struct UserProfileView: View {
                             }
                         }
                         .onChange(of: maxDeadlift) { newValue in
-                            userProfile.maxDeadlift = Double(newValue) ?? 0
+                            GlobalManager.shared.userProfile!.maxDeadlift = Double(newValue) ?? 0
                         }
                 }
 
@@ -107,30 +123,33 @@ struct UserProfileView: View {
                             }
                         }
                         .onChange(of: maxOHP) { newValue in
-                            userProfile.maxOHP = Double(newValue) ?? 0
+                            GlobalManager.shared.userProfile!.maxOHP = Double(newValue) ?? 0
                         }
                 }
-            /*   Button("Submit") {
-                    //this button also needs to take the use to the welcome screen
+            Button("Update Profile") {
                     if let bodyweightDouble = Double(bodyweight),
                        let maxBenchDouble = Double(maxBench),
                        let maxSquatDouble = Double(maxSquat),
                        let maxDeadliftDouble = Double(maxDeadlift),
                        let maxOHPDouble = Double(maxOHP) {
-                        
-                        let newUserEmail = GlobalManager.shared.newUserEmail
-                        
-                        var userprofile = dbService.createUserProfile(email: GlobalManager.shared.newUserEmail ?? "", sex: sex , bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble)
-                        
+                       let newUserEmail = GlobalManager.shared.newUserEmail
+                
+                        var userprofile = dbService.createUserProfile(email: GlobalManager.shared.userID!, sex: sex , bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble)
+
                         dbService.createNewUser(profile: userprofile)
                         
                         self.successfulSubmission = true
+                        alertTitle = "Submitted"
+                        alertMessage = "Workout Successfully Submitted"
+                        showAlert = true
                         
                     } else {
                         // Handle error: one or more of the inputs are not valid numbers
                         print("Error: One or more inputs are invalid.")
                     }
-                }*/
+                }.alert(isPresented: $showAlert) {
+                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                }
             }
         }
         .navigationTitle("My Profile")
