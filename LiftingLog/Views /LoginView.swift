@@ -140,7 +140,7 @@ struct LoginView: View {
         if ( GlobalManager.shared.newUserEmail == nil && GlobalManager.shared.userID != nil )
         {
             dbService.loadUserProfile(userID: GlobalManager.shared.userID!)
-            dbService.loadWorkouts()
+            DatabaseService.loadWorkouts()
             print(GlobalManager.shared.userProfile)
             self.isAuthenticated = true // Set this to true when login is successful
             return; 

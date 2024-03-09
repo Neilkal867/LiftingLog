@@ -11,14 +11,15 @@ import UIKit
 let container = CKContainer.default()
 let privateDB = container.privateCloudDatabase
 
-var workoutsArray = [Workout]()
 
 class DatabaseService: UIViewController
 {
     func saveWorkout(workout:Workout)
     {
+       
         let record = CKRecord(recordType: "Workout")
         record["userID"] = GlobalManager.shared.userID
+        record["workoutID"] = record.recordID.recordName
         record["date"] = workout.date
         record["workoutType"] = workout.workoutType
         record["weight"] = workout.weight
@@ -32,36 +33,41 @@ class DatabaseService: UIViewController
                 self.showAlert(title: "Error", message: error.localizedDescription)
                 return
             }
-            // Handle the successful save here
         }
+        GlobalManager.shared.workoutArray.append(workout)
+        print(workout)
+        print(GlobalManager.shared.workoutArray)
     }
     
-    func loadWorkouts() {
-        let predicate = NSPredicate(format: "userID == %@", GlobalManager.shared.userID!)
-        let query = CKQuery(recordType: "Workout", predicate: predicate)
-
-        privateDB.perform(query, inZoneWith: nil) { (records, error) in
-            guard error == nil else {
-                return
-            }
-
-            var workouts = [Workout]()
-            records?.forEach { record in
-                if let date = record["date"] as? String,
-                   let workoutType = record["workoutType"] as? String,
-                   let weight = record["weight"] as? Double,
-                   let reps = record["reps"] as? Double,
-                   let sets = record["sets"] as? Double,
-                   let comments = record["comments"] as? String {
-                    let workout = Workout(id: GlobalManager.shared.userID!, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments)
-                    workouts.append(workout)
+    static func loadWorkouts() {
+            let predicate = NSPredicate(format: "userID == %@", GlobalManager.shared.userID ?? "")
+            let query = CKQuery(recordType: "Workout", predicate: predicate)
+            privateDB.perform(query, inZoneWith: nil) { (records, error) in
+                if let error = error {
+                    // Handle error appropriately
+                   print("Error loading workouts: \(error.localizedDescription)")
+                    return
+                }
+                
+                var workouts: [Workout] = []
+                records?.forEach { record in
+                   let workoutID = record["workoutID"] as? String
+                    if let date = record["date"] as? String,
+                       let workoutType = record["workoutType"] as? String,
+                       let weight = record["weight"] as? Double,
+                       let reps = record["reps"] as? Double,
+                       let sets = record["sets"] as? Double,
+                       let comments = record["comments"] as? String {
+                        workouts.append(Workout(id: GlobalManager.shared.userID!, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments))
+                       
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    GlobalManager.shared.workoutArray = workouts
                 }
             }
-
-            // Update the global workoutArray
-            GlobalManager.shared.workoutArray = workouts
         }
-    }
     
     func createNewUser(profile: UserProfile)
     {
@@ -120,7 +126,7 @@ class DatabaseService: UIViewController
     {
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM-dd-yyyy"
+        dateFormatter.dateFormat = "MMMM-dd-yyyy"//HH:mm:ss"
         let MonthDayYear = dateFormatter.string(from: date)
         
         return MonthDayYear

@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-class GlobalManager {
+class GlobalManager: ObservableObject {
     static let shared = GlobalManager()
     
     var newUserEmail: String?
     var userID: String?
     var userProfile: UserProfile?
-    var workoutArray: [Workout]?
+    var workoutArray: [Workout] = []
     private init() {} // Private initialization to ensure only one instance is created.
 }
 
