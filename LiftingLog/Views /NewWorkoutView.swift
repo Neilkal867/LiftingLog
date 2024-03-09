@@ -20,6 +20,7 @@ struct NewWorkoutView: View {
     @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
     @FocusState private var isTextEditorFocused: Bool
+    
     var body: some View {
             Form {
                 TextField("Workout Type", text: $workoutType)
@@ -45,17 +46,21 @@ struct NewWorkoutView: View {
                 Button("Submit Workout") {
                     submitWorkout()
                 }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                }
             }
             .navigationBarTitle("New Workout")
-            .navigationBarItems(leading: Button(action: {
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: Button ("Cancel"){
                 // Custom back button action
                 if hasUnsavedData() {
                     // Show alert if there's unsaved data
                     showUnsavedDataAlert = true
-                } else {
+                } 
+                else {
                     presentationMode.wrappedValue.dismiss()
                 }
-            }) {
             })
             .alert(isPresented: $showAlert) {
                 Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
@@ -73,7 +78,10 @@ struct NewWorkoutView: View {
     
     private func submitWorkout() 
     {
-        guard !workoutType.isEmpty, !weight.isEmpty, !numOfReps.isEmpty, !numOfSets.isEmpty else {
+        print(workoutType)
+                print(weight)
+        guard !workoutType.isEmpty, !weight.isEmpty, !numOfReps.isEmpty, !numOfSets.isEmpty
+        else {
             alertTitle = "Required Data"
             alertMessage = "All Fields Must Contain Data. However, Comments Are Optional"
             showAlert = true

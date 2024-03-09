@@ -33,7 +33,6 @@ struct LoginView: View {
         }
         else {
             loginForm
-            //LoginView()
         }
     }
     

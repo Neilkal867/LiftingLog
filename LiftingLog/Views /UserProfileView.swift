@@ -1,19 +1,34 @@
 import SwiftUI
 
 struct UserProfileView: View {
-    @State private var userProfile = UserProfile(email: "", userID: "", sex: "Male", bodyweight: 0, maxBench: 0, maxSquat: 0, maxDeadlift: 0, maxOHP: 0)
-    @State private var bodyweightText: String = ""
-    @State private var maxBenchText: String = ""
-    @State private var maxSquatText: String = ""
-    @State private var maxDeadliftText: String = ""
-    @State private var maxOHPText: String = ""
-    let sexes = ["Male", "Female"]
-
+    
+        @State private var userProfile = UserProfile(email: "", userID: "", sex: "Male", bodyweight: 0, maxBench: 0, maxSquat: 0, maxDeadlift: 0, maxOHP: 0)
+        @State private var sex: String = "Male"
+        @State private var bodyweight: String = ""
+        @State private var maxBench: String = ""
+        @State private var maxSquat: String = ""
+        @State private var maxDeadlift: String = ""
+        @State private var maxOHP: String = ""
+        @State private var successfulSubmission = false
+        @State private var isLogout = false
+    
+        let sexOptions = ["Male", "Female"]
+        let dbService = DatabaseService()
+    
     var body: some View {
+            if isLogout {
+                LoginView()
+            }
+            else {
+                userProfileForm
+            }
+        }
+    
+    var userProfileForm: some View {
         Form {
             Section(header: Text("Personal Information")) {
                 Picker("Sex", selection: $userProfile.sex) {
-                    ForEach(sexes, id: \.self) {
+                    ForEach(sexOptions, id: \.self) {
                         Text($0)
                     }
                 }
@@ -22,14 +37,14 @@ struct UserProfileView: View {
                 HStack {
                     Text("Bodyweight:")
                     Spacer()
-                    TextField("lbs.", text: $bodyweightText)
+                    TextField("lbs.", text: $bodyweight)
                         .keyboardType(.decimalPad)
                         .onAppear {
                             if GlobalManager.shared.userProfile!.bodyweight != 0 {
-                                bodyweightText = "\(Int(GlobalManager.shared.userProfile!.bodyweight))"
+                                bodyweight = "\(Int(GlobalManager.shared.userProfile!.bodyweight))"
                             }
                         }
-                        .onChange(of: bodyweightText) { newValue in
+                        .onChange(of: bodyweight) { newValue in
                             userProfile.bodyweight = Double(newValue) ?? 0
                         }
                 }
@@ -39,14 +54,14 @@ struct UserProfileView: View {
                 HStack {
                     Text("Max Bench Press:")
                     Spacer()
-                    TextField("lbs.", text: $maxBenchText)
+                    TextField("lbs.", text: $maxBench)
                         .keyboardType(.numberPad)
                         .onAppear {
                             if GlobalManager.shared.userProfile!.maxBench != 0 {
-                                maxBenchText = "\(Int(GlobalManager.shared.userProfile!.maxBench))"
+                                maxBench = "\(Int(GlobalManager.shared.userProfile!.maxBench))"
                             }
                         }
-                        .onChange(of: maxBenchText) { newValue in
+                        .onChange(of: maxBench) { newValue in
                             userProfile.maxBench = Double(newValue) ?? 0
                         }
                 }
@@ -54,14 +69,14 @@ struct UserProfileView: View {
                 HStack {
                     Text("Max Squat:")
                     Spacer()
-                    TextField("lbs.", text: $maxSquatText)
+                    TextField("lbs.", text: $maxSquat)
                         .keyboardType(.numberPad)
                         .onAppear {
                             if GlobalManager.shared.userProfile!.maxSquat != 0 {
-                                maxSquatText = "\(Int(GlobalManager.shared.userProfile!.maxSquat))"
+                                maxSquat = "\(Int(GlobalManager.shared.userProfile!.maxSquat))"
                             }
                         }
-                        .onChange(of: maxSquatText) { newValue in
+                        .onChange(of: maxSquat) { newValue in
                             userProfile.maxSquat = Double(newValue) ?? 0
                         }
                 }
@@ -69,14 +84,14 @@ struct UserProfileView: View {
                 HStack {
                     Text("Max Deadlift:")
                     Spacer()
-                    TextField("lbs.", text: $maxDeadliftText)
+                    TextField("lbs.", text: $maxDeadlift)
                         .keyboardType(.numberPad)
                         .onAppear {
                             if GlobalManager.shared.userProfile!.maxDeadlift != 0 {
-                                maxDeadliftText = "\(Int(GlobalManager.shared.userProfile!.maxDeadlift))"
+                                maxDeadlift = "\(Int(GlobalManager.shared.userProfile!.maxDeadlift))"
                             }
                         }
-                        .onChange(of: maxDeadliftText) { newValue in
+                        .onChange(of: maxDeadlift) { newValue in
                             userProfile.maxDeadlift = Double(newValue) ?? 0
                         }
                 }
@@ -84,20 +99,45 @@ struct UserProfileView: View {
                 HStack {
                     Text("Max Overhead Press:")
                     Spacer()
-                    TextField("lbs.", text: $maxOHPText)
+                    TextField("lbs.", text: $maxOHP)
                         .keyboardType(.numberPad)
                         .onAppear {
                             if GlobalManager.shared.userProfile!.maxOHP != 0 {
-                                maxOHPText = "\(Int(GlobalManager.shared.userProfile!.maxOHP))"
+                                maxOHP = "\(Int(GlobalManager.shared.userProfile!.maxOHP))"
                             }
                         }
-                        .onChange(of: maxOHPText) { newValue in
+                        .onChange(of: maxOHP) { newValue in
                             userProfile.maxOHP = Double(newValue) ?? 0
                         }
                 }
+            /*   Button("Submit") {
+                    //this button also needs to take the use to the welcome screen
+                    if let bodyweightDouble = Double(bodyweight),
+                       let maxBenchDouble = Double(maxBench),
+                       let maxSquatDouble = Double(maxSquat),
+                       let maxDeadliftDouble = Double(maxDeadlift),
+                       let maxOHPDouble = Double(maxOHP) {
+                        
+                        let newUserEmail = GlobalManager.shared.newUserEmail
+                        
+                        var userprofile = dbService.createUserProfile(email: GlobalManager.shared.newUserEmail ?? "", sex: sex , bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble)
+                        
+                        dbService.createNewUser(profile: userprofile)
+                        
+                        self.successfulSubmission = true
+                        
+                    } else {
+                        // Handle error: one or more of the inputs are not valid numbers
+                        print("Error: One or more inputs are invalid.")
+                    }
+                }*/
             }
         }
         .navigationTitle("My Profile")
+        .navigationBarItems(trailing: Button("Logout"){
+            //add logout logic here
+            isLogout = true
+        })
     }
 }
 
