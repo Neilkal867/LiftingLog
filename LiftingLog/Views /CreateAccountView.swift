@@ -20,7 +20,7 @@ struct CreateAccountView: View {
     @State private var showAlert = false
     @State private var showFillOutAlert = false
     @State private var isDatePickerPresented = false
-
+    
     var body: some View {
         if isAuthenticated {
             WelcomeDashboardView()

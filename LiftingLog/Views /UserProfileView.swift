@@ -2,31 +2,31 @@ import SwiftUI
 
 struct UserProfileView: View {
     
-        @State private var sex: String = "Male"
-        @State private var bodyweight: String = ""
-        @State private var maxBench: String = ""
-        @State private var maxSquat: String = ""
-        @State private var maxDeadlift: String = ""
-        @State private var maxOHP: String = ""
-        @State private var successfulSubmission = false
-        @State private var isLogout = false
+    @State private var sex: String = "Male"
+    @State private var bodyweight: String = ""
+    @State private var maxBench: String = ""
+    @State private var maxSquat: String = ""
+    @State private var maxDeadlift: String = ""
+    @State private var maxOHP: String = ""
+    @State private var successfulSubmission = false
+    @State private var isLogout = false
     
-        @State private var showAlert: Bool = false
-        @State private var showUnsavedDataAlert: Bool = false // Alert for unsaved changes
-        @State private var alertTitle: String = ""
-        @State private var alertMessage: String = ""
+    @State private var showAlert: Bool = false
+    @State private var showUnsavedDataAlert: Bool = false // Alert for unsaved changes
+    @State private var alertTitle: String = ""
+    @State private var alertMessage: String = ""
     
-        let sexOptions = ["Male", "Female"]
-        let dbService = DatabaseService()
+    let sexOptions = ["Male", "Female"]
+    let dbService = DatabaseService()
     
     var body: some View {
-            if isLogout {
-                LoginView()
-            }
-            else {
-                userProfileForm
-            }
+        if isLogout {
+            LoginView()
         }
+        else {
+            userProfileForm
+        }
+    }
     
     var userProfileForm: some View {
         Form {
@@ -35,7 +35,7 @@ struct UserProfileView: View {
                     ForEach(sexOptions, id: \.self) {
                         Text($0)
                         //print(userProfile.sex)
-                       // print(sex)
+                        // print(sex)
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
@@ -47,9 +47,6 @@ struct UserProfileView: View {
                 .onChange(of: sex) { newValue in
                     GlobalManager.shared.userProfile!.sex = String(newValue)
                 }
-                
-                
-                
                 HStack {
                     Text("Bodyweight:")
                     Spacer()
@@ -65,7 +62,7 @@ struct UserProfileView: View {
                         }
                 }
             }
-
+            
             Section(header: Text("Max Lifts (lbs.)")) {
                 HStack {
                     Text("Max Bench Press:")
@@ -81,7 +78,7 @@ struct UserProfileView: View {
                             GlobalManager.shared.userProfile!.maxBench = Double(newValue) ?? 0
                         }
                 }
-
+                
                 HStack {
                     Text("Max Squat:")
                     Spacer()
@@ -96,7 +93,7 @@ struct UserProfileView: View {
                             GlobalManager.shared.userProfile!.maxSquat = Double(newValue) ?? 0
                         }
                 }
-
+                
                 HStack {
                     Text("Max Deadlift:")
                     Spacer()
@@ -111,7 +108,7 @@ struct UserProfileView: View {
                             GlobalManager.shared.userProfile!.maxDeadlift = Double(newValue) ?? 0
                         }
                 }
-
+                
                 HStack {
                     Text("Max Overhead Press:")
                     Spacer()
@@ -126,16 +123,16 @@ struct UserProfileView: View {
                             GlobalManager.shared.userProfile!.maxOHP = Double(newValue) ?? 0
                         }
                 }
-            Button("Update Profile") {
+                Button("Update Profile") {
                     if let bodyweightDouble = Double(bodyweight),
                        let maxBenchDouble = Double(maxBench),
                        let maxSquatDouble = Double(maxSquat),
                        let maxDeadliftDouble = Double(maxDeadlift),
                        let maxOHPDouble = Double(maxOHP) {
-                       let newUserEmail = GlobalManager.shared.newUserEmail
-                
+                        let newUserEmail = GlobalManager.shared.newUserEmail
+                        
                         var userprofile = dbService.createUserProfile(email: GlobalManager.shared.userID!, sex: sex , bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble)
-
+                        
                         dbService.createNewUser(profile: userprofile)
                         
                         self.successfulSubmission = true

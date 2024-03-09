@@ -68,8 +68,8 @@ class ChatViewModel: ObservableObject {
         }
         task.resume()
     }
-
-
+    
+    
 }
 struct LiftingBuddyView: View {
     @State private var newMessageText: String = ""

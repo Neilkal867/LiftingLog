@@ -22,64 +22,64 @@ struct NewWorkoutView: View {
     @FocusState private var isTextEditorFocused: Bool
     
     var body: some View {
-            Form {
-                TextField("Workout Type", text: $workoutType)
-                
-                TextField("Weight (lbs.)", text: 
-                    $weight).keyboardType(.decimalPad)
-                
-                TextField("Number of Reps", text: $numOfReps).keyboardType(.numberPad)
-                
-                TextField("Number of Sets", text: $numOfSets).keyboardType(.numberPad)
-                // Custom TextEditor with placeholder
-                ZStack(alignment: .topLeading) {
-                           if comments.isEmpty && !isTextEditorFocused {
-                               Text("Additional Comments")
-                                   .foregroundColor(.secondary)
-                                   .padding(.bottom, -200)
-                           }
-                           TextEditor(text: $comments)
-                               .frame(height: 100)
-                               .focused($isTextEditorFocused)
-                       }
-                               
-                Button("Submit Workout") {
-                    submitWorkout()
+        Form {
+            TextField("Workout Type", text: $workoutType)
+            
+            TextField("Weight (lbs.)", text:
+                        $weight).keyboardType(.decimalPad)
+            
+            TextField("Number of Reps", text: $numOfReps).keyboardType(.numberPad)
+            
+            TextField("Number of Sets", text: $numOfSets).keyboardType(.numberPad)
+            // Custom TextEditor with placeholder
+            ZStack(alignment: .topLeading) {
+                if comments.isEmpty && !isTextEditorFocused {
+                    Text("Additional Comments")
+                        .foregroundColor(.secondary)
+                        .padding(.bottom, -200)
                 }
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-                }
+                TextEditor(text: $comments)
+                    .frame(height: 100)
+                    .focused($isTextEditorFocused)
             }
-            .navigationBarTitle("New Workout")
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: Button ("Cancel"){
-                // Custom back button action
-                if hasUnsavedData() {
-                    // Show alert if there's unsaved data
-                    showUnsavedDataAlert = true
-                } 
-                else {
-                    presentationMode.wrappedValue.dismiss()
-                }
-            })
+            
+            Button("Submit Workout") {
+                submitWorkout()
+            }
             .alert(isPresented: $showAlert) {
                 Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
-            .alert(isPresented: $showUnsavedDataAlert) { // Alert for unsaved changes
-                Alert(title: Text("Unsaved Changes"),
-                      message: Text("You have unsaved changes. Are you sure you want to leave?"),
-                      primaryButton: .destructive(Text("Leave")) {
-                        presentationMode.wrappedValue.dismiss()
-                      },
-                      secondaryButton: .cancel()
-                )
-            }
         }
+        .navigationBarTitle("New Workout")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button ("Cancel"){
+            // Custom back button action
+            if hasUnsavedData() {
+                // Show alert if there's unsaved data
+                showUnsavedDataAlert = true
+            }
+            else {
+                presentationMode.wrappedValue.dismiss()
+            }
+        })
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        }
+        .alert(isPresented: $showUnsavedDataAlert) { // Alert for unsaved changes
+            Alert(title: Text("Unsaved Changes"),
+                  message: Text("You have unsaved changes. Are you sure you want to leave?"),
+                  primaryButton: .destructive(Text("Leave")) {
+                presentationMode.wrappedValue.dismiss()
+            },
+                  secondaryButton: .cancel()
+            )
+        }
+    }
     
-    private func submitWorkout() 
+    private func submitWorkout()
     {
         print(workoutType)
-                print(weight)
+        print(weight)
         guard !workoutType.isEmpty, !weight.isEmpty, !numOfReps.isEmpty, !numOfSets.isEmpty
         else {
             alertTitle = "Required Data"
@@ -88,14 +88,14 @@ struct NewWorkoutView: View {
             return
         }
         let dbService = DatabaseService()
-             let todaysDate = dbService.getCurrentMonthDayYear()
-             let weightInt = Double(weight) ?? 0
-             let numOfRepsInt = Double(numOfReps) ?? 0
-             let numOfSetsInt = Double(numOfSets) ?? 0
-             let comments = comments
+        let todaysDate = dbService.getCurrentMonthDayYear()
+        let weightInt = Double(weight) ?? 0
+        let numOfRepsInt = Double(numOfReps) ?? 0
+        let numOfSetsInt = Double(numOfSets) ?? 0
+        let comments = comments
         let newWorkout = dbService.createWorkoutObject(id: GlobalManager.shared.userID!, date: todaysDate, workoutType: workoutType, weight: weightInt, reps: numOfRepsInt, sets: numOfSetsInt, comments: comments)
-             
-             dbService.saveWorkout(workout: newWorkout)
+        
+        dbService.saveWorkout(workout: newWorkout)
         
         alertTitle = "Submitted"
         alertMessage = "Workout Successfully Submitted"
