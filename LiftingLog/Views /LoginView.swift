@@ -33,7 +33,6 @@ struct LoginView: View {
         }
         else {
             loginForm
-            //LoginView()
         }
     }
     
@@ -127,7 +126,7 @@ struct LoginView: View {
     
     func login() {
         // Perform login logic here
-       
+        
         
         //This is a new user because the userEmail is NOT nil.  We want to store the userID and email together
         if ( GlobalManager.shared.newUserEmail != nil)
@@ -146,8 +145,8 @@ struct LoginView: View {
             return; 
         }
         
-            self.isAuthenticated = true // Set this to true when login is successful
-       //this is also for testing ----> self.isNewUser = true
+        self.isAuthenticated = true // Set this to true when login is successful
+        //this is also for testing ----> self.isNewUser = true
     }
     private func resetPassword() {
         // Implement the reset password functionality
@@ -158,16 +157,16 @@ struct LoginView: View {
     }
     
 }
-    
-    struct Line: View {
-        var body: some View {
-            Rectangle()
-                .fill(Color.secondary) // Set the color of the line here
-        }
+
+struct Line: View {
+    var body: some View {
+        Rectangle()
+            .fill(Color.secondary) // Set the color of the line here
     }
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            LoginView()
-        }
+}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
     }
+}
 

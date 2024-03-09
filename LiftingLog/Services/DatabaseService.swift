@@ -16,7 +16,7 @@ class DatabaseService: UIViewController
 {
     func saveWorkout(workout:Workout)
     {
-       
+        
         let record = CKRecord(recordType: "Workout")
         record["userID"] = GlobalManager.shared.userID
         record["workoutID"] = record.recordID.recordName
@@ -40,34 +40,34 @@ class DatabaseService: UIViewController
     }
     
     static func loadWorkouts() {
-            let predicate = NSPredicate(format: "userID == %@", GlobalManager.shared.userID ?? "")
-            let query = CKQuery(recordType: "Workout", predicate: predicate)
-            privateDB.perform(query, inZoneWith: nil) { (records, error) in
-                if let error = error {
-                    // Handle error appropriately
-                   print("Error loading workouts: \(error.localizedDescription)")
-                    return
-                }
-                
-                var workouts: [Workout] = []
-                records?.forEach { record in
-                   let workoutID = record["workoutID"] as? String
-                    if let date = record["date"] as? String,
-                       let workoutType = record["workoutType"] as? String,
-                       let weight = record["weight"] as? Double,
-                       let reps = record["reps"] as? Double,
-                       let sets = record["sets"] as? Double,
-                       let comments = record["comments"] as? String {
-                        workouts.append(Workout(id: GlobalManager.shared.userID!, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments))
-                       
-                    }
-                }
-                
-                DispatchQueue.main.async {
-                    GlobalManager.shared.workoutArray = workouts
+        let predicate = NSPredicate(format: "userID == %@", GlobalManager.shared.userID ?? "")
+        let query = CKQuery(recordType: "Workout", predicate: predicate)
+        privateDB.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                // Handle error appropriately
+                print("Error loading workouts: \(error.localizedDescription)")
+                return
+            }
+            
+            var workouts: [Workout] = []
+            records?.forEach { record in
+                let workoutID = record["workoutID"] as? String
+                if let date = record["date"] as? String,
+                   let workoutType = record["workoutType"] as? String,
+                   let weight = record["weight"] as? Double,
+                   let reps = record["reps"] as? Double,
+                   let sets = record["sets"] as? Double,
+                   let comments = record["comments"] as? String {
+                    workouts.append(Workout(id: GlobalManager.shared.userID!, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments))
+                    
                 }
             }
+            
+            DispatchQueue.main.async {
+                GlobalManager.shared.workoutArray = workouts
+            }
         }
+    }
     
     func createNewUser(profile: UserProfile)
     {
@@ -90,7 +90,7 @@ class DatabaseService: UIViewController
             print(record)
         }
     }
-   
+    
     func loadUserProfile(userID: String) {
         let predicate = NSPredicate(format: "userID == %@", userID)
         let query = CKQuery(recordType: "Lifter", predicate: predicate)

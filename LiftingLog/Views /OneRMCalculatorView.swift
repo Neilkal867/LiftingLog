@@ -14,36 +14,36 @@ struct OneRMCalculatorView: View {
     @State private var oneRMOutput = "" // Holds the calculated 1RM output
     @State private var showAlert = false // Controls the visibility of the alert
     @State private var alertMessage = "" // Holds the message to be displayed in the alert
-
-    var calcServ = CalculationsService() // Instance of the calculations service
-   
-    var body: some View {
-            Form {
-                Section(header: Text("Input your personal data (lbs.)")) {
-                    // TextField for body weight with decimal pad for numerical input
-                    TextField("Body Weight", text: $bodyWeight)
-                        .keyboardType(.decimalPad) // Shows a keyboard suitable for numerical input including decimals
-                    // TextField for number of reps with number pad for integer input
-                    TextField("Number of Reps", text: $numberOfReps)
-                        .keyboardType(.numberPad) // Shows a keyboard suitable for integer numerical input
     
-                    // Button to trigger the 1RM calculation
-                    Button("Calculate 1RM") {
-                        calculateRM()
-                    }
-                }
+    var calcServ = CalculationsService() // Instance of the calculations service
+    
+    var body: some View {
+        Form {
+            Section(header: Text("Input your personal data (lbs.)")) {
+                // TextField for body weight with decimal pad for numerical input
+                TextField("Body Weight", text: $bodyWeight)
+                    .keyboardType(.decimalPad) // Shows a keyboard suitable for numerical input including decimals
+                // TextField for number of reps with number pad for integer input
+                TextField("Number of Reps", text: $numberOfReps)
+                    .keyboardType(.numberPad) // Shows a keyboard suitable for integer numerical input
                 
-                Section {
-                    // Displays the calculated 1RM
-                    Text(oneRMOutput.isEmpty ? "Enter values to calculate 1RM score" : oneRMOutput)
+                // Button to trigger the 1RM calculation
+                Button("Calculate 1RM") {
+                    calculateRM()
                 }
             }
-            .navigationBarTitle("1RM Calculator")
-            // Alert for invalid input or calculation errors
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            
+            Section {
+                // Displays the calculated 1RM
+                Text(oneRMOutput.isEmpty ? "Enter values to calculate 1RM score" : oneRMOutput)
             }
         }
+        .navigationBarTitle("1RM Calculator")
+        // Alert for invalid input or calculation errors
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        }
+    }
     
     // Function to calculate the 1RM using the inputs
     private func calculateRM() {

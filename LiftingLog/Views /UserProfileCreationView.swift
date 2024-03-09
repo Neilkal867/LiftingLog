@@ -18,13 +18,13 @@ struct UserProfileCreationView: View {
     
     let sexOptions = ["Male", "Female"]
     let dbService = DatabaseService()
-   
+    
     var body: some View {
         if successfulSubmission {
             WelcomeDashboardView()
         }
         else {
-           newUserForm
+            newUserForm
         }
     }
     
@@ -61,13 +61,13 @@ struct UserProfileCreationView: View {
                    let maxSquatDouble = Double(maxSquat),
                    let maxDeadliftDouble = Double(maxDeadlift),
                    let maxOHPDouble = Double(maxOHP) {
-                   
+                    
                     let newUserEmail = GlobalManager.shared.newUserEmail
                     
                     var userprofile = dbService.createUserProfile(email: GlobalManager.shared.newUserEmail!, sex: sex , bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble)
-                   
+                    
                     dbService.createNewUser(profile: userprofile)
-                   
+                    
                     self.successfulSubmission = true
                     
                 } else {

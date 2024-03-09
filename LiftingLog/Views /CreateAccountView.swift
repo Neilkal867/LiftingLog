@@ -20,7 +20,7 @@ struct CreateAccountView: View {
     @State private var showAlert = false
     @State private var showFillOutAlert = false
     @State private var isDatePickerPresented = false
-
+    
     var body: some View {
         if isAuthenticated {
             WelcomeDashboardView()
@@ -53,7 +53,7 @@ struct CreateAccountView: View {
                 }
             }
             .navigationBarTitle("Account Creation")
-            .navigationBarItems(trailing: Button("Cancel") {
+            .navigationBarItems(leading: Button("Cancel") {
                 self.showAlert = true
             })
             .alert(isPresented: $showAlert) {

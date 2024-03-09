@@ -22,7 +22,7 @@ class WilksCalculatorViewModel: ObservableObject {
             // Handle error - in SwiftUI, you might use an alert
             return
         }
-
+        
         // Calculations based on gender
         if gender == "Male" {
             let wilksOutput = calcServ.calculateMensWilksNumberInPounds(maxBench: doubleMaxBench, maxSquat: doubleMaxSquat, maxDeadlift: doubleMaxDeadlift, bodyWeight: doubleBodyWeight)
@@ -38,40 +38,40 @@ import SwiftUI
 
 struct WilksCalculatorView: View {
     @StateObject private var viewModel = WilksCalculatorViewModel()
-
+    
     var body: some View {
-            Form {
-                Section(header: Text("Input your personal data (lbs.)")) {
-                    TextField("Body Weight", text: ($viewModel.bodyWeight))
-                        .keyboardType(.decimalPad)
-                    
-                    TextField("Max Bench", text: ($viewModel.maxBench))
-                        .keyboardType(.numberPad)
-                    
-                    TextField("Max Squat", text: ($viewModel.maxSquat))
-                        .keyboardType(.numberPad)
-                    
-                    TextField("Max Deadlift", text: ($viewModel.maxDeadlift))
-                        .keyboardType(.numberPad)
-
-                    Picker("Gender", selection: $viewModel.gender) {
-                        Text("Male").tag("Male")
-                        Text("Female").tag("Female")
-                    }.pickerStyle(SegmentedPickerStyle())
-                }
-
-                Section {
-                    Button("Calculate Wilks Score") {
-                        viewModel.calculateWilksScore()
-                    }
-                }
-
-                Section(header: Text("Result")) {
-                    Text(viewModel.wilksScore.isEmpty ? "Enter values to calculate the Wilks score" : viewModel.wilksScore)
+        Form {
+            Section(header: Text("Input your personal data (lbs.)")) {
+                TextField("Body Weight", text: ($viewModel.bodyWeight))
+                    .keyboardType(.decimalPad)
+                
+                TextField("Max Bench", text: ($viewModel.maxBench))
+                    .keyboardType(.numberPad)
+                
+                TextField("Max Squat", text: ($viewModel.maxSquat))
+                    .keyboardType(.numberPad)
+                
+                TextField("Max Deadlift", text: ($viewModel.maxDeadlift))
+                    .keyboardType(.numberPad)
+                
+                Picker("Gender", selection: $viewModel.gender) {
+                    Text("Male").tag("Male")
+                    Text("Female").tag("Female")
+                }.pickerStyle(SegmentedPickerStyle())
+            }
+            
+            Section {
+                Button("Calculate Wilks Score") {
+                    viewModel.calculateWilksScore()
                 }
             }
-            .navigationTitle("Wilks Calculator")
+            
+            Section(header: Text("Result")) {
+                Text(viewModel.wilksScore.isEmpty ? "Enter values to calculate the Wilks score" : viewModel.wilksScore)
+            }
         }
+        .navigationTitle("Wilks Calculator")
+    }
 }
 
 // Preview provider for SwiftUI previews in Xcode
