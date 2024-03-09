@@ -19,7 +19,7 @@ class DatabaseService: UIViewController
        
         let record = CKRecord(recordType: "Workout")
         record["userID"] = GlobalManager.shared.userID
-        record["workoutID"] = record.recordID.recordName
+       // record["workoutID"] = record.recordID.recordName
         record["date"] = workout.date
         record["workoutType"] = workout.workoutType
         record["weight"] = workout.weight
@@ -58,7 +58,7 @@ class DatabaseService: UIViewController
                        let reps = record["reps"] as? Double,
                        let sets = record["sets"] as? Double,
                        let comments = record["comments"] as? String {
-                        workouts.append(Workout(id: workoutID ?? "ID NOT FOUND", date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments))
+                        workouts.append(Workout(id: GlobalManager.shared.userID!, date: date, workoutType: workoutType, weight: weight, reps: reps, sets: sets, comments: comments))
                        
                     }
                 }

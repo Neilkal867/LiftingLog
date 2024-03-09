@@ -13,7 +13,7 @@ struct SubmittedWorkoutsView: View {
     
     var body: some View {
             List {
-                ForEach(GlobalManager.shared.workoutArray, id: \.self) { workout in
+                ForEach(GlobalManager.shared.workoutArray.reversed(), id: \.self) { workout in
                     VStack(alignment: .leading) {
                         Text(workout.date)
                             .font(.headline)
