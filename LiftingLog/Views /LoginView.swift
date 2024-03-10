@@ -16,6 +16,7 @@ struct LoginView: View {
     @State private var isNewUser = false
     @State private var isNoAcc = false
     @State private var isPWForgot = false
+    @State private var noEmailOrPassword = false
     let dbService = DatabaseService()
     
     var body: some View {
@@ -95,7 +96,12 @@ struct LoginView: View {
             .buttonStyle(.borderedProminent)
             .padding()
             .frame(width: 380, height: 50)
-            
+            .alert(isPresented: $noEmailOrPassword) {
+                Alert(title: Text("Credentials Not Found"),
+                      message: Text("Please Enter a Valid Username and Password"),
+                      dismissButton: .default(Text("OK"),action: {
+                }))
+            }
             Text("Forgot Password?")
                 .foregroundColor(.blue) // Hyperlink color
                 .onTapGesture {
@@ -126,27 +132,30 @@ struct LoginView: View {
     
     func login() {
         // Perform login logic here
-        
-        
-        //This is a new user because the userEmail is NOT nil.  We want to store the userID and email together
-        if ( GlobalManager.shared.newUserEmail != nil)
-        {
-            self.isNewUser = true
-            return;
-        }
-        
-        //This is a user who has logged in before
-        if ( GlobalManager.shared.newUserEmail == nil && GlobalManager.shared.userID != nil )
-        {
-            dbService.loadUserProfile(userID: GlobalManager.shared.userID!)
-            DatabaseService.loadWorkouts()
-            print(GlobalManager.shared.userProfile)
+        if (!userName.isEmpty || !password.isEmpty){
+            
+            //This is a new user because the userEmail is NOT nil.  We want to store the userID and email together
+            if ( GlobalManager.shared.newUserEmail != nil)
+            {
+                self.isNewUser = true
+                return;
+            }
+            
+            //This is a user who has logged in before
+            if ( GlobalManager.shared.newUserEmail == nil && GlobalManager.shared.userID != nil )
+            {
+                dbService.loadUserProfile(userID: GlobalManager.shared.userID!)
+                DatabaseService.loadWorkouts()
+                print(GlobalManager.shared.userProfile)
+                self.isAuthenticated = true // Set this to true when login is successful
+                return;
+            }
+            
             self.isAuthenticated = true // Set this to true when login is successful
-            return; 
+            //this is also for testing ----> self.isNewUser = true
         }
-        
-        self.isAuthenticated = true // Set this to true when login is successful
-        //this is also for testing ----> self.isNewUser = true
+            noEmailOrPassword = true
+       
     }
     private func resetPassword() {
         // Implement the reset password functionality
