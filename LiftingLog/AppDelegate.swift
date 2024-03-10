@@ -5,10 +5,10 @@
 //  Created by Neil Kalanish on 9/22/22.
 //
 
-import UIKit
+/*import UIKit
 import CoreData
-
-
+import FirebaseCore
+import FirebaseAuth
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -80,3 +80,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+*/

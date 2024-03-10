@@ -11,7 +11,7 @@ struct CreateAccountView: View {
     // State variables to hold the input text values
     @State private var firstName: String = ""
     @State private var lastName: String = ""
-    @State private var userName: String = ""
+    @State private var userEmail: String = ""
     @State private var password: String = ""
     @State private var dateOfBirth = Date()
     
@@ -20,13 +20,25 @@ struct CreateAccountView: View {
     @State private var showAlert = false
     @State private var showFillOutAlert = false
     @State private var isDatePickerPresented = false
+    @State private var isNewUser = false
+    
+    let authService = AuthenticationService()
     
     var body: some View {
-        if isAuthenticated {
+        if isAuthenticated
+        {
             WelcomeDashboardView()
-        } else if isCancel {
+        }
+        else if isCancel
+        {
             LoginView()
-        } else {
+        }
+        else if isNewUser
+        {
+            UserProfileCreationView()
+        }
+        else
+        {
             createAccForm
         }
     }
@@ -36,7 +48,7 @@ struct CreateAccountView: View {
             Form {
                 TextField("First Name", text: $firstName)
                 TextField("Last Name", text: $lastName)
-                TextField("Email", text: $userName)
+                TextField("Email", text: $userEmail)
                 SecureField("Password", text: $password)
                 DatePicker("Date of Birth", selection: $dateOfBirth, displayedComponents: .date)
                     .datePickerStyle(CompactDatePickerStyle())
@@ -71,12 +83,20 @@ struct CreateAccountView: View {
         }
     }
     
-    func createAccountClicked() {
+    func createAccountClicked()
+    {
         // Implement account creation logic here
-        print(firstName, lastName, userName, password, dateOfBirth)
-        if !userName.isEmpty && !password.isEmpty {
-            self.isAuthenticated = true
-            // User account creation logic here
+        print(firstName, lastName, userEmail, password, dateOfBirth)
+        if !userEmail.isEmpty && !password.isEmpty
+        {
+            authService.createUser(emailAddress: userEmail, password: password) { authresponse in
+                if(authresponse.SuccesfulSignin)
+                {
+                    GlobalManager.shared.userID = authService.getCurrentUser()
+                    GlobalManager.shared.newUserEmail = userEmail
+                    self.isNewUser = true
+                }
+            }
         }
         else {
             self.showFillOutAlert = true

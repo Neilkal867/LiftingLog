@@ -68,6 +68,12 @@ struct UserProfileCreationView: View {
                     
                     dbService.createNewUser(profile: userprofile)
                     
+                    GlobalManager.shared.userProfile?.bodyweight = bodyweightDouble
+                    GlobalManager.shared.userProfile?.maxSquat = maxBenchDouble
+                    GlobalManager.shared.userProfile?.maxBench = maxSquatDouble
+                    GlobalManager.shared.userProfile?.maxDeadlift = maxDeadliftDouble
+                    GlobalManager.shared.userProfile?.maxOHP = maxOHPDouble
+                    
                     self.successfulSubmission = true
                     
                 } else {

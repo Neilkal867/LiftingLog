@@ -37,11 +37,10 @@ struct ResetPasswordView: View {
                         alertTitle = "Missing Information"
                         alertMessage = "Please Enter Your Email Address."
                     } else {
+                        self.resetPassword(email: email)
                         alertTitle = "Success"
                         alertMessage = "Email submitted successfully."
                         self.isEmailPresent = true
-                        
-                        
                     }
                     showAlert = true
                     
@@ -62,6 +61,12 @@ struct ResetPasswordView: View {
                 self.returnToWelcome = true
             })
         }
+    }
+    
+    private func resetPassword(email: String)
+    {
+        var authService = AuthenticationService()
+        authService.sendResetPasswordEmail(emailAddress: email)
     }
     
 }

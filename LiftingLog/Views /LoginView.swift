@@ -22,7 +22,7 @@ struct LoginView: View {
     var body: some View {
         if isAuthenticated {
             WelcomeDashboardView()
-        } 
+        }
         else if isNewUser{
             UserProfileCreationView()
         }
@@ -105,7 +105,6 @@ struct LoginView: View {
             Text("Forgot Password?")
                 .foregroundColor(.blue) // Hyperlink color
                 .onTapGesture {
-                    resetPassword()
                     self.isPWForgot = true
                 }
                 .padding()
@@ -117,7 +116,7 @@ struct LoginView: View {
                 Text("Create One.")
                     .foregroundColor(.blue)
                     .onTapGesture {
-                        self.isNoAcc = true 
+                        self.isNoAcc = true
                         print("Tapped Create One.")
                     }
             }
@@ -131,51 +130,77 @@ struct LoginView: View {
     
     
     func login() {
-        // Perform login logic here
-        if (!userName.isEmpty || !password.isEmpty){
-            
-            //This is a new user because the userEmail is NOT nil.  We want to store the userID and email together
-            if ( GlobalManager.shared.newUserEmail != nil)
-            {
-                self.isNewUser = true
-                return;
-            }
-            
-            //This is a user who has logged in before
-            if ( GlobalManager.shared.newUserEmail == nil && GlobalManager.shared.userID != nil )
-            {
-                dbService.loadUserProfile(userID: GlobalManager.shared.userID!)
-                DatabaseService.loadWorkouts()
-                print(GlobalManager.shared.userProfile)
-                self.isAuthenticated = true // Set this to true when login is successful
-                return;
-            }
-            
-            self.isAuthenticated = true // Set this to true when login is successful
-            //this is also for testing ----> self.isNewUser = true
-        }
+        
+        if (userName.isEmpty || password.isEmpty)
+        {
             noEmailOrPassword = true
-       
-    }
-    private func resetPassword() {
-        // Implement the reset password functionality
-    }
+        }
+        
+        // If the username and password is filled in the user is attempting to log in with the auth service.
+        if (!userName.isEmpty || !password.isEmpty)
+        {
+            firebaseAuth(emailAddress: userName, password: password)
+        }
+        
+        //This is a new user because the userEmail is NOT nil.  We want to store the userID and email together
+        if ( GlobalManager.shared.newUserEmail != nil)
+        {
+            self.isNewUser = true
+            return;
+        }
+        
+        //This is a user who has logged in before
+        if (GlobalManager.shared.newUserEmail == nil && GlobalManager.shared.userID != nil )
+        {
+            loadProfileAndWorkoutsBeforLogin(userId: GlobalManager.shared.userID!)
+            self.isAuthenticated = true // Set this to true when login is successful
+            return;
+        }
+    }  
+
     
     private func createAccount() {
         // Implement the reset password functionality
     }
     
-}
-
-struct Line: View {
-    var body: some View {
-        Rectangle()
-            .fill(Color.secondary) // Set the color of the line here
+    func firebaseAuth(emailAddress: String, password: String)
+    {
+        let authService = AuthenticationService()
+        authService.logUserIn(emailAddress: emailAddress, password: password) { Authresponse in
+    
+            //The user's credientials are valid so we log them in
+            if(Authresponse.SuccesfulSignin)
+            {
+                let userID = authService.getCurrentUser()
+                GlobalManager.shared.userID = userID
+                loadProfileAndWorkoutsBeforLogin(userId: userID)
+                self.isAuthenticated = true
+            }
+            
+            //The user's credientials are invalid so we don't log them in.  Maybe we display this error as a prompt
+            if(!Authresponse.SuccesfulSignin)
+            {
+                print(Authresponse.Error.description)
+            }
+        }
+    }
+    
+    func loadProfileAndWorkoutsBeforLogin(userId: String)
+    {
+        dbService.loadUserProfile(userID: userId)
+        //dbService.loadUserProfile(userID: GlobalManager.shared.userID!)
+        DatabaseService.loadWorkouts()
+    }
+    
+    struct Line: View {
+        var body: some View {
+            Rectangle()
+                .fill(Color.secondary) // Set the color of the line here
+        }
+    }
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            LoginView()
+        }
     }
 }
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
-
