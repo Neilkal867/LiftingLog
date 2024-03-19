@@ -106,7 +106,7 @@ struct UserProfileView: View {
                         }
                         .onChange(of: maxDeadlift) { newValue in
                             GlobalManager.shared.userProfile?.maxDeadlift = Double(newValue) ?? 0
-                        }
+                        } 
                 }
                 
                 HStack {
