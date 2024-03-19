@@ -18,10 +18,11 @@ struct UserProfileCreationView: View {
     
     let sexOptions = ["Male", "Female"]
     let dbService = DatabaseService()
+    let authService = AuthenticationService()
     
     var body: some View {
         if successfulSubmission {
-            WelcomeDashboardView()
+            LoginView()
         }
         else {
             newUserForm
@@ -74,6 +75,7 @@ struct UserProfileCreationView: View {
                     GlobalManager.shared.userProfile?.maxDeadlift = maxDeadliftDouble
                     GlobalManager.shared.userProfile?.maxOHP = maxOHPDouble
                     
+                    authService.signOutFromFirebase()
                     self.successfulSubmission = true
                     
                 } else {

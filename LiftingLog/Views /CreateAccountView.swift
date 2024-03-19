@@ -15,7 +15,7 @@ struct CreateAccountView: View {
     @State private var password: String = ""
     @State private var dateOfBirth = Date()
     
-    @State private var isAuthenticated = false
+    
     @State private var isCancel = false
     @State private var showAlert = false
     @State private var showFillOutAlert = false
@@ -25,11 +25,7 @@ struct CreateAccountView: View {
     let authService = AuthenticationService()
     
     var body: some View {
-        if isAuthenticated
-        {
-            WelcomeDashboardView()
-        }
-        else if isCancel
+        if isCancel
         {
             LoginView()
         }
@@ -87,7 +83,7 @@ struct CreateAccountView: View {
     {
         // Implement account creation logic here
         print(firstName, lastName, userEmail, password, dateOfBirth)
-        if !userEmail.isEmpty && !password.isEmpty
+        if (!userEmail.isEmpty && !password.isEmpty)
         {
             authService.createUser(emailAddress: userEmail, password: password) { authresponse in
                 if(authresponse.SuccesfulSignin)

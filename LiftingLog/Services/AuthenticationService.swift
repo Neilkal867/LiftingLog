@@ -65,6 +65,15 @@ class AuthenticationService
             }
         }
     }
+    
+    func signOutFromFirebase() {
+      do {
+        try Auth.auth().signOut()
+        print("User has been signed out")
+      } catch let error {
+        print("Error signing out: \(error.localizedDescription)")
+      }
+    }
 }
 
 

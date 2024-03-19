@@ -137,7 +137,7 @@ struct LoginView: View {
         }
         
         // If the username and password is filled in the user is attempting to log in with the auth service.
-        if (!userName.isEmpty || !password.isEmpty)
+        if (!userName.isEmpty && !password.isEmpty)
         {
             firebaseAuth(emailAddress: userName, password: password)
         }
