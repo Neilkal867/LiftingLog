@@ -18,7 +18,7 @@ struct UserProfileView: View {
     
     let sexOptions = ["Male", "Female"]
     let dbService = DatabaseService()
-    
+    let authService = AuthenticationService()
     var body: some View {
         if isLogout {
             LoginView()
@@ -151,7 +151,7 @@ struct UserProfileView: View {
         }
         .navigationTitle("My Profile")
         .navigationBarItems(trailing: Button("Logout"){
-            //add logout logic here
+            authService.signOutFromFirebase()
             isLogout = true
         })
     }
