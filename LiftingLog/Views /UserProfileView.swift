@@ -40,12 +40,12 @@ struct UserProfileView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .onAppear {
-                    if GlobalManager.shared.userProfile!.sex != "" {
-                        sex = "\((GlobalManager.shared.userProfile!.sex))"
+                    if GlobalManager.shared.userProfile?.sex != "" {
+                        sex = "\((GlobalManager.shared.userProfile?.sex ?? "Male"))"
                     }
                 }
                 .onChange(of: sex) { newValue in
-                    GlobalManager.shared.userProfile!.sex = String(newValue)
+                    GlobalManager.shared.userProfile?.sex = String(newValue)
                 }
                 HStack {
                     Text("Bodyweight:")
@@ -53,12 +53,12 @@ struct UserProfileView: View {
                     TextField("lbs.", text: $bodyweight)
                         .keyboardType(.decimalPad)
                         .onAppear {
-                            if GlobalManager.shared.userProfile!.bodyweight != 0 {
-                                bodyweight = "\(Int(GlobalManager.shared.userProfile!.bodyweight))"
+                            if GlobalManager.shared.userProfile?.bodyweight != 0 {
+                                bodyweight = "\(Int(GlobalManager.shared.userProfile?.bodyweight ?? 0))"
                             }
                         }
                         .onChange(of: bodyweight) { newValue in
-                            GlobalManager.shared.userProfile!.bodyweight = Double(newValue) ?? 0
+                            GlobalManager.shared.userProfile?.bodyweight = Double(newValue) ?? 0
                         }
                 }
             }
@@ -70,12 +70,12 @@ struct UserProfileView: View {
                     TextField("lbs.", text: $maxBench)
                         .keyboardType(.numberPad)
                         .onAppear {
-                            if GlobalManager.shared.userProfile!.maxBench != 0 {
-                                maxBench = "\(Int(GlobalManager.shared.userProfile!.maxBench))"
+                            if GlobalManager.shared.userProfile?.maxBench != 0 {
+                                maxBench = "\(Int(GlobalManager.shared.userProfile?.maxBench ?? 0))"
                             }
                         }
                         .onChange(of: maxBench) { newValue in
-                            GlobalManager.shared.userProfile!.maxBench = Double(newValue) ?? 0
+                            GlobalManager.shared.userProfile?.maxBench = Double(newValue) ?? 0
                         }
                 }
                 
@@ -85,12 +85,12 @@ struct UserProfileView: View {
                     TextField("lbs.", text: $maxSquat)
                         .keyboardType(.numberPad)
                         .onAppear {
-                            if GlobalManager.shared.userProfile!.maxSquat != 0 {
-                                maxSquat = "\(Int(GlobalManager.shared.userProfile!.maxSquat))"
+                            if GlobalManager.shared.userProfile?.maxSquat != 0 {
+                                maxSquat = "\(Int(GlobalManager.shared.userProfile?.maxSquat ?? 0))"
                             }
                         }
                         .onChange(of: maxSquat) { newValue in
-                            GlobalManager.shared.userProfile!.maxSquat = Double(newValue) ?? 0
+                            GlobalManager.shared.userProfile?.maxSquat = Double(newValue) ?? 0
                         }
                 }
                 
@@ -100,12 +100,12 @@ struct UserProfileView: View {
                     TextField("lbs.", text: $maxDeadlift)
                         .keyboardType(.numberPad)
                         .onAppear {
-                            if GlobalManager.shared.userProfile!.maxDeadlift != 0 {
-                                maxDeadlift = "\(Int(GlobalManager.shared.userProfile!.maxDeadlift))"
+                            if GlobalManager.shared.userProfile?.maxDeadlift != 0 {
+                                maxDeadlift = "\(Int(GlobalManager.shared.userProfile?.maxDeadlift ?? 0))"
                             }
                         }
                         .onChange(of: maxDeadlift) { newValue in
-                            GlobalManager.shared.userProfile!.maxDeadlift = Double(newValue) ?? 0
+                            GlobalManager.shared.userProfile?.maxDeadlift = Double(newValue) ?? 0
                         }
                 }
                 
@@ -115,12 +115,12 @@ struct UserProfileView: View {
                     TextField("lbs.", text: $maxOHP)
                         .keyboardType(.numberPad)
                         .onAppear {
-                            if GlobalManager.shared.userProfile!.maxOHP != 0 {
-                                maxOHP = "\(Int(GlobalManager.shared.userProfile!.maxOHP))"
+                            if GlobalManager.shared.userProfile?.maxOHP != 0 {
+                                maxOHP = "\(Int(GlobalManager.shared.userProfile?.maxOHP ?? 0))"
                             }
                         }
                         .onChange(of: maxOHP) { newValue in
-                            GlobalManager.shared.userProfile!.maxOHP = Double(newValue) ?? 0
+                            GlobalManager.shared.userProfile?.maxOHP = Double(newValue) ?? 0
                         }
                 }
                 Button("Update Profile") {

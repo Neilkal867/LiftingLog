@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBihk2KftfigM65vik1rHlfDOQ4fogj1fA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>433620041040</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>KalanishMelito2024.LiftingLog</string>
+	<key>PROJECT_ID</key>
+	<string>liftinglog-86695</string>
+	<key>STORAGE_BUCKET</key>
+	<string>liftinglog-86695.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:433620041040:ios:d76a117e796b150d228055</string>
+</dict>
+</plist>

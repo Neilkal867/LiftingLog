@@ -21,7 +21,8 @@ struct UserProfileCreationView: View {
     
     var body: some View {
         if successfulSubmission {
-            WelcomeDashboardView()
+            LoginView()
+            //WelcomeDashboardView()
         }
         else {
             newUserForm
