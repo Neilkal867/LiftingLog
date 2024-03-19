@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E2FA059290F2EB70016B726 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2FA058290F2EB70016B726 /* UIViewControllerExtension.swift */; };
+		1E5F428D2BAA160E00BBA560 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5F428C2BAA160E00BBA560 /* FirebaseAuth */; };
 		1E9ECD682B88F9EC00988C4E /* UserProfileCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9ECD672B88F9EC00988C4E /* UserProfileCreationView.swift */; };
 		1E9EE2212B98D1E400D4AB65 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EE2202B98D1E400D4AB65 /* CreateAccountView.swift */; };
 		1E9EE2232B98F8ED00D4AB65 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9EE2222B98F8ED00D4AB65 /* ResetPasswordView.swift */; };
@@ -31,7 +32,6 @@
 		8D1062A328DD0411008AD000 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D1062A228DD0411008AD000 /* Assets.xcassets */; };
 		8D67F4F6290B1DE50008724F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F5290B1DE50008724F /* DatabaseService.swift */; };
 		8D67F4F8290B1E020008724F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67F4F7290B1E020008724F /* AuthenticationService.swift */; };
-		8DB0D6492B9D0E4200307428 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8DB0D6482B9D0E4200307428 /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DB0D6492B9D0E4200307428 /* FirebaseAuth in Frameworks */,
+				1E5F428D2BAA160E00BBA560 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +182,7 @@
 			);
 			name = LiftingLog;
 			packageProductDependencies = (
-				8DB0D6482B9D0E4200307428 /* FirebaseAuth */,
+				1E5F428C2BAA160E00BBA560 /* FirebaseAuth */,
 			);
 			productName = LiftingLog;
 			productReference = 8D10629328DD040F008AD000 /* LiftingLog.app */;
@@ -474,7 +474,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8DB0D6482B9D0E4200307428 /* FirebaseAuth */ = {
+		1E5F428C2BAA160E00BBA560 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8DB0D6472B9D0E4200307428 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
