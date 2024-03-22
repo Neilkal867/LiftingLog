@@ -25,7 +25,7 @@ class WilksCalculatorViewModel: ObservableObject {
         
         // Calculations based on gender
         if gender == "Male" {
-            let wilksOutput = calcServ.calculateMensWilksNumberInPounds(maxBench: doubleMaxBench, maxSquat: doubleMaxSquat, maxDeadlift: doubleMaxDeadlift, bodyWeight: doubleBodyWeight)
+            let wilksOutput = calcServ.calculateMensWilksNumberInPounds()
             wilksScore = String(wilksOutput)
         } else if gender == "Female" {
             let wilksOutput = calcServ.calculateWomensWilksNumberInPounds(maxBench: doubleMaxBench, maxSquat: doubleMaxSquat, maxDeadlift: doubleMaxDeadlift, bodyWeight: doubleBodyWeight)

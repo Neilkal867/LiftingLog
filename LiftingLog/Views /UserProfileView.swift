@@ -19,6 +19,7 @@ struct UserProfileView: View {
     let sexOptions = ["Male", "Female"]
     let dbService = DatabaseService()
     let authService = AuthenticationService()
+    let calcService = CalculationsService()
     var body: some View {
         if isLogout {
             LoginView()
@@ -146,6 +147,27 @@ struct UserProfileView: View {
                     }
                 }.alert(isPresented: $showAlert) {
                     Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                }
+            }
+            
+            Section(header: Text("Wilks Number")) {
+                HStack {
+                    Text("Wilks Score:")
+                    Spacer()
+                    Text("\(calcService.calculateMensWilksNumberInPounds(), specifier: "%.2f")")
+                }
+            }
+            
+            Section(header: Text("Total Lifted Wight")) {
+                HStack {
+                    Text("Pounds:")
+                    Spacer()
+                    Text("\(calcService.totalLiftInPounds(), specifier: "%.2f")")
+                }
+                HStack {
+                    Text("Kilograms:")
+                    Spacer()
+                    Text("\(calcService.totalLiftInKilos(), specifier: "%.2f")")
                 }
             }
         }

@@ -129,8 +129,8 @@ struct LoginView: View {
     }
     
     
-    func login() {
-        
+    func login()
+    {
         if (userName.isEmpty || password.isEmpty)
         {
             noEmailOrPassword = true
@@ -140,6 +140,7 @@ struct LoginView: View {
         if (!userName.isEmpty && !password.isEmpty)
         {
             firebaseAuth(emailAddress: userName, password: password)
+            return;
         }
         
         //This is a new user because the userEmail is NOT nil.  We want to store the userID and email together

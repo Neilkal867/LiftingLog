@@ -10,7 +10,12 @@ import SwiftUI
 // Define a struct that conforms to View for our SwiftUI representation of the Welcome Dashboard
 struct WelcomeDashboardView: View {
     // Define the list of options available in the dashboard
-    let welcomeDashOptions = ["My Profile", "New Workout", "View Past Workout", "Wilks Calculator", "1RM Calculator", "Lifting Buddy"]
+    let welcomeDashOptions = ["My Profile", 
+                              "New Workout",
+                              "View Past Workout",
+                              //"Wilks Calculator",
+                              "1RM Calculator",
+                              "Lifting Buddy"]
     
     // The body property defines the view's content
     var body: some View {
@@ -37,8 +42,8 @@ struct WelcomeDashboardView: View {
             return AnyView(NewWorkoutView())
        case "View Past Workout":
             return AnyView(SubmittedWorkoutsView())
-        case "Wilks Calculator":
-            return AnyView(WilksCalculatorView())
+       // case "Wilks Calculator":
+            //return AnyView(WilksCalculatorView())
         case "1RM Calculator":
             return AnyView(OneRMCalculatorView())
         case "Lifting Buddy":

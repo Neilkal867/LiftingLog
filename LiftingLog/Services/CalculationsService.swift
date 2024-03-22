@@ -11,11 +11,11 @@ class CalculationsService {
     
     init(){}
     
-    func calculateMensWilksNumberInPounds(maxBench: Double, maxSquat: Double, maxDeadlift: Double, bodyWeight: Double) -> Double
+    func calculateMensWilksNumberInPounds() -> Double
     {
-        let totalLiftWeightInPounds = maxBench + maxSquat + maxDeadlift
+        let totalLiftWeightInPounds = GlobalManager.shared.userProfile!.maxBench  + GlobalManager.shared.userProfile!.maxSquat + GlobalManager.shared.userProfile!.maxDeadlift
         let totalLightWeightInKilos = totalLiftWeightInPounds * 0.45359237
-        let x = bodyWeight * 0.45359237
+        let x = GlobalManager.shared.userProfile!.bodyweight  * 0.45359237
         
         let a = 47.46178854
         let b = 8.472061379
@@ -35,6 +35,22 @@ class CalculationsService {
         let coefficient = 600 / bottom
         let mensWilksNum = coefficient * totalLightWeightInKilos
         return roundToTwoDecimalPlaces(value: mensWilksNum)
+    }
+    
+    func totalLiftInPounds() -> Double
+    {
+        let totalLiftWeightInPounds = GlobalManager.shared.userProfile!.maxBench  + GlobalManager.shared.userProfile!.maxSquat + GlobalManager.shared.userProfile!.maxDeadlift
+        
+        return totalLiftWeightInPounds
+    }
+    
+    func totalLiftInKilos() -> Double
+    {
+        let totalLiftWeightInPounds = GlobalManager.shared.userProfile!.maxBench  + GlobalManager.shared.userProfile!.maxSquat + GlobalManager.shared.userProfile!.maxDeadlift
+        
+        let totalLiftWeightInKilos = totalLiftWeightInPounds * 0.453592
+        
+        return totalLiftWeightInKilos
     }
     
     func calculateWomensWilksNumberInPounds(maxBench: Double, maxSquat: Double, maxDeadlift: Double, bodyWeight: Double) -> Double
