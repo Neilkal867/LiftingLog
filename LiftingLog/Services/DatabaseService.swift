@@ -151,4 +151,39 @@ class DatabaseService: UIViewController
             
         )
     }
+    func updateUserProfile(userID: String, sex: String, bodyweight: Double, maxBench: Double, maxSquat: Double, maxDeadlift: Double, maxOHP: Double, completion: @escaping (Bool, Error?) -> Void) {
+        let privateDatabase = CKContainer.default().privateCloudDatabase // Changed to private database
+        let predicate = NSPredicate(format: "userID == %@", userID)
+        let query = CKQuery(recordType: "Lifter", predicate: predicate)
+        
+        privateDatabase.perform(query, inZoneWith: nil) { records, error in
+            if let error = error {
+                completion(false, error)
+                return
+            }
+            
+            guard let record = records?.first else {
+                completion(false, NSError(domain: "AppError", code: 404, userInfo: [NSLocalizedDescriptionKey: "Record not found."]))
+                return
+            }
+            
+            // Update the fields except for the email
+            record["sex"] = sex
+            record["bodyweight"] = bodyweight
+            record["maxBench"] = maxBench
+            record["maxSquat"] = maxSquat
+            record["maxDeadlift"] = maxDeadlift
+            record["maxOHP"] = maxOHP
+            
+            // Save the updated record back to the database
+            privateDatabase.save(record) { _, saveError in
+                if let saveError = saveError {
+                    completion(false, saveError)
+                } else {
+                    completion(true, nil)
+                }
+            }
+        }
+    }
+    
 }

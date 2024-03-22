@@ -132,9 +132,15 @@ struct UserProfileView: View {
                        let maxOHPDouble = Double(maxOHP) {
                         let newUserEmail = GlobalManager.shared.newUserEmail
                         
-                        var userprofile = dbService.createUserProfile(email: GlobalManager.shared.userID!, sex: sex , bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble)
+                       // var userprofile = dbService.createUserProfile(email: GlobalManager.shared.userID!, sex: sex , bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble)
                         
-                        dbService.createNewUser(profile: userprofile)
+                        dbService.updateUserProfile(userID: GlobalManager.shared.userID!, sex: sex, bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble) { success, error in
+                            if success {
+                                print("User profile successfully updated in the private database.")
+                            } else if let error = error {
+                                print("Error updating user profile in the private database: \(error.localizedDescription)")
+                            }
+                        }
                         
                         self.successfulSubmission = true
                         alertTitle = "Updated"
