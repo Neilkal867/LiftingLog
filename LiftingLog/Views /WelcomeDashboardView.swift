@@ -13,6 +13,7 @@ struct WelcomeDashboardView: View {
     let welcomeDashOptions = ["My Profile", 
                               "New Workout",
                               "View Past Workout",
+                              "531 Plan",
                               //"Wilks Calculator",
                               "1RM Calculator",
                               "Lifting Buddy"]
@@ -44,6 +45,8 @@ struct WelcomeDashboardView: View {
             return AnyView(SubmittedWorkoutsView())
        // case "Wilks Calculator":
             //return AnyView(WilksCalculatorView())
+        case "531 Plan":
+            return AnyView(Workout531View())
         case "1RM Calculator":
             return AnyView(OneRMCalculatorView())
         case "Lifting Buddy":
