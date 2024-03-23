@@ -12,15 +12,15 @@ struct LoginView: View {
     @State private var userName: String = ""
     @State private var password: String = ""
     @State private var userEmail: String?
-    @State private var isAuthenticated = false // Declare the state variable for authentication status
     @State private var isNewUser = false
     @State private var isNoAcc = false
     @State private var isPWForgot = false
     @State private var noEmailOrPassword = false
     let dbService = DatabaseService()
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
-        if isAuthenticated {
+        if appState.isLoggedIn {
             WelcomeDashboardView()
         }
         else if isNewUser{
@@ -122,6 +122,12 @@ struct LoginView: View {
             }
             
         }
+        .onAppear {
+                    // Reset text fields if the user is not logged in
+                     
+                        self.userName = ""
+                        self.password = ""
+                    }
         
         .navigationTitle("Login")
         .navigationBarHidden(true)
@@ -154,7 +160,7 @@ struct LoginView: View {
         if (GlobalManager.shared.newUserEmail == nil && GlobalManager.shared.userID != nil )
         {
             loadProfileAndWorkoutsBeforLogin(userId: GlobalManager.shared.userID!)
-            self.isAuthenticated = true // Set this to true when login is successful
+            appState.isLoggedIn = true // Set this to true when login is successful
             return;
         }
     }  
@@ -175,13 +181,15 @@ struct LoginView: View {
                 let userID = authService.getCurrentUser()
                 GlobalManager.shared.userID = userID
                 loadProfileAndWorkoutsBeforLogin(userId: userID)
-                self.isAuthenticated = true
+                appState.isLoggedIn = true
             }
             
             //The user's credientials are invalid so we don't log them in.  Maybe we display this error as a prompt
             if(!Authresponse.SuccesfulSignin)
             {
                 print(Authresponse.Error.description)
+                noEmailOrPassword = true
+                
             }
         }
     }

@@ -13,7 +13,7 @@ struct WelcomeDashboardView: View {
     let welcomeDashOptions = ["My Profile", 
                               "New Workout",
                               "View Past Workout",
-                              "531 Plan",
+                              "531 Workout Plan",
                               //"Wilks Calculator",
                               "1RM Calculator",
                               "Lifting Buddy"]
@@ -21,7 +21,7 @@ struct WelcomeDashboardView: View {
     // The body property defines the view's content
     var body: some View {
         // Use NavigationView to enable navigation between views
-        NavigationView {
+       NavigationView {
             // Use List to create a list of items
             List(welcomeDashOptions.indices, id: \.self) { index in
                 // Use NavigationLink to create a tappable list item that navigates to a new view
@@ -45,7 +45,7 @@ struct WelcomeDashboardView: View {
             return AnyView(SubmittedWorkoutsView())
        // case "Wilks Calculator":
             //return AnyView(WilksCalculatorView())
-        case "531 Plan":
+        case "531 Workout Plan":
             return AnyView(Workout531View())
         case "1RM Calculator":
             return AnyView(OneRMCalculatorView())

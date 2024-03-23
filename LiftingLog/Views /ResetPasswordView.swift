@@ -26,7 +26,6 @@ struct ResetPasswordView: View {
         }
     }
     var resetPasswordForm: some View {
-        NavigationView {
             VStack {
                 TextField("Email", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -60,7 +59,7 @@ struct ResetPasswordView: View {
             .navigationBarItems(leading: Button("Cancel") {
                 self.returnToWelcome = true
             })
-        }
+        
     }
     
     private func resetPassword(email: String)

@@ -17,12 +17,23 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   }
 }
 
+class AppState: ObservableObject {
+    @Published var isLoggedIn: Bool = false
+    
+    func logout() {
+            isLoggedIn = false
+        }
+}
+
 @main
 struct LiftingLog: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject private var appState = AppState()
     var body: some Scene {
         WindowGroup {
             LoginView()
+                .environmentObject(appState) // Attach AppState to the environment
+                        
         }
         
     }

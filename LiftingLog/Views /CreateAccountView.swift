@@ -40,7 +40,6 @@ struct CreateAccountView: View {
     }
     
     var createAccForm: some View {
-        NavigationView {
             Form {
                 TextField("First Name", text: $firstName)
                 TextField("Last Name", text: $lastName)
@@ -76,7 +75,7 @@ struct CreateAccountView: View {
                     secondaryButton: .cancel()
                 )
             }
-        }
+        
     }
     
     func createAccountClicked()

@@ -9,19 +9,20 @@ struct UserProfileView: View {
     @State private var maxDeadlift: String = ""
     @State private var maxOHP: String = ""
     @State private var successfulSubmission = false
-    @State private var isLogout = false
-    
+    @State private var isLoggedOut = false
     @State private var showAlert: Bool = false
     @State private var showUnsavedDataAlert: Bool = false // Alert for unsaved changes
     @State private var alertTitle: String = ""
     @State private var alertMessage: String = ""
+    
+    @EnvironmentObject var appState: AppState
     
     let sexOptions = ["Male", "Female"]
     let dbService = DatabaseService()
     let authService = AuthenticationService()
     let calcService = CalculationsService()
     var body: some View {
-        if isLogout {
+        if isLoggedOut {
             LoginView()
         }
         else {
@@ -180,7 +181,9 @@ struct UserProfileView: View {
         .navigationTitle("My Profile")
         .navigationBarItems(trailing: Button("Logout"){
             authService.signOutFromFirebase()
-            isLogout = true
+            self.isLoggedOut = true
+            appState.logout()
+            //appState.isLoggedIn = true
         })
     }
 }
