@@ -133,7 +133,6 @@ struct UserProfileView: View {
                        let maxOHPDouble = Double(maxOHP) {
                         let newUserEmail = GlobalManager.shared.newUserEmail
                         
-                       // var userprofile = dbService.createUserProfile(email: GlobalManager.shared.userID!, sex: sex , bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble)
                         
                         dbService.updateUserProfile(userID: GlobalManager.shared.userID!, sex: sex, bodyweight: bodyweightDouble, maxBench: maxBenchDouble, maxSquat: maxSquatDouble, maxDeadlift: maxDeadliftDouble, maxOHP: maxOHPDouble) { success, error in
                             if success {

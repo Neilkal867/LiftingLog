@@ -26,6 +26,7 @@ struct ResetPasswordView: View {
         }
     }
     var resetPasswordForm: some View {
+        NavigationView {
             VStack {
                 TextField("Email", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -54,11 +55,13 @@ struct ResetPasswordView: View {
                     }))
                 }
             }
+            
             .padding()
             .navigationTitle("Reset Password")
             .navigationBarItems(leading: Button("Cancel") {
                 self.returnToWelcome = true
             })
+        }
         
     }
     

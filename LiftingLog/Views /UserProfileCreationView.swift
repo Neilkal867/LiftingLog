@@ -15,6 +15,7 @@ struct UserProfileCreationView: View {
     @State private var maxDeadlift: String = ""
     @State private var maxOHP: String = ""
     @State private var successfulSubmission = false
+    @State private var accountCreated = false
     
     let sexOptions = ["Male", "Female"]
     let dbService = DatabaseService()
@@ -30,6 +31,7 @@ struct UserProfileCreationView: View {
     }
     
     var newUserForm: some View {
+        NavigationView {
         Form {
             Section(header: Text("General Information")) {
                 Picker("Gender", selection: $sex) {
@@ -56,7 +58,7 @@ struct UserProfileCreationView: View {
             
             
             Button("Submit") {
-                //this button also needs to take the use to the welcome screen 
+                //this button also needs to take the use to the welcome screen
                 if let bodyweightDouble = Double(bodyweight),
                    let maxBenchDouble = Double(maxBench),
                    let maxSquatDouble = Double(maxSquat),
@@ -76,14 +78,25 @@ struct UserProfileCreationView: View {
                     GlobalManager.shared.userProfile?.maxOHP = maxOHPDouble
                     
                     authService.signOutFromFirebase()
-                    self.successfulSubmission = true
-                    
+                    self.accountCreated = true
                 } else {
                     // Handle error: one or more of the inputs are not valid numbers
                     print("Error: One or more inputs are invalid.")
                 }
             }
-        }.navigationTitle("New User Profile Setup")
+        }
+        .navigationTitle("New User Profile Setup")
+        .alert(isPresented: $accountCreated) {
+            Alert(
+                title: Text("Account Created"),
+                message: Text("Your Account Has Been Successfully Created. Please Login."),
+                dismissButton: .default(Text("OK"), action: {
+                    self.successfulSubmission = true
+                })
+            )
+        }
+    }
+    
     }
     
 }
