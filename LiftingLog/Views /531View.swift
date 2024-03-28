@@ -54,7 +54,7 @@ struct Workout531View: View {
                     }
                 }
             }
-            
+            ///
             // Picker used as a segmented control to select the week
             Picker("Select Week", selection: $selectedWeek) {
                 // Options for each week
