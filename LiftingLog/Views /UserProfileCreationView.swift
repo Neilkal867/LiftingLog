@@ -21,6 +21,8 @@ struct UserProfileCreationView: View {
     let dbService = DatabaseService()
     let authService = AuthenticationService()
     
+    @EnvironmentObject var appState: AppState
+    
     var body: some View {
         if successfulSubmission {
             LoginView()
@@ -78,6 +80,7 @@ struct UserProfileCreationView: View {
                     GlobalManager.shared.userProfile?.maxOHP = maxOHPDouble
                     
                     authService.signOutFromFirebase()
+                    appState.logout()
                     self.accountCreated = true
                 } else {
                     // Handle error: one or more of the inputs are not valid numbers

@@ -140,12 +140,14 @@ struct LoginView: View {
         if (userName.isEmpty || password.isEmpty)
         {
             noEmailOrPassword = true
+            return;
         }
         
         // If the username and password is filled in the user is attempting to log in with the auth service.
         if (!userName.isEmpty && !password.isEmpty)
         {
             firebaseAuth(emailAddress: userName, password: password)
+            appState.isLoggedIn = true
             return;
         }
         
@@ -181,7 +183,6 @@ struct LoginView: View {
                 let userID = authService.getCurrentUser()
                 GlobalManager.shared.userID = userID
                 loadProfileAndWorkoutsBeforLogin(userId: userID)
-                appState.isLoggedIn = true
             }
             
             //The user's credientials are invalid so we don't log them in.  Maybe we display this error as a prompt
