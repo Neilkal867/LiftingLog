@@ -25,7 +25,7 @@ struct CreateAccountView: View {
     @State private var invalidEmailOrInUse = false
     
     let authService = AuthenticationService()
-    
+    @EnvironmentObject var appState: AppState
     enum AlertType {
         case none, missingInformation, invalidEmailOrInUse, cancelConfirmation
     }
@@ -116,6 +116,7 @@ struct CreateAccountView: View {
                     GlobalManager.shared.userID = authService.getCurrentUser()
                     GlobalManager.shared.newUserEmail = userEmail
                     self.isNewUser = true
+                   // appState.logout()
                 }
                 else
                 {

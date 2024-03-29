@@ -19,10 +19,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 class AppState: ObservableObject {
     @Published var isLoggedIn: Bool = false
+    @Published var isNoAcc: Bool = false
     
     func logout() {
             isLoggedIn = false
+            isNoAcc = false 
         }
+    
+    
 }
 
 @main

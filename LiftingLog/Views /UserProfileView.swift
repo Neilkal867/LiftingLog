@@ -22,7 +22,7 @@ struct UserProfileView: View {
     let authService = AuthenticationService()
     let calcService = CalculationsService()
     var body: some View {
-        if isLoggedOut {
+        if  !appState.isLoggedIn {
             LoginView()
         }
         else {

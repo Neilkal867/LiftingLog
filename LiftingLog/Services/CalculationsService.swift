@@ -13,9 +13,9 @@ class CalculationsService {
     
     func calculateMensWilksNumberInPounds() -> Double
     {
-        let totalLiftWeightInPounds = GlobalManager.shared.userProfile!.maxBench  + GlobalManager.shared.userProfile!.maxSquat + GlobalManager.shared.userProfile!.maxDeadlift
+        let totalLiftWeightInPounds = (GlobalManager.shared.userProfile?.maxBench ?? 0)  + (GlobalManager.shared.userProfile?.maxSquat ?? 0)  + (GlobalManager.shared.userProfile?.maxDeadlift ?? 0)
         let totalLightWeightInKilos = totalLiftWeightInPounds * 0.45359237
-        let x = GlobalManager.shared.userProfile!.bodyweight  * 0.45359237
+        let x = (GlobalManager.shared.userProfile?.bodyweight ?? 0)  * 0.45359237
         
         let a = 47.46178854
         let b = 8.472061379
@@ -39,14 +39,14 @@ class CalculationsService {
     
     func totalLiftInPounds() -> Double
     {
-        let totalLiftWeightInPounds = GlobalManager.shared.userProfile!.maxBench  + GlobalManager.shared.userProfile!.maxSquat + GlobalManager.shared.userProfile!.maxDeadlift
+        let totalLiftWeightInPounds = (GlobalManager.shared.userProfile?.maxBench ?? 0)  + (GlobalManager.shared.userProfile?.maxSquat ?? 0)  + (GlobalManager.shared.userProfile?.maxDeadlift ?? 0)
         
         return totalLiftWeightInPounds
     }
     
     func totalLiftInKilos() -> Double
     {
-        let totalLiftWeightInPounds = GlobalManager.shared.userProfile!.maxBench  + GlobalManager.shared.userProfile!.maxSquat + GlobalManager.shared.userProfile!.maxDeadlift
+        let totalLiftWeightInPounds = (GlobalManager.shared.userProfile?.maxBench ?? 0)  + (GlobalManager.shared.userProfile?.maxSquat ?? 0)  + (GlobalManager.shared.userProfile?.maxDeadlift ?? 0)
         
         let totalLiftWeightInKilos = totalLiftWeightInPounds * 0.453592
         

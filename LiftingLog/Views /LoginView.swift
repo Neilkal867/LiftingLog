@@ -13,7 +13,7 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var userEmail: String?
     @State private var isNewUser = false
-    @State private var isNoAcc = false
+    //@State private var isNoAcc = false
     @State private var isPWForgot = false
     @State private var noEmailOrPassword = false
     let dbService = DatabaseService()
@@ -26,7 +26,7 @@ struct LoginView: View {
         else if isNewUser{
             UserProfileCreationView()
         }
-        else if isNoAcc{
+        else if appState.isNoAcc{
             CreateAccountView()
         }
         else if isPWForgot{
@@ -116,7 +116,8 @@ struct LoginView: View {
                 Text("Create One.")
                     .foregroundColor(.blue)
                     .onTapGesture {
-                        self.isNoAcc = true
+                        appState.isNoAcc = true
+                        //self.isNoAcc = true
                         print("Tapped Create One.")
                     }
             }
@@ -137,12 +138,7 @@ struct LoginView: View {
     
     func login()
     {
-        if (userName.isEmpty || password.isEmpty)
-        {
-            noEmailOrPassword = true
-            return;
-        }
-        
+       
         // If the username and password is filled in the user is attempting to log in with the auth service.
         if (!userName.isEmpty && !password.isEmpty)
         {
@@ -165,7 +161,13 @@ struct LoginView: View {
             appState.isLoggedIn = true // Set this to true when login is successful
             return;
         }
-    }  
+
+        if (userName.isEmpty || password.isEmpty)
+                {
+                    noEmailOrPassword = true
+                    return;
+                }
+    }
 
     
     private func createAccount() {
