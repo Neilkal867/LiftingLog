@@ -286,36 +286,6 @@
             endingLineNumber = "96"
             landmarkName = "newUserForm"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "82B7AC73-9243-449B-99F0-67726CA58863 - d509aa7c14368bc9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; SwiftUI.Alert in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.alert(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, content: () -&gt; SwiftUI.Alert) -&gt; some&gt;&gt;.0 in LiftingLog.UserProfileCreationView.newUserForm.getter : some"
-                  moduleName = "LiftingLog"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/josephmelito/Documents/GitHub/LiftingLog/LiftingLog/Views%20/UserProfileCreationView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96">
-               </Location>
-               <Location
-                  uuid = "82B7AC73-9243-449B-99F0-67726CA58863 - 44c7b661338c0603"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #2 () -&gt; SwiftUI.Alert in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.alert(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, content: () -&gt; SwiftUI.Alert) -&gt; some&gt;&gt;.0 in LiftingLog.UserProfileCreationView.newUserForm.getter : some"
-                  moduleName = "LiftingLog"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/josephmelito/Documents/GitHub/LiftingLog/LiftingLog/Views%20/UserProfileCreationView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

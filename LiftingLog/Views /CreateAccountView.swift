@@ -15,6 +15,7 @@ struct CreateAccountView: View {
     @State private var password: String = ""
     @State private var dateOfBirth = Date()
     
+    @State private var currentAlertType: AlertType = .none
     
     @State private var isCancel = false
     @State private var showAlert = false
@@ -24,6 +25,10 @@ struct CreateAccountView: View {
     @State private var invalidEmailOrInUse = false
     
     let authService = AuthenticationService()
+    
+    enum AlertType {
+        case none, missingInformation, invalidEmailOrInUse, cancelConfirmation
+    }
     
     var body: some View {
         if isCancel
@@ -53,38 +58,49 @@ struct CreateAccountView: View {
                 Button("Create Account") {
                     createAccountClicked()
                 }
-                .alert(isPresented: $showFillOutAlert) { // New alert for missing information
-                    Alert(
-                        title: Text("Missing Information"),
-                        message: Text("Please fill out all fields to create an account."),
-                        dismissButton: .default(Text("OK"))
-                    )
-                }
-                //.alert(isPresented: $invalidEmailOrInUse) { // New alert for missing information
-                   // Alert(
-                 //       title: Text("Invalid Input"),
-             //           message: Text("Please Use A Different Email. Also Please Make Sure Your Password Is At Least 6 Characters Long."),
-               //         dismissButton: .default(Text("OK"))
-                 //   )
-               // }
             }
-        
-        .navigationBarTitle("Account Creation")
-        .navigationBarItems(leading: Button("Cancel") {
-            self.showAlert = true
-        })}
-            .alert(isPresented: $showAlert) {
-                Alert(
+            
+            .navigationBarTitle("Account Creation")
+            .navigationBarItems(leading: Button("Cancel") {
+                self.currentAlertType = .cancelConfirmation
+            })
+        }
+        .alert(isPresented: Binding<Bool>(get: {
+            self.currentAlertType != .none
+        }, set: { _ in })) {
+            switch currentAlertType {
+            case .missingInformation:
+                return Alert(
+                    title: Text("Missing Information"),
+                    message: Text("Please fill out all fields to create an account."),
+                    dismissButton: .default(Text("OK")) {
+                        self.currentAlertType = .none
+                    }
+                )
+            case .invalidEmailOrInUse:
+                return Alert(
+                    title: Text("Invalid Input"),
+                    message: Text("Please use a different email. Also, please make sure your password is at least 6 characters long."),
+                    dismissButton: .default(Text("OK")) {
+                        self.currentAlertType = .none
+                    }
+                )
+            case .cancelConfirmation:
+                return Alert(
                     title: Text("Confirmation"),
                     message: Text("Are you sure you want to cancel?"),
                     primaryButton: .destructive(Text("Yes")) {
                         self.isCancel = true
-                        print("Cancelled.")
-                        // Logic to handle cancellation here
+                        self.currentAlertType = .none
                     },
-                    secondaryButton: .cancel()
+                    secondaryButton: .cancel() {
+                        self.currentAlertType = .none
+                    }
                 )
+            default:
+                return Alert(title: Text("Error")) // This should never be reached
             }
+        }
         
     }
     
@@ -103,12 +119,12 @@ struct CreateAccountView: View {
                 }
                 else
                 {
-                    self.invalidEmailOrInUse = true
+                    self.currentAlertType = .invalidEmailOrInUse
                 }
             }
         }
         else {
-            self.showFillOutAlert = true
+            self.currentAlertType = .missingInformation
         }
     }
 }
