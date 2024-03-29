@@ -91,4 +91,133 @@ class CalculationsService {
         let roundedValue = (value * 100).rounded() / 100
         return roundedValue
     }
+    
+    
+  // Warmup workouts
+    
+    func warmUpOne(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.4)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+    func warmUpTwo(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.5)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+    func warmUpThree(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.6)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+    // Week one workouts
+    
+    func weekOneFirst(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.65)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+   func weekOneSecond(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.75)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+    func weekOneThird(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.85)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+    // Week Two workous
+    
+    func weekTwoFirst(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.7)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+    func weekTwoSecond(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.8)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+    func weekTwoThird(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.9)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+    // Week Three Workouts
+    
+    func weekThreeFirst(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.75)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+    func weekThreeSecond(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.85)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
+    
+    func weekThreeThird(workoutWeight: Double) -> Int
+    {
+        var warmup = workoutWeight * 0.9
+        warmup = round(warmup / 5) * 5
+        
+        warmup = (workoutWeight * 0.95)
+        warmup = round(warmup / 5) * 5
+        return Int(warmup)
+    }
 }
