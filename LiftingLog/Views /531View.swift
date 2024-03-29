@@ -161,18 +161,19 @@ struct Workout531View: View {
             // Sections for each subtype's weights
             List {
                 if selectedExercise == "Warmup" {
-                    ForEach(["Squat", "Bench", "Deadlift", "Press"], id: \.self) { subtype in
-                        Section(header: Text("\(subtype) Weights (lb)")) {
-                            ForEach(exerciseData.weights(for: selectedExercise, subtype: subtype), id: \.self) { weight in
-                                Text("\(weight)")
-                            }
-                        }
-                    }
+                       ForEach(["Squat", "Bench", "Deadlift", "Press"], id: \.self) { subtype in
+                           Section(header: Text("\(subtype) Warmup Weights (lb)")) {
+                               ForEach(Array(exerciseData.weights(for: selectedExercise, subtype: subtype).enumerated()), id: \.element) { index, weight in
+                                   Text("\(repLabelForWarmup(index: index))\(weight)")
+                               }
+                           }
+                       }
                 } else {
                     ForEach(1...4, id: \.self) { week in
-                        Section(header: Text("Week \(week) Weights")) {
-                            ForEach(exerciseData.weights(for: selectedExercise, subtype: "Week \(week)"), id: \.self) { weight in
-                                Text("\(weight)")
+                        Section(header: Text("Week \(week) Weights (lb)")) {
+                            ForEach(Array(exerciseData.weights(for: selectedExercise, subtype: "Week \(week)").enumerated()), id: \.element) { index, weight in
+                                let repLabel = repsLabelForWeek(week: week, index: index)
+                                Text("\(repLabel)\(weight)")
                             }
                         }
                     }
@@ -182,6 +183,35 @@ struct Workout531View: View {
         }
         .navigationTitle("\(selectedExercise) Weights")
         .onAppear(perform: populateExerciseData)
+    }
+    
+    private func repsLabelForWeek(week: Int, index: Int) -> String {
+            switch week {
+            case 1, 4:
+                return "5 Reps: "
+            case 2:
+                return "3 Reps: "
+            case 3:
+                if index == 0 {
+                    return "5 Reps: "
+                } else if index == 1 {
+                    return "3 Reps: "
+                } else {
+                    return "1 Rep: "
+                }
+            default:
+                return ""
+            }
+        }
+    private func repLabelForWarmup(index: Int) -> String {
+        switch index {
+        case 0, 1:
+            return "5 Reps: "
+        case 2:
+            return "3 Reps: "
+        default:
+            return ""
+        }
     }
 }
 
