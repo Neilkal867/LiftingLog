@@ -1,0 +1,60 @@
+DEFINE SCHEMA
+
+    RECORD TYPE Lifter (
+        "___createTime" TIMESTAMP QUERYABLE,
+        "___createdBy"  REFERENCE QUERYABLE,
+        "___etag"       STRING QUERYABLE,
+        "___modTime"    TIMESTAMP QUERYABLE,
+        "___modifiedBy" REFERENCE QUERYABLE,
+        "___recordID"   REFERENCE QUERYABLE,
+        bodyweight      DOUBLE QUERYABLE,
+        email           STRING QUERYABLE,
+        maxBench        DOUBLE QUERYABLE,
+        maxDeadlift     DOUBLE QUERYABLE,
+        maxOHP          DOUBLE QUERYABLE,
+        maxSquat        DOUBLE QUERYABLE,
+        sex             STRING QUERYABLE,
+        userID          STRING QUERYABLE,
+        GRANT WRITE TO "_creator",
+        GRANT CREATE TO "_icloud",
+        GRANT READ TO "_world"
+    );
+
+    RECORD TYPE Users (
+        "___createTime" TIMESTAMP QUERYABLE,
+        "___createdBy"  REFERENCE QUERYABLE,
+        "___etag"       STRING QUERYABLE,
+        "___modTime"    TIMESTAMP,
+        "___modifiedBy" REFERENCE QUERYABLE,
+        "___recordID"   REFERENCE QUERYABLE,
+        bodyweight      DOUBLE QUERYABLE,
+        email           STRING QUERYABLE SEARCHABLE,
+        maxBench        DOUBLE,
+        maxDeadlift     DOUBLE QUERYABLE,
+        maxOHP          DOUBLE QUERYABLE,
+        maxSquat        DOUBLE QUERYABLE,
+        roles           LIST<INT64> QUERYABLE,
+        sex             STRING QUERYABLE,
+        userID          STRING QUERYABLE SEARCHABLE,
+        GRANT WRITE TO "_creator",
+        GRANT READ TO "_world"
+    );
+
+    RECORD TYPE Workout (
+        "___createTime" TIMESTAMP,
+        "___createdBy"  REFERENCE,
+        "___etag"       STRING,
+        "___modTime"    TIMESTAMP,
+        "___modifiedBy" REFERENCE,
+        "___recordID"   REFERENCE QUERYABLE,
+        comments        STRING QUERYABLE,
+        date            STRING SORTABLE,
+        reps            DOUBLE QUERYABLE,
+        sets            DOUBLE QUERYABLE,
+        userID          STRING QUERYABLE,
+        weight          DOUBLE QUERYABLE,
+        workoutType     STRING QUERYABLE,
+        GRANT WRITE TO "_creator",
+        GRANT CREATE TO "_icloud",
+        GRANT READ TO "_world"
+    );
